@@ -3,6 +3,9 @@ const cors=require("cors");
 const dotenv=require("dotenv").config();
 const  connection  = require("./config/db");
 const authRouter = require("./Auth/auth.router");
+const adminAuthRouter = require("./Admin/Admin.auth.router");
+const { authentication } = require("./Middleware/authentication");
+const authorization = require("./Middleware/authorization");
 
 
 
@@ -12,16 +15,16 @@ app.use(express.json());
 
 //**Added your Router here */
 app.use("/auth",authRouter)
-
+app.use("/auth",adminAuthRouter)
 
 
 //**Ending of Router */
 
 // checking homepage
 
-app.get("/",(req,res)=>{
+app.get("/",authentication,authorization(["Admin"]),(req,res)=>{
     // Ypu can use use status also for sending res
-    res.status(201).send("Home Page")
+    res.status(200).send("Home Page")
 })
 
 

@@ -1,1 +1,22 @@
 // You can copy here your req.body data for different sections
+
+name,email,password,country_code,mobile,gender,ip_address
+
+{
+  "name": "sahil",
+  "email": "sk@gmail.com",
+  "password": "123",
+  "country_code": "+91",
+  "mobile": 1234567899,
+  "gender": "Male"
+}
+
+{
+  "name": "Anjana",
+  "email": "a6@gmail.com",
+  "password": "123",
+  "country_code": "+91",
+  "mobile": 1234567899,
+  "gender": "Female",
+  "AdminId":"abc1236"
+}

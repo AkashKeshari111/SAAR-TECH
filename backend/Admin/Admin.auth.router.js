@@ -1,15 +1,16 @@
 const { Router } = require("express");
-const { AuthModel } = require("./auth.model");
+
 const bcrypt = require("bcrypt");
 const dns = require("node:dns");
 const jwt = require("jsonwebtoken");
+const { AdminAuthModel } = require("./Admin.auth.model");
 const dotenv = require("dotenv").config();
 
-const authRouter = Router();
+const adminAuthRouter = Router();
 
 //Make your API here
 
-authRouter.post("/register", async (req, res) => {
+adminAuthRouter.post("/admin/register", async (req, res) => {
   const {
     name,
     email,
@@ -18,11 +19,12 @@ authRouter.post("/register", async (req, res) => {
     mobile,
     gender,
     userId,
+    AdminId
   } = req.body;
 
   try {
-  const auth_user = await AuthModel.findOne({ email });
-  const Role="Customer";
+  const auth_user = await AdminAuthModel.findOne({ email,AdminId });
+  const Role="Admin";
 
     if (auth_user) {
       return res.status(403).send({ msg: "User are already exists" });
@@ -35,7 +37,7 @@ authRouter.post("/register", async (req, res) => {
           if (err) {
             return res.status(501).send(err);
           }
-          const new_authUser = new AuthModel({
+          const new_adminAuthUser = new AdminAuthModel({
             name,
             email,
             password: hash,
@@ -45,8 +47,9 @@ authRouter.post("/register", async (req, res) => {
             ip_address: address,
             role:Role,
             userId,
+            AdminId
           });
-          await new_authUser.save();
+          await new_adminAuthUser.save();
           return res.status(201).send({ msg: "Signup Successfully" });
         });
       });
@@ -56,10 +59,10 @@ authRouter.post("/register", async (req, res) => {
   }
 });
 
-authRouter.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-
-  const validUser = await AuthModel.findOne({ email });
+adminAuthRouter.post("/admin/login", async (req, res) => {
+  const { email, password,AdminId } = req.body;
+ 
+  const validUser = await AdminAuthModel.findOne({ email,AdminId });
   if(validUser){
   const userId = validUser._id;
   const hash = validUser.password;
@@ -77,12 +80,12 @@ authRouter.post("/login", async (req, res) => {
       }
     });
   } catch (err) {
-    return res.status(401).send({ msg: "Login failed!" });
+    return res.status(401).send(err);
   }
 }
 else{
-  return res.status(401).send({ msg: "Login failed!" })
+  return res.status(401).send({ msg: "Login failed!" });
 }
 });
 
-module.exports = authRouter;
+module.exports = adminAuthRouter;
