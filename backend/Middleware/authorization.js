@@ -1,5 +1,5 @@
 const { AdminAuthModel } = require("../Admin/Admin.auth.model");
-const { AuthModel } = require("../Auth/auth.model");
+const { AuthModel } = require("../Auth/auth.user.model");
 
 
 const authorization=(permission_role)=>{

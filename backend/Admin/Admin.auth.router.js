@@ -5,10 +5,19 @@ const dns = require("node:dns");
 const jwt = require("jsonwebtoken");
 const { AdminAuthModel } = require("./Admin.auth.model");
 const dotenv = require("dotenv").config();
+var crypto = require("crypto");
+const { authentication } = require("../Middleware/authentication");
 
 const adminAuthRouter = Router();
 
 //Make your API here
+function randomValueHex(len) {
+  return crypto
+    .randomBytes(Math.ceil(len / 2))
+    .toString("hex") // convert to hexadecimal format
+    .slice(0, len)
+    .toUpperCase(); // return required number of characters
+}
 
 adminAuthRouter.post("/admin/register", async (req, res) => {
   const {
@@ -19,16 +28,20 @@ adminAuthRouter.post("/admin/register", async (req, res) => {
     mobile,
     gender,
     userId,
-    AdminId
+    AdminId,
+    gst_number,
+    company_name,
   } = req.body;
 
-  try {
-  const auth_user = await AdminAuthModel.findOne({ email,AdminId });
-  const Role="Admin";
+  var string =
+    randomValueHex(4) + "-" + randomValueHex(4) + "-" + randomValueHex(4);
 
-    if (auth_user) {
-      return res.status(403).send({ msg: "User are already exists" });
-    } else {
+  const auth_user = await AdminAuthModel.findOne({ email });
+  const Role = "Admin";
+  if (auth_user) {
+    return res.status(403).send({ msg: "User are already exists" });
+  } else {
+    try {
       bcrypt.hash(password, 5, async function (err, hash) {
         if (err) {
           return res.status(501).send(err);
@@ -45,47 +58,75 @@ adminAuthRouter.post("/admin/register", async (req, res) => {
             mobile,
             gender,
             ip_address: address,
-            role:Role,
+            role: Role,
             userId,
-            AdminId
+            AdminId: string,
+            gst_number,
+            company_name,
           });
+
           await new_adminAuthUser.save();
-          return res.status(201).send({ msg: "Signup Successfully" });
+          return res
+            .status(201)
+            .send({ msg: "Signup Successfully", "AdminId": string });
         });
       });
+    } catch (err) {
+      return res.status(500).send(err);
     }
-  } catch (err) {
-    return res.status(500).send(err);
   }
 });
 
 adminAuthRouter.post("/admin/login", async (req, res) => {
-  const { email, password,AdminId } = req.body;
- 
-  const validUser = await AdminAuthModel.findOne({ email,AdminId });
-  if(validUser){
-  const userId = validUser._id;
-  const hash = validUser.password;
-  try {
-    await bcrypt.compare(password, hash, async function (err, result) {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      if (result) {
-        const token = jwt.sign({ userId }, process.env.SECRET_KEY);
-        return res.status(201).send({ msg: "Login Success", token: token });
-      }
-      else{
-        return res.status(401).send({ msg: "Login failed!" })
-      }
-    });
-  } catch (err) {
-    return res.status(401).send(err);
+  const { email, password, AdminId } = req.body;
+
+  const validUser = await AdminAuthModel.findOne({ AdminId });
+  if (validUser) {
+    const userId = validUser._id;
+    const hash = validUser.password;
+    try {
+      await bcrypt.compare(password, hash, async function (err, result) {
+        if (err) {
+          return res.status(500).send(err);
+        }
+        if (result) {
+          const token = jwt.sign({ userId }, process.env.SECRET_KEY,{ expiresIn: '24h' });
+          return res.status(201).send({ msg: "Login Success", token: token });
+        } else {
+          return res.status(401).send({ msg: "Login failed!" });
+        }
+      });
+    } catch (err) {
+      return res.status(401).send(err);
+    }
+  } else {
+    return res.status(401).send({ msg: "Login failed!" });
   }
-}
-else{
-  return res.status(401).send({ msg: "Login failed!" });
-}
+});
+
+adminAuthRouter.patch("/admin/:id",authentication, async (req, res) => {
+  const { id } = req.params;
+  const { AdminId,password } = req.body;
+  const auth_user = await AdminAuthModel.findOne({ AdminId });
+
+  if (auth_user) {
+    res.status(403).send({ msg: "This Id already exists" });
+  } else {
+    try {
+      bcrypt.hash(password, 5, async function (err, hash) {
+        if(err){
+          res.status(500).send(err)
+        }
+      const updateAdminId = await AdminAuthModel.updateOne(
+        { _id: id },
+        { $set: { AdminId,password:hash } }
+      );
+      res.send({ msg: "Update AdminId", updateAdminId });
+      })
+    } catch (err) {
+      res.send(err);
+    }
+  }
 });
 
 module.exports = adminAuthRouter;

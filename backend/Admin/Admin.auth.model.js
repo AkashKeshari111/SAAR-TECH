@@ -13,7 +13,9 @@ const adminAuthSchema=new Schema({
     ip_address:{type:String},
     role:{type:String,enum:["Admin"]},
     userId:{type:String},
-    AdminId:{type:String,required:true,unique:true}
+    AdminId:{type:String,required:true,unique:true},
+    gst_number:{type:String,required:true},
+    company_name:{type:String,required:true},
 
 },{
     timestamps:true
