@@ -2,10 +2,11 @@ const express=require("express");
 const cors=require("cors");
 const dotenv=require("dotenv").config();
 const  connection  = require("./config/db");
-const authRouter = require("./Auth/auth.router");
+const authRouter = require("./Auth/auth.user.router");
 const adminAuthRouter = require("./Admin/Admin.auth.router");
 const { authentication } = require("./Middleware/authentication");
 const authorization = require("./Middleware/authorization");
+const AdminProductRouter = require("./Admin/Admin.router");
 
 
 
@@ -16,7 +17,7 @@ app.use(express.json());
 //**Added your Router here */
 app.use("/auth",authRouter)
 app.use("/auth",adminAuthRouter)
-
+app.use("/admin",AdminProductRouter)
 
 //**Ending of Router */
 
@@ -27,6 +28,15 @@ app.get("/",authentication,authorization(["Admin"]),(req,res)=>{
     res.status(200).send("Home Page")
 })
 
+
+// function randomValueHex (len) {
+//     return crypto.randomBytes(Math.ceil(len/2))
+//         .toString('hex') // convert to hexadecimal format
+//         .slice(0,len).toUpperCase();   // return required number of characters
+// }
+
+// var string = randomValueHex(4)+"-"+randomValueHex(4)+"-"+randomValueHex(4);
+// console.log(string);
 
 //Listening and connecting to port and db respectively
 
