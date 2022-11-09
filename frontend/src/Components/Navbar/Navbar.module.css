@@ -79,6 +79,10 @@ padding-top: 2%;
  /* border:2px solid #04c74f; */
 }
 
+.navbarSearchSection>div>input:focus{
+  Outline:none !important
+ }
+ 
 
 .navbarSearchSection>div>p{
     padding-top: 1.5%;
