@@ -1,0 +1,135 @@
+.containerFooter {
+  display: flex;
+  width: 93%;
+  /* border: 1px solid red; */
+  margin: auto;
+  margin-top: 1%;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.footerCompanyInfo > ul {
+  list-style: none;
+  color: #777079;
+  font-size: 14px;
+}
+
+.footerCompanyInfo > h3 {
+  font-weight: 700;
+  margin-bottom: 3%;
+}
+
+.qrcode {
+  display: flex;
+}
+.qrcode > img {
+  width: 130px;
+  height: 130px;
+}
+
+.qrcode > div > img {
+  width: 120px;
+  margin-bottom: 5%;
+  height: 50px;
+}
+
+.qrcode > div {
+  margin-top: 4%;
+}
+
+#footerPayment {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+.containerFooter ~ div {
+  text-align: center;
+  font-size: 12px;
+  color: rgb(227, 227, 227);
+  padding: 10px 0;
+  width: 100%;
+  background-color: black;
+}
+
+.newslter {
+    height: 70px;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.newslter {
+  padding: 0px 3.5%;
+}
+
+.newslter > div:first-child {
+  /* border: 1px solid rgb(8, 165, 68); */
+  width: 50%;
+  display: flex;
+  justify-content: none;
+  padding-left: -10px;
+  padding-right: 0;
+}
+
+.newslter > div:first-child {
+  color: rgb(105, 104, 104);
+  font-weight: bold;
+  font-size: 15px;
+}
+.newslter > div:first-child > input {
+  width: 310px;
+  height: 40px;
+  margin-top: -1.8%;
+  padding-left: 5px;
+  margin-left: 1%;
+  border: 1px solid rgb(8, 8, 8);
+}
+
+.newslter > div:first-child > input ~ button {
+  background-color: rgb(8, 8, 8);
+  margin-top: -1.8%;
+  color: white;
+  height: 40.2px;
+  margin-left: 0px;
+  padding: 3px 27px;
+}
+
+
+.newslter > div:last-child {
+    /* border: 1px solid rgb(8, 165, 68); */
+width: 36%;
+height: 50px;
+margin-top: -0.8%;
+display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .qualitySection{
+    width: 95%;
+    padding-top: 2%;
+
+       height: 170px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-Top: 5%;
+    margin-bottom: 5%;
+    background-color: white;
+    /* border: 1px solid red; */
+  }
+
+  .qualitySection>div:first-child>img{
+width: 150px;
+height: 50px;
+margin-top: 7%;
+  }
+
+  .qualitySection>div:first-child>p{
+   font-weight: bold;
+   font-size: 14px;
+      }
+    
+  .qualitySection>div:first-child~img{
+    width: 680px;
+    height: 110px;
+      }
