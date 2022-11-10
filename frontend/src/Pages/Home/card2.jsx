@@ -1,14 +1,11 @@
 import React from 'react'
 import styles from './Styles/Homepage.module.css'
-export default function Card(props) {
+export default function Cardthird(props) {
 
 
 
   return (
     <>
-    
-
-    
         <div className={styles.card}>
 
 <div>
@@ -17,10 +14,10 @@ export default function Card(props) {
 <div className={styles.cardp}>
 <p>{props.title}</p>
 </div>
-<button className={styles.addcart}>{props.price}</button>
+<p className={styles.addp}>{props.price}</p>
 
 </div>
-
+    
   
 
     </>
