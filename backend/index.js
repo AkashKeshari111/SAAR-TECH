@@ -7,6 +7,7 @@ const adminAuthRouter = require("./Admin/Admin.auth.router");
 const AdminProductRouter = require("./Admin/Admin.router");
 const passport=require("./Auth/user.google.auth");
 const addressRouter = require("./Address/address.router");
+const userOrder = require("./UserOrder/User.router");
 
 
 
@@ -19,6 +20,7 @@ app.use("/auth",authRouter)
 app.use("/auth",adminAuthRouter)
 app.use("/admin",AdminProductRouter)
 app.use("/address",addressRouter)
+app.use("/order",userOrder)
 
 //**Ending of Router */
 
