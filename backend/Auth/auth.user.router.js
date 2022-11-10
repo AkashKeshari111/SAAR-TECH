@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { AuthModel } = require("./auth.user.model");
 const bcrypt = require("bcrypt");
-const dns = require("node:dns");
+const dns = require("dns");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv").config();
 

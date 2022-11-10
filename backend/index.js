@@ -23,7 +23,7 @@ app.use("/admin",AdminProductRouter)
 
 // checking homepage
 
-app.get("/",authentication,authorization(["Admin"]),(req,res)=>{
+app.get("/",(req,res)=>{
     // Ypu can use use status also for sending res
     res.status(200).send("Home Page")
 })
