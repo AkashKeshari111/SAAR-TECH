@@ -1,6 +1,6 @@
 const express=require("express");
 const cors=require("cors");
-const dotenv=require("dotenv").config();
+require("dotenv").config();
 const  connection  = require("./config/db");
 const authRouter = require("./Auth/auth.user.router");
 const adminAuthRouter = require("./Admin/Admin.auth.router");
