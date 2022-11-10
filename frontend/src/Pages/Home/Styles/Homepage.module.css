@@ -120,8 +120,17 @@
   gap: 10px;
   
 }
-
-/* @media(max-width:380px){
+@media(max-width:800px ){
+  .fdiv{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+    width: 80%;
+    height: 100vh;
+  
+  }
+}
+ @media(max-width:380px){
   .fdiv{
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -179,7 +188,7 @@
    
 }
 
-@media(max-width:415px){
+ @media(max-width:415px){
   .card div img{
     
     margin: auto;
@@ -191,6 +200,7 @@
     margin: auto;
     width: 80%;
     height: 100vh;
+    margin-top: 10px;
   
   }
   .fdiv div{
@@ -233,5 +243,5 @@
     margin: auto;
   }
    
-} */
+}  
 
