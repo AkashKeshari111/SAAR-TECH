@@ -6,38 +6,24 @@ import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
+import SideNavbar from "./SideNavbar"
 
 const Navbar = () => {
    const menuItems = [
     {
-      title: 'Consumer Electronics',
-      url: '/consumer_Electronics',
+      title: 'SUPER DEALS',
+      url: '/SUPER_DEALS',
     },
     {
-      title: 'Computers, Tablets & Office',
-      url: '/Computers',
+      title: 'APP ONLY',
+      url: '/APP_ONLY',
     },
     {
-      title: 'Health & Personal Care',
-      url: '/Health',
-    },
-    {
-      title:"Outdoors, Fitness & Sports",
-      url:"/Outdoors"
-    },
-    {
-      title: 'Motor & Car Electronics',
-      url: '/Motors',
-    },
-    {
-      title: 'Health & Personal Care',
-      url: '/Health',
-    },
-    {
-      title:"Watches & Jewelry",
-      url:"/Watches"
+      title: 'NEW ARRIVALS',
+      url: '/NEW_ARRIVALS',
     }
   ];
+  
   return (
     <div className={styles.outerbar}>
       <div className={styles.containerNavbar}>
@@ -91,6 +77,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.mainDropdown}>
+        <SideNavbar></SideNavbar>
         {menuItems.map((e)=>(
           <p>{e.title}</p>
         ))}

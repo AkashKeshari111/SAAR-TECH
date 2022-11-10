@@ -123,10 +123,15 @@ padding-top: 2%;
   margin-top:2px;
   background:#ffda00;
   display: flex;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 4%;
+  /* padding-right: 4%; */
   font-size: 14px;
   font-weight: 500;
   padding-top: 1%;
- justify-content: space-between;
+ justify-content: left;
+}
+
+.mainDropdown>p{
+  font-weight: 700;
+  margin-right: 12%;
 }
