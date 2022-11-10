@@ -16,21 +16,17 @@ AdminProductRouter.get(
       limit = 10,
       sortBy = "id",
       order = "asc",
-      product_category,
+    
     } = req.query;
     try {
-      if (product_category) {
-        product = await AdminProductModel.find({ userId, product_category })
+      
+        product = await AdminProductModel.find({ userId ,sortBy})
           .skip((page - 1) * limit)
           .limit(limit)
           .sort({ [sortBy]: order === "asc" ? 1 : -1 });
-      } else {
-        product = await AdminProductModel.find({ userId })
-          .skip((page - 1) * limit)
-          .limit(limit)
-          .sort({ [sortBy]: order === "asc" ? 1 : -1 });
-      }
-      const count = await AdminProductModel.find().count();
+      
+      const count = await AdminProductModel.find({userId}).count();
+      // console.log(count)
       res
         .status(200)
         .send({ data: product, totalPages: Math.ceil(count / limit) });
@@ -59,6 +55,7 @@ AdminProductRouter.post(
       product_width_unit,
       product_height,
       product_height_unit,
+      product_qty,
       product_description,
     } = req.body;
 
@@ -78,6 +75,7 @@ AdminProductRouter.post(
         product_width_unit,
         product_height,
         product_height_unit,
+        product_qty,
         product_description,
         userId,
       });
@@ -122,18 +120,12 @@ AdminProductRouter.delete(
   }
 );
 
-// AdminProductRouter.delete("/product/:userId",
-//   authentication,
-//   authorization(["Admin"]),
-//   async (req, res) => {
-//     const { userId } = req.params;
-//     try {
-//       const deletingAllProduct = await AdminProductModel.remove({ userId });
-//       res.send({ "msg": "Deleted All Product", deletingAllProduct });
-//     } catch (err) {
-//       res.send(err);
-//     }
-//   }
-// );
+
+
+AdminProductRouter.delete("/products/:userId",authentication,async(req,res)=>{
+    const {userId}=req.params;
+    const allDeleteProducts=await AdminProductModel.remove({userId});
+    res.status(201).send(allDeleteProducts)
+})
 
 module.exports = AdminProductRouter;

@@ -23,6 +23,8 @@ const adminProductSchema=new Schema({
     product_qty:{type:Number,required:true},
     product_description:{type:String,required:true},
     userId:{type:String}
+},{
+    timestamps:true
 })
 const AdminProductModel=model("adminproduct",adminProductSchema);
 
