@@ -2,14 +2,18 @@ import React from "react";
 import styles from "../Navbar/Navbar.module.css";
 import { BsChevronDown } from "react-icons/bs";
 import { IoIosPhonePortrait } from "react-icons/io";
-import { HiOutlineUser, HiOutlineHeart } from "react-icons/hi";
+import {  HiOutlineHeart } from "react-icons/hi";
 import { FiShoppingCart } from "react-icons/fi";
 import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
-import SideNavbar from "./SideNavbar"
+import NavbarCarousel from "./NavbarCarousel"
 
 const Navbar = () => {
    const menuItems = [
+    {
+      title: 'CATEGORY',
+      url: '/SUPER_DEALS',
+    },
     {
       title: 'SUPER DEALS',
       url: '/SUPER_DEALS',
@@ -25,6 +29,7 @@ const Navbar = () => {
   ];
   
   return (
+    <>
     <div className={styles.outerbar}>
       <div className={styles.containerNavbar}>
         {/* <a href="" alt=""></a> */}
@@ -76,13 +81,35 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={styles.mainDropdown}>
-        <SideNavbar></SideNavbar>
+          </div>
+          <div className={styles.mainDropdown}>
+        
         {menuItems.map((e)=>(
-          <p>{e.title}</p>
+        <div><p>{e.title}</p></div>
         ))}
       </div>
-    </div>
+      <div className={styles.megaDropdownBox}>
+        <div className={styles.navbarMegaDropdown}>
+        <div> <a href=" ">Consumer Electronics </a> </div>
+           <div> <a href=" "> Industrial & Scientific </a> </div>
+           <div> <a href=" ">Cell Phones & Accessories </a> </div>
+           <div> <a href=" ">Appliances </a> </div>
+           <div> <a href=" "> Outdoors, Fitness & Sports </a> </div>
+           <div> <a href=" ">Computers, Tablets & Office </a> </div>
+           <div> <a href=" ">Health & Personal Care </a> </div>
+           <div> <a href=" ">Home Improvement & Tools </a> </div>
+           <div> <a href=" ">Drones, Toys & Hobbies </a> </div>
+           <div> <a href=" ">Home & Garden </a> </div>
+           <div> <a href=" ">Motor & Car Electronics </a> </div>
+           <div> <a href=" ">Men's Fashion </a> </div>
+           <div> <a href=" ">Watches & Jewelry </a> </div>
+           <div> <a href=" ">Gearbest Promotion </a> </div>
+        </div>
+        <div className={styles.navbarCaurosol}>
+          <NavbarCarousel></NavbarCarousel>
+        </div>
+      </div>
+    </> 
   );
 };
 

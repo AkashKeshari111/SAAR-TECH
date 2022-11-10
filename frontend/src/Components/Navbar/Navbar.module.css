@@ -123,15 +123,47 @@ padding-top: 2%;
   margin-top:2px;
   background:#ffda00;
   display: flex;
-  padding-left: 4%;
-  /* padding-right: 4%; */
   font-size: 14px;
   font-weight: 500;
-  padding-top: 1%;
+  /* padding-top: 1%; */
  justify-content: left;
 }
 
-.mainDropdown>p{
+.mainDropdown>div{
   font-weight: 700;
-  margin-right: 12%;
+  /* border: 1px solid red; */
+  /* margin-right: 12%; */
+padding: 18px 85px;
+}
+
+.mainDropdown>div:first-child{
+background-color: black;
+color: white
+;
+}
+
+.megaDropdownBox{
+  width: 95%;
+  display: flex;
+  margin: auto;
+  height: 420px;
+  border: 1px solid green;
+}
+
+.navbarMegaDropdown{
+  width: 20%;
+    height: 100%;
+    text-align: left;
+    padding-top: 1%;
+    line-height: 28px;
+    background-color: #e4f4f5;
+    padding-left: 1%;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+
+.navbarCaurosol{
+  width: 80%;
+    height: 100%;
+  border: 1px solid rgb(0, 0, 0);
 }
