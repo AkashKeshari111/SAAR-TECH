@@ -1,0 +1,137 @@
+.outerbar{
+    position: sticky;
+    background-color:rgb(253, 250, 250);
+    border-color: white;
+top:0;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* border: 1px solid red; */
+
+}
+.containerNavbar {
+  width: 95%;
+  height: auto;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.topNavbarSEction {
+  width: 100%;
+  height: 98px;
+  /* border: 1px solid pink; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.topNavbarSEction > img {
+  width: 20%;
+  margin: 5px;
+}
+
+.topNavbarSEction > div {
+  width: 70%;
+  margin-top: 10px;
+  height: 30%;
+}
+
+.navbarlnguageSection {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 14px;
+  color: grey;
+}
+
+.navbarlnguageSection > p {
+  display: flex;
+}
+
+.icks {
+  margin-top: 5%;
+  margin-left: 3px;
+}
+
+.icksPhone {
+  margin-top: 0%;
+  font-size: 18px;
+}
+
+.navbarSearchSection {
+  height: 65px;
+  /* border: 1px solid black; */
+padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbarSearchSection>div{
+    width:60%;
+    height: 38px;
+    border-radius: 40px;
+    display: flex;
+ border:2px solid #ffda00;
+}
+
+.navbarSearchSection>div>input{
+    width:83%;
+    height: 100%;
+    padding-left: 3%;
+ /* border:2px solid #04c74f; */
+}
+
+.navbarSearchSection>div>input:focus{
+  Outline:none !important
+ }
+ 
+
+.navbarSearchSection>div>p{
+    padding-top: 1.5%;
+    width: 9%;
+    padding-left: 2%;
+    padding-right: 10px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background-color: #ffda00;
+}
+
+.navbarSearchSection>div>select{
+    width: 8%;
+    padding-left: -1%;
+    font-size: 14px;
+    padding-right: -10%;
+    border: none;
+    margin-left: 3%;
+ /* border:2px solid #04c74f; */
+}
+
+.navbarSearchSection>a{
+   display: flex;
+   margin-top: 1%;
+}
+
+.navbarSearchSection>a>p{
+    margin-top: -1%;
+    margin-left: 5px;
+    color: grey;
+ }
+
+ .mainDropdown{
+  width: 95%;
+  height: 50px;
+  margin: auto;
+  color:black;
+  margin-top:2px;
+  background:#ffda00;
+  display: flex;
+  padding-left: 4%;
+  /* padding-right: 4%; */
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 1%;
+ justify-content: left;
+}
+
+.mainDropdown>p{
+  font-weight: 700;
+  margin-right: 12%;
+}

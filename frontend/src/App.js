@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import AllRoutes from './Router/AllRoutes';
-
+import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import AllRoutes from "./Router/AllRoutes";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
   return (
     <div className="App">
-     <Navbar/>
-     <AllRoutes/>
+      <Navbar />
+      <AllRoutes />
+      <Footer />
+    
     </div>
   );
 }
