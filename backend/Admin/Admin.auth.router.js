@@ -106,7 +106,7 @@ adminAuthRouter.post("/admin/login", async (req, res) => {
 
 adminAuthRouter.patch("/admin/:id",authentication, async (req, res) => {
   const { id } = req.params;
-  const { AdminId,password } = req.body;
+  const { AdminId,password,name,mobile,gender } = req.body;
   const auth_user = await AdminAuthModel.findOne({ AdminId });
 
   if (auth_user) {
@@ -119,7 +119,7 @@ adminAuthRouter.patch("/admin/:id",authentication, async (req, res) => {
         }
       const updateAdminId = await AdminAuthModel.updateOne(
         { _id: id },
-        { $set: { AdminId,password:hash } }
+        { $set: { AdminId,password:hash,name,mobile,gender } }
       );
       res.send({ msg: "Update AdminId", updateAdminId });
       })

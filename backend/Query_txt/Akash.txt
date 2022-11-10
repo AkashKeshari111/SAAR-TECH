@@ -1,6 +1,6 @@
 // You can copy here your req.body data for different sections
 
-RemoveAllproducts,multer,sorting & filtering,user profile, Address, 
+RemoveAllproducts, multer,  filtering  , Address ,profic pic
 
 name,email,password,country_code,mobile,gender,ip_address
 
@@ -79,3 +79,18 @@ name,email,password,country_code,mobile,gender,ip_address
   "gst_number": "123456789",
   "company_name": "Masai"
 }
+
+
+
+
+first_name,
+    last_name,
+    address,
+    pincode,
+    country,
+    state,
+    street,
+    country_code,
+    mobile,
+    email,
+    userId

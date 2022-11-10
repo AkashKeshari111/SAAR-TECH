@@ -9,7 +9,7 @@ const authSchema=new Schema({
     password:{type:String,required:true},
     country_code:{type:String, default:"+91"},
     mobile:{type:Number},
-    gender:{type:String,enum:["Male","Female","Other"],required:true},
+    gender:{type:String,enum:["Male","Female","Other"]},
     ip_address:{type:String},
     role:{type:String,enum:["Customer"]},
     userId:{type:String}

@@ -3,6 +3,7 @@ const { AuthModel } = require("./auth.user.model");
 const bcrypt = require("bcrypt");
 const dns = require("node:dns");
 const jwt = require("jsonwebtoken");
+const { authentication } = require("../Middleware/authentication");
 const dotenv = require("dotenv").config();
 
 const authRouter = Router();
@@ -83,6 +84,33 @@ authRouter.post("/login", async (req, res) => {
 else{
   return res.status(401).send({ msg: "Login failed!" })
 }
+});
+
+
+
+authRouter.patch("/:id",authentication, async (req, res) => {
+  const { id } = req.params;
+  const { name,mobile,gender,email,password } = req.body;
+  const auth_user = await AuthModel.findOne({ email });
+
+  if (auth_user) {
+    res.status(403).send({ msg: "This user already exists" });
+  } else {
+    try {
+      bcrypt.hash(password, 5, async function (err, hash) {
+        if(err){
+          res.status(500).send(err)
+        }
+      const updateUser = await AuthModel.updateOne(
+        { _id: id },
+        { $set: { name,password:hash,mobile,gender } }
+      );
+      res.send({ msg: "Update AdminId", updateUser });
+      })
+    } catch (err) {
+      res.send(err);
+    }
+  }
 });
 
 module.exports = authRouter;
