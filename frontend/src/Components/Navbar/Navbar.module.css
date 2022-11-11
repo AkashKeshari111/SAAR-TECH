@@ -168,6 +168,11 @@
 .footerLogoNavbarDropdown{
   display: none;
 }
+
+
+.midSectionSign{
+ display: none;   
+}
 /* <----------------------------------------------min screen---------------------> */
 @media screen and (max-width: 800px) {
   .outerbar {
@@ -175,21 +180,20 @@
   }
 
   .sideNavBtn {
-    
     width: 95%;
     padding-left: 50%;
   }
 
   .sideNavbarCompo{
     position:sticky;
+    z-index: 10;
     top:0;
   }
   .navbardropdownName {
-  
-    color: black;
+        color: black;
     font-size: 14px;
     margin-left: -80%;
-    
+
   }
   .carouselNavabr{
     height:307px; width:100%
@@ -209,13 +213,14 @@
   .footerLogoNavbarDropdown>img{
     display: block;
     margin-top: 0%;
-    width: 33%;
+    width: 25%;
     height: 30px;
     background-color: white;
   }
   .midScreenNavbar{
-    width: 51%;
-    margin-left: 10%;
+    width: 42.8%;
+    margin-right: -0.3%;
+    margin-left: 2%;
     height: 28px;
     border-radius: 40px;
     display: flex;
@@ -235,5 +240,14 @@ border-top-left-radius: 10px;
 
 margin-left: 1%;
 font-size: 10px;
+  }
+
+  .midSectionSign{
+    display: block;
+font-size: px;
+width: 1%;
+height:5%;
+margin-top: -2%;
+border: 1px solid red;
   }
 }

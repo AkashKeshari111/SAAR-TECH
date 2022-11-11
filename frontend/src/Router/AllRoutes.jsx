@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from '../Pages/Home/HomePage'
-import AdminLogin from "../Pages/Home/AdminLogin"
-import UserLogin from "../Pages/Home/UserLogin.jsx"
-import AdminRegister from "../Pages/Home/AdminRegister.jsx"
-import UserRegister from "../Pages/Home/UserRegister.jsx"
+import AdminLogin from "../Pages/Login/AdminLogin"
+import UserLogin from "../Pages/Login/UserLogin.jsx"
+import AdminRegister from "../Pages/Signup/AdminRegister.jsx"
+import UserRegister from "../Pages/Signup/UserRegister.jsx"
 
 
 

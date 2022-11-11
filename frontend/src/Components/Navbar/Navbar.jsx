@@ -94,6 +94,9 @@ const Navbar = () => {
             <BiSearch size={"23px"}></BiSearch>
           </p>
         </div>
+<div className={styles.midSectionSign}>
+  <Signinfunction></Signinfunction>
+</div>
       </div>
 <div className={styles.sideNavbarCompo}>      <SideNavbar></SideNavbar></div>
 

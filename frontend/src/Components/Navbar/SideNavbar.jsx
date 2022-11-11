@@ -18,7 +18,7 @@ import styles from "./Navbar.module.css"
 
 const SideNavbar = () => {
   return (
-    <MDBNavbar  expand='xxlg'  light  className={styles.sideNavBtn} >
+    <MDBNavbar  expand='xxlg'   light  className={styles.sideNavBtn} >
       <MDBContainer fluid>
         <MDBNavbarNav className='me-auto ps-lg-0' >
           <MDBNavbarItem>
@@ -28,19 +28,19 @@ const SideNavbar = () => {
           <MDBNavbarItem className='position-static' style={{width:"100%"}}>
          
             <MDBDropdown  >
-              <MDBDropdownToggle   tag='a'   className={styles.navbardropdownName}>
+              <MDBDropdownToggle   tag='a'  ca  className={styles.navbardropdownName}>
                 CATEGORY
               </MDBDropdownToggle>
               
               <MDBDropdownMenu
                 className='mt-0 w-100 justify-content-center'
                 style={{
-                  borderTopLeftRadius: '3',
+                  borderTopLeftRadius: '0',
                   borderTopRightRadius: '0',
                 }}
               >
-                <MDBContainer>
-                  <MDBRow className='my-4'>
+                <MDBContainer fluid={"true"}>
+                  <MDBRow className='my-4' >
                     <MDBCol md='6' lg='3' className='mb-3 mb-lg-0'>
                       <MDBListGroup flush>
                         <MDBListGroupItem className='text-uppercase' style={{fontWeight:"bold"}} tag='a' href='#' action>
