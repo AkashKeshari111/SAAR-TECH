@@ -51,9 +51,6 @@ const MensFasion = () => {
             <p>Accessories</p>
             <p>Socks</p>
             <p>Jewelry</p>
-
-
-
             <p>Watches</p>
             <p>Shoes</p>
             <p>Clothing</p>
