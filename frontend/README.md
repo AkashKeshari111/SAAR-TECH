@@ -68,3 +68,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+Smart Electronics
+Smart Watches
+Smart Watch Phone
+Smart Wristband
+Smart Watch Accessories
+Sport Watch
+Smart Health Watch
+Security & Protection
+Access Control
+Alarm Systems
+Door Intercom
+IP Cameras
+Smart Doorbells
+Surveillance Camera System
+ 
+Headphones & Earphones
+Bluetooth Headphones
+Earbud Headphones
+Gaming Headphones
+On-Ear & Over-Ear Headphones
+Sports & Fitness Headphones
+Headphone Accessories
+Xiaomi Ecosystem Products
+Xiaomi

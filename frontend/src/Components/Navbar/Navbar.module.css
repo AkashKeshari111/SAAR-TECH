@@ -1,11 +1,10 @@
-.outerbar{
-    position: sticky;
-    background-color:rgb(253, 250, 250);
-    border-color: white;
-top:0;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    /* border: 1px solid red; */
-
+.outerbar {
+  position: sticky;
+  background-color: rgb(253, 250, 250);
+  border-color: white;
+  top: 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* border: 1px solid red; */
 }
 .containerNavbar {
   width: 95%;
@@ -55,115 +54,186 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin-top: 0%;
   font-size: 18px;
 }
-
+.midScreenNavbar{
+  display: none;
+}
 .navbarSearchSection {
   height: 65px;
   /* border: 1px solid black; */
-padding-top: 2%;
+  padding-top: 2%;
   display: flex;
   justify-content: space-between;
 }
 
-.navbarSearchSection>div{
-    width:60%;
-    height: 38px;
-    border-radius: 40px;
-    display: flex;
- border:2px solid #ffda00;
+
+.navbarSearchSection > div {
+  width: 60%;
+  height: 38px;
+  border-radius: 40px;
+  display: flex;
+  border: 2px solid #ffda00;
 }
 
-.navbarSearchSection>div>input{
-    width:83%;
-    height: 100%;
-    padding-left: 3%;
- /* border:2px solid #04c74f; */
+.navbarSearchSection > div > input {
+  width: 83%;
+  height: 100%;
+  padding-left: 3%;
+  /* border:2px solid #04c74f; */
 }
 
-.navbarSearchSection>div>input:focus{
-  Outline:none !important
- }
- 
-
-.navbarSearchSection>div>p{
-    padding-top: 1.5%;
-    width: 9%;
-    padding-left: 2%;
-    padding-right: 10px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    background-color: #ffda00;
+.navbarSearchSection > div > input:focus {
+  outline: none !important;
 }
 
-.navbarSearchSection>div>select{
-    width: 8%;
-    padding-left: -1%;
-    font-size: 14px;
-    padding-right: -10%;
-    border: none;
-    margin-left: 3%;
- /* border:2px solid #04c74f; */
+.navbarSearchSection > div > p {
+  padding-top: 1.5%;
+  width: 9%;
+  padding-left: 2%;
+  padding-right: 10px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: #ffda00;
 }
 
-.navbarSearchSection>a{
-   display: flex;
-   margin-top: 1%;
+.navbarSearchSection > div > select {
+  width: 8%;
+  padding-left: -1%;
+  font-size: 14px;
+  padding-right: -10%;
+  border: none;
+  margin-left: 3%;
+  /* border:2px solid #04c74f; */
 }
 
-.navbarSearchSection>a>p{
-    margin-top: -1%;
-    margin-left: 5px;
-    color: grey;
- }
+.navbarSearchSection > a {
+  display: flex;
+  margin-top: 1%;
+}
 
- .mainDropdown{
+.navbarSearchSection > a > p {
+  margin-top: -1%;
+  margin-left: 5px;
+  color: grey;
+}
+
+.mainDropdown {
   width: 95%;
   height: 50px;
   margin: auto;
-  color:black;
-  margin-top:2px;
-  background:#ffda00;
+  color: black;
+  margin-top: 2px;
+  background: #ffda00;
   display: flex;
   font-size: 14px;
   font-weight: 500;
   /* padding-top: 1%; */
- justify-content: left;
+  justify-content: left;
 }
 
-.mainDropdown>div{
+.mainDropdown > div {
   font-weight: 700;
   /* border: 1px solid red; */
   /* margin-right: 12%; */
-padding: 18px 85px;
+  padding: 18px 85px;
 }
 
-.mainDropdown>div:first-child{
-background-color: black;
-color: white
-;
+.mainDropdown > div:first-child {
+  background-color: black;
+  color: white;
 }
 
-.megaDropdownBox{
+.megaDropdownBox {
   width: 95%;
-  display: flex;
   margin: auto;
   height: 420px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
+}
+.sideNavBtn {
+  width: 95%;
+  background: #ffda00;
+  margin: auto;
 }
 
-.navbarMegaDropdown{
-  width: 20%;
-    height: 100%;
-    text-align: left;
-    padding-top: 1%;
-    line-height: 28px;
-    background-color: #e4f4f5;
-    padding-left: 1%;
-  border: 1px solid rgb(0, 0, 0);
+.navbardropdownName {
+  font-weight: bold;
+  color: black;
+  margin-left: -90%;
+  padding-top: 0%;
+  padding-bottom: 0%;
 }
 
+.carouselNavabr{
+  height:417px; width:100%
+}
+.footerLogoNavbarDropdown{
+  display: none;
+}
+/* <----------------------------------------------min screen---------------------> */
+@media screen and (max-width: 800px) {
+  .outerbar {
+    display: none;
+  }
 
-.navbarCaurosol{
-  width: 80%;
-    height: 100%;
-  border: 1px solid rgb(0, 0, 0);
+  .sideNavBtn {
+    
+    width: 95%;
+    padding-left: 50%;
+  }
+
+  .sideNavbarCompo{
+    position:sticky;
+    top:0;
+  }
+  .navbardropdownName {
+  
+    color: black;
+    font-size: 14px;
+    margin-left: -80%;
+    
+  }
+  .carouselNavabr{
+    height:307px; width:100%
+  }
+
+  
+  .footerLogoNavbarDropdown{
+    display: flex;
+    margin-top: 2%;
+    width: 100%;
+    margin-left: 2.3%;
+    margin-bottom: 2%;
+    height: 30px;
+
+    background-color: white;
+  }
+  .footerLogoNavbarDropdown>img{
+    display: block;
+    margin-top: 0%;
+    width: 33%;
+    height: 30px;
+    background-color: white;
+  }
+  .midScreenNavbar{
+    width: 51%;
+    margin-left: 10%;
+    height: 28px;
+    border-radius: 40px;
+    display: flex;
+    border: 2px solid #ffda00;
+  }
+  .midScreenNavbar>input{
+  font-size: 12px;
+    /* border: 1px solid red; */
+    width: 59%;
+    margin-right: 1%;
+  }
+  .midScreenNavbar>select{
+    /* border: 1px solid red; */
+width: 21%;
+border-bottom-left-radius: 10px;
+border-top-left-radius: 10px;
+
+margin-left: 1%;
+font-size: 10px;
+  }
 }

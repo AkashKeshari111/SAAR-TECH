@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import styles from "./Navbar.module.css"
 
 function NavbarCarousel() {
 
@@ -13,11 +14,13 @@ function NavbarCarousel() {
   ]
 
   return (
-    <Carousel>
+    <Carousel  >
       {carouselData.map((e)=>(
-        <Carousel.Item>
-        <img
-          className="d-block w-100"
+        <Carousel.Item  >
+        <img 
+className={styles.carouselNavabr}
+          // className="d-block w-100 h-100%"
+      
           src={e.img}
           alt="First slide"
         />
