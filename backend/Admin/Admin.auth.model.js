@@ -3,7 +3,7 @@ const {Schema,model}=require("mongoose");
 //authSchema is in camel case formate
 const adminAuthSchema=new Schema({
     //Add your schema data here 
- 
+    
     name:{type:String,required:true},
     email:{type:String,required:true,unique:true},
     password:{type:String,required:true},
@@ -13,7 +13,9 @@ const adminAuthSchema=new Schema({
     ip_address:{type:String},
     role:{type:String,enum:["Admin"]},
     userId:{type:String},
-    AdminId:{type:String,required:true,unique:true}
+    AdminId:{type:String,required:true,unique:true},
+    gst_number:{type:String,required:true},
+    company_name:{type:String,required:true},
 
 },{
     timestamps:true

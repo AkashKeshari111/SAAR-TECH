@@ -1,0 +1,14 @@
+.singBox{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color:white;
+    height: 300px;
+    width: 100px
+}
+
+.loginBtn{
+    color: black;
+    background: rgb(255,218,0);
+}
+.registerBtn{
+    background-color:#007aff;
+}

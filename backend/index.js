@@ -1,11 +1,13 @@
 const express=require("express");
 const cors=require("cors");
-const dotenv=require("dotenv").config();
+require("dotenv").config();
 const  connection  = require("./config/db");
-const authRouter = require("./Auth/auth.router");
+const authRouter = require("./Auth/auth.user.router");
 const adminAuthRouter = require("./Admin/Admin.auth.router");
-const { authentication } = require("./Middleware/authentication");
-const authorization = require("./Middleware/authorization");
+const AdminProductRouter = require("./Admin/Admin.router");
+const passport=require("./Auth/user.google.auth");
+const addressRouter = require("./Address/address.router");
+const userOrder = require("./UserOrder/User.router");
 
 
 
@@ -16,19 +18,36 @@ app.use(express.json());
 //**Added your Router here */
 app.use("/auth",authRouter)
 app.use("/auth",adminAuthRouter)
-
+app.use("/admin",AdminProductRouter)
+app.use("/address",addressRouter)
+app.use("/order",userOrder)
 
 //**Ending of Router */
 
 // checking homepage
 
-app.get("/",authentication,authorization(["Admin"]),(req,res)=>{
+app.get("/",(req,res)=>{
     // Ypu can use use status also for sending res
-    res.status(200).send("Home Page")
+    res.status(200).send("SAARTECH Home Page")
 })
 
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile','email'] }));
 
-//Listening and connecting to port and db respectively
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login',session:false }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    // console.log(req.user)
+    // const name=req.user.name;
+    // const email=req.user.email;
+    // const profile=req.user.url;
+    // const token=req.user.url; 
+    // res.send({name,email,profile,token})
+    res.redirect('/');
+  });
+
+
 
 const PORT=process.env.PORT || 8000;
 app.listen(PORT,async()=>{

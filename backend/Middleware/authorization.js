@@ -1,5 +1,5 @@
 const { AdminAuthModel } = require("../Admin/Admin.auth.model");
-const { AuthModel } = require("../Auth/auth.model");
+const { AuthModel } = require("../Auth/auth.user.model");
 
 
 const authorization=(permission_role)=>{
@@ -10,7 +10,7 @@ const authorization=(permission_role)=>{
       const user = await AdminAuthModel.findOne({_id:userId}) || await AuthModel.findOne({_id:userId});
       // console.log(user)
       const Role = user.role;
-      console.log(Role)
+      // console.log(Role)
           if(permission_role.includes(Role)){
               next()
           }

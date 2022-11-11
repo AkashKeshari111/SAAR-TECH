@@ -1,5 +1,7 @@
 // You can copy here your req.body data for different sections
 
+RemoveAllproducts, multer,  filtering  , Address ,profic pic
+
 name,email,password,country_code,mobile,gender,ip_address
 
 {
@@ -20,3 +22,75 @@ name,email,password,country_code,mobile,gender,ip_address
   "gender": "Female",
   "AdminId":"abc1236"
 }
+
+{
+    product_img:,
+    product_name:,
+    product_category:,
+    product_title:,
+    product_brand:,
+    product_year:, 
+    product_price:,
+    product_rating:,
+    product_discount:,
+    product_width:,
+    product_width_unit:
+    product_height:,
+     product_height_unit:,
+    product_description:
+
+ }
+
+ {
+    "product_img":"abc_img",
+    "product_name":"MI band1",
+    "product_category":"Band",
+    "product_title":"Smart band",
+    "product_brand":"MI",
+    "product_year":"2022", 
+    "product_price":9000,
+    "product_rating":4,
+    "product_discount":50,
+    "product_width":5,
+     "product_width_unit":"cm",
+    "product_height":7,
+     "product_height_unit":"cm",
+      product_qty:,
+    "product_description":"absdgsajfhskf"
+
+ }
+
+
+
+ {
+  "AdminId":"CC4D-BFA9-C59F",
+  "password": "123"
+ 
+}
+
+
+{
+  "name": "Anjana",
+  "email": "lm2@gmail.com",
+  "password": "123",
+  "country_code": "+91",
+  "mobile": 1234567899,
+  "gender": "Female",
+  "gst_number": "123456789",
+  "company_name": "Masai"
+}
+
+
+
+
+first_name,
+    last_name,
+    address,
+    pincode,
+    country,
+    state,
+    street,
+    country_code,
+    mobile,
+    email,
+    userId
