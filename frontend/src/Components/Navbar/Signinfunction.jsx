@@ -22,11 +22,13 @@ const Signinfunction = () => {
       initialFocusRef={initialFocusRef}
       placement="bottom"
       closeOnBlur={false}
+     
+      className={styles.containerSigninfunction}
     >
-      <PopoverTrigger>
+      <PopoverTrigger  >
         <Button background="white">
-          <HiOutlineUser size={"25px"}></HiOutlineUser>
-          <p style={{ color: "grey" }}>Sign In</p>
+          <HiOutlineUser size={"25px"}  background= "rgb(247, 238, 238)"></HiOutlineUser>
+          <p style={{ color:"grey" }}>Sign In</p>
         </Button>
       </PopoverTrigger>
       <PopoverContent className={styles.singBox} maxWidth="270px">
@@ -37,6 +39,7 @@ const Signinfunction = () => {
           textAlign={"left"}
           fontWeight="bold"
           border="0"
+         
         >
           Welcome to SAAR TECH
         </PopoverHeader>

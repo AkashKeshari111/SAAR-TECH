@@ -51,7 +51,7 @@
 }
 
 .newslter {
-    height: 70px;
+  height: 70px;
   /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
@@ -93,43 +93,81 @@
   padding: 3px 27px;
 }
 
-
 .newslter > div:last-child {
-    /* border: 1px solid rgb(8, 165, 68); */
-width: 36%;
-height: 50px;
-margin-top: -0.8%;
-display: flex;
-    justify-content: space-between;
-    
-  }
+  /* border: 1px solid rgb(8, 165, 68); */
+  width: 36%;
+  height: 50px;
+  margin-top: -0.8%;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .qualitySection{
+.qualitySection {
+  width: 95%;
+  padding-top: 2%;
+
+  height: 170px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: white;
+  /* border: 1px solid red; */
+}
+
+.qualitySection > div:first-child > img {
+  width: 150px;
+  height: 50px;
+  margin-top: 7%;
+}
+
+.qualitySection > div:first-child > p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.qualitySection > div:first-child ~ img {
+  width: 680px;
+  height: 110px;
+}
+/* <--------------------------------mid screen--------------------------> */
+@media screen and (max-width: 800px) {
+  .containerFooter {
+    display: block;
+    padding-left: 2%;
+  }
+  .newslter{
+margin-top: -22%;
+  }
+  .newslter > div:last-child {
+    display: none;
+  }
+  .newslter > div:first-child {
     width: 95%;
-    padding-top: 2%;
-
-       height: 170px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    margin-Top: 5%;
-    margin-bottom: 5%;
-    background-color: white;
     /* border: 1px solid red; */
+    margin: auto;
+    font-size: 13px;
+    padding-left: -20%;
   }
 
-  .qualitySection>div:first-child>img{
-width: 150px;
-height: 50px;
-margin-top: 7%;
+  .newslter > div:first-child > input {
+    width: 45%;
+    height: 35px;
   }
 
-  .qualitySection>div:first-child>p{
-   font-weight: bold;
-   font-size: 14px;
-      }
-    
-  .qualitySection>div:first-child~img{
-    width: 680px;
-    height: 110px;
-      }
+  .newslter > div:first-child>input ~ button {
+    width: 33%;
+    height: 35px;
+  }
+  .qualitySection > div:first-child ~ img {
+    display: none;
+  }
+  .qualitySection > div:first-child > img {
+display: none;
+  }
+  
+  .qualitySection > div:first-child > p {
+display: none;
+    }
+}
