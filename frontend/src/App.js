@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <AllRoutes />
       <Footer />
-    
+    {/* <MensFasion/> */}
 
     </div>
   );
