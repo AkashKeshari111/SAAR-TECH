@@ -1,0 +1,139 @@
+.mainsinglepage{
+  margin:auto;
+  width: 90%;
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  
+}
+
+.imageup{
+  background-color:#F9F9F9;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+}
+.imagediv{
+  
+  width: 600px;
+  height: 400px;
+
+}
+.imagediv img{
+  width: 400px;
+  height: 400px;
+}
+
+.ratediv{
+  background-color: #F9F9F9;
+
+}
+
+.hdiv{
+  width: 75%;
+  line-height: 1;
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 10px;
+  
+}
+.price{
+  margin-top: 20px;
+  
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.dollar{
+  
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+} 
+.price
+ label{
+  -webkit-text-size-adjust: 100%;
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  line-height: 1;
+  display: inline-block;
+  padding: 0 10px;
+  width: 80px;
+  color: #666;
+  font-size: 14px;
+  margin: auto;
+}
+.dollar span:nth-child(1){
+  -webkit-text-size-adjust: 100%;
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  vertical-align: bottom;
+  display: inline-block;
+  color: #f30240;
+  font-size: 30px;
+  line-height: .8;
+  font-weight: 700;
+}
+.dollar span:nth-child(2){
+  -webkit-text-size-adjust: 100%;
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  vertical-align: bottom;
+  padding: 0 6px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #f30240;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: auto;
+}
+
+.shiping{
+  width: 85%;
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  font-size: 14px;
+  color: #999;
+}
+
+.price1{
+  
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shiping span{
+  color: #f30240;
+}
+
+.price1
+  label{
+    -webkit-text-size-adjust: 100%;
+    font-family: OpenSans,Arial,Helvetica,sans-serif;
+    line-height: 1;
+    display: inline-block;
+    padding: 0 10px;
+    width: 80px;
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .paypal{
+    margin-top: 50px;
+  }
+.fav{
+  margin-top: 20px;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1;
+  background-color: rgba(0,0,0,0);
+  font-family: OpenSans,Arial,Helvetica,sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+.icon{
+  display: flex;
+  gap: 10px;
+}
