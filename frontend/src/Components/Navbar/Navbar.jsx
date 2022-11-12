@@ -76,14 +76,11 @@ const Navbar = () => {
                 <FiShoppingCart size={"25px"} color="#ffda00"></FiShoppingCart>
                 <p>Cart</p>
               </a>
-<<<<<<< HEAD
+
    
               </div>
 
-=======
 
-            
->>>>>>> 508cfbbe479fa26a050dac7fcbc05b85f388fab6
             </div>
           </div>
         </div>

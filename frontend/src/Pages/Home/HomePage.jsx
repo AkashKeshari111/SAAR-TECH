@@ -4,7 +4,7 @@ import styles from "./Styles/Homepage.module.css"
 import Card from './card'
 import Cardsec from './card1'
 import Cardthird from './card2'
-
+import {Link} from "react-router-dom"
 import{data} from "./data"
 import{datathird} from "./data1"
 
@@ -100,6 +100,8 @@ const HomePage = () => {
   <div className={styles.image1}>
   <img src={image2} alt="omnifood" />
   </div>
+  
+ <Link to="/products">
   <div className={styles.gridcard2}>
 
   {smanthird.map((e,index)=>{
@@ -107,6 +109,7 @@ const HomePage = () => {
     <Cardthird key={index} e={e} Image={e.Image}   price={e.price} />)
    })}
    </div>
+   </Link>
     </div>
     </div>
     {/* card1 button end */}
