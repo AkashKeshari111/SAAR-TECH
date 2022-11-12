@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 
 export const AdminProducts = () => {
     const [data,setData] = useState();
+const token = localStorage.get("token")
 
     const getYourData=()=>{
         axios.get("http://localhost:8080/admin/product",{
             headers:{
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlMDJiYjIyZWE2MTYxZjEwNGU2OWMiLCJpYXQiOjE2NjgxNjg4NDMsImV4cCI6MTY2ODI1NTI0M30.wfsuWpsfSqoB0gDeZBLA5KzR1PNAdK48LEDjH8aFRPM`
+                "token":`Bearer ${token}`
             }
         }).then(res=>{
             setData(res.data.data)

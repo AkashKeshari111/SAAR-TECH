@@ -9,7 +9,7 @@ const userLogin = (payload)=> dispatch=>{
     return axios.post("http://localhost:8080/auth/login", payload)
     .then((r)=>{
 
-   return dispatch({type:types.USER_LOGIN_SUCCESS, payload:r.data.token})
+   return dispatch({type:types.USER_LOGIN_SUCCESS, payload:r.data})
     
     })
     .catch((err)=>{
@@ -34,7 +34,7 @@ const userLogin = (payload)=> dispatch=>{
     return axios.post("http://localhost:8080/auth/admin/login", payload)
     .then((r)=>{
 
-   return dispatch({type:types.ADMIN_LOGIN_SUCCESS, payload:r.data.token})
+   return dispatch({type:types.ADMIN_LOGIN_SUCCESS, payload:r.data})
     
     })
     .catch((err)=>{

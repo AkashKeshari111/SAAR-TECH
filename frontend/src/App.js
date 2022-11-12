@@ -22,7 +22,7 @@ function App() {
       
 
       <AllRoutes/>
-      <AdminRoutes/>
+      {/* <AdminRoutes/> */}
 
 
     </div>
