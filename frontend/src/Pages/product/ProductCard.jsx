@@ -7,25 +7,25 @@ const ProductCard = ({ title, image, price, discount,per, off,id }) => {
   // console.log(id)
   const [icon, setIcon] = useState(heartIcon1)
 
-  const handleIcon=()=>{
-    setIcon(icon => heartIcon2)
-  }
+  // const handleIcon=()=>{
+  //   setIcon(icon => heartIcon2)
+  // }
 
 
   return (
     <div className={styles.productcard}>
       <img className={styles.imagecard} src={image} alt={title} />
       <h3 className={styles.titlecard}>{title}</h3>
-      <h2 style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>{price}</h2>
+      <h2 className={styles.priceheart} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>{price}</h2>
       <div>
         <h4 className={styles.discountcard}>
           {per}{discount}  <br />
           {off}
         </h4>
-        <button onClick={()=>handleIcon()}>
+        {/* <button onClick={()=>handleIcon()}>
 
         <img className={styles.heartcard} style={{width:"27px"}} src={icon} alt="heart icon" />
-        </button>
+        </button> */}
       </div>
     </div>
   );
