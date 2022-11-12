@@ -5,6 +5,7 @@ import AdminLogin from "../Pages/Home/AdminLogin"
 import UserLogin from "../Pages/Home/UserLogin.jsx"
 import AdminRegister from "../Pages/Home/AdminRegister.jsx"
 import UserRegister from "../Pages/Home/UserRegister.jsx"
+import CartAdd from '../Pages/Cart/CartAdd'
 
 
 
@@ -16,6 +17,8 @@ const AllRoutes = () => {
     <Route path="/UserLogin" element={<UserLogin/>}/>
     <Route path="/AdminRegister" element={<AdminRegister/>}/>
     <Route path="/UserRegister" element={<UserRegister/>}/>
+    <Route path="/cart" element={<CartAdd/>}/>
+
   </Routes>
   )
 }

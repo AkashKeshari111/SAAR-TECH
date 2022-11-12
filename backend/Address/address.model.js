@@ -1,16 +1,16 @@
 const {Schema,model}=require("mongoose");
 
 const addressSchema=new Schema({
-    first_name:{type:String, required:true},
+    first_name:{type:String},
     last_name:{type:String},
-    address:{type:String,required:true},
-    pincode:{type:Number,required:true},
-    country:{type:String,required:true},
-    state:{type:String,required:true},
-    city:{type:String,required:true},
-    country_code:{type:String, default:"+91",required:true},
-    mobile:{type:Number,required:true},
-    email:{type:String,required:true},
+    address:{type:String},
+    pincode:{type:Number},
+    country:{type:String},
+    state:{type:String},
+    city:{type:String},
+    country_code:{type:String, default:"+91"},
+    mobile:{type:Number},
+    email:{type:String},
     userId:{type:String}
 })
 

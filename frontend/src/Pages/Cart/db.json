@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "img": "abc",
+      "title": "efg",
+      "price": 10,
+      "qty": 5
+    }
+  ]
+}

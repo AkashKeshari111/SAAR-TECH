@@ -68,7 +68,7 @@ const Navbar = () => {
               </a>
 
 
-              <a href="#" alt="">
+              <a href="/cart" alt="">
                 <FiShoppingCart size={"25px"} color="#ffda00"></FiShoppingCart>
                 <p>Cart</p>
               </a>
