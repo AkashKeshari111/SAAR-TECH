@@ -20,8 +20,10 @@ const AdminNavbar = () => {
                         Add Products
                         </div>
                     </Link>
-
-                    <p>Admin:{" "}"Sahil Kumar"</p>
+                    <div className={styles.adminName}>
+                    Admin:{" "}"Sahil Kumar"
+                    </div>
+                    
         </div>
     </div>
   )

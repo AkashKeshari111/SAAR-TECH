@@ -20,8 +20,10 @@ function App() {
 
 
       
+
       <AllRoutes/>
       <AdminRoutes/>
+
 
     </div>
   );
