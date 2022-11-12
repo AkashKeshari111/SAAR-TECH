@@ -13,7 +13,7 @@ import {
   Text,
   useColorModeValue,
   Link,
-  Select,
+
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -39,10 +39,20 @@ const UserRegister = () => {
     });
   };
 
-  const handleSubmit = () => {
-
-    console.log(userSignupData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let payload = {
+      name:name,
+      email: email,
+      password: password,
+    };
+    if (email && password) {
+      dispatch(userLoginSuccess(payload))
+      
+    }
   };
+
+
 
   return (
     <Flex

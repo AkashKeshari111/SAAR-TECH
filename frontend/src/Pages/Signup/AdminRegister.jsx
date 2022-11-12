@@ -10,7 +10,9 @@ import {
   Stack,
   Button,
   Heading,
+  Select,
   Text,
+
   useColorModeValue,
   Link,
 } from '@chakra-ui/react';
@@ -33,14 +35,13 @@ const AdminRegister = () => {
   console.log(adminSignupData);
 
   const handleChange = (e) => {
-
-    
-    const { name, value } = e.target;
+const { name, value } = e.target;
     setAdminSignupData({
       ...adminSignupData,
       [name]: value,
     });
   };
+
 
   return (
     <Flex
