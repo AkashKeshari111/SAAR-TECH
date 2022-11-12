@@ -22,11 +22,13 @@ const Signinfunction = () => {
       initialFocusRef={initialFocusRef}
       placement="bottom"
       closeOnBlur={false}
+     
+      className={styles.containerSigninfunction}
     >
-      <PopoverTrigger>
+      <PopoverTrigger  >
         <Button background="white">
-          <HiOutlineUser size={"25px"}></HiOutlineUser>
-          <p style={{ color: "grey" }}>Sign In</p>
+          <HiOutlineUser size={"25px"}  background= "rgb(247, 238, 238)"></HiOutlineUser>
+          <p style={{ color:"grey" }}>Sign In</p>
         </Button>
       </PopoverTrigger>
       <PopoverContent className={styles.singBox} maxWidth="270px">
@@ -37,6 +39,7 @@ const Signinfunction = () => {
           textAlign={"left"}
           fontWeight="bold"
           border="0"
+         
         >
           Welcome to SAAR TECH
         </PopoverHeader>
@@ -54,16 +57,24 @@ const Signinfunction = () => {
           <Box>
             {" "}
             <Button className={styles.loginBtn} width={"90%"} mt="-2%" bgColor="rgb(255,218,0)">
-              User Login
+              
+              <a href="/UserLogin">User Login</a>
             </Button>
            
             <Button className={styles.loginBtn} width={"90%"} mt="2%" bgColor="rgb(255,218,0)">
-              Admin Login
+           
+              <a href="/AdminLogin">    Admin Login</a>
             </Button>
             <PopoverBody color={"grey"} display="flex" ml="18%"><p>or connect via </p><FcGoogle size={"27px"} mt="20%"></FcGoogle> </PopoverBody>
-            <Button className={styles.registerBtn} bgColor="#007aff" width={"90%"}>User Register</Button>
+            <Button className={styles.registerBtn} bgColor="#007aff" width={"90%"}>
+            <a href="/UserRegister">    User Register</a>
+
+             </Button>
           
-            <Button className={styles.registerBtn} bgColor="#007aff" mt="2%" width={"90%"}>Admin Register</Button>
+            <Button className={styles.registerBtn} bgColor="#007aff" mt="2%" width={"90%"}>
+            <a href="/AdminRegister">  Admin Register</a>
+              
+              </Button>
           </Box>
         </PopoverFooter>
       </PopoverContent>
