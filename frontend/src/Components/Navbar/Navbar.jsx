@@ -79,21 +79,31 @@ const Navbar = () => {
                   <p>Cart</p>
                 </a>
               </div>
+
+
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.footerLogoNavbarDropdown}>
-        <img src="/footerLogo.png" alt=""></img>
-        <div className={styles.midScreenNavbar}>
-          <select>
-            <option>All</option>
-          </select>
-          <input placeholder="Search Products" />
-          <p>
-            <BiSearch size={"23px"}></BiSearch>
-          </p>
+        <div className={styles.footerLogoNavbarDropdown}>
+          <img src="/footerLogo.png" alt=""></img>
+          <div className={styles.midScreenNavbar}>
+            <select>
+              <option>All</option>
+            </select>
+            <input placeholder="Search Products" />
+            <p>
+              <BiSearch size={"23px"}></BiSearch>
+            </p>
+          </div>
+          <div className={styles.midSectionSign}>
+            <Signinfunction></Signinfunction>
+          </div>
         </div>
+        <div className={styles.sideNavbarCompo}>
+          {" "}
+          <SideNavbar></SideNavbar>
+        </div>
+
         <div className={styles.midSectionSign}>
           <Signinfunction></Signinfunction>
         </div>
@@ -103,8 +113,10 @@ const Navbar = () => {
         <SideNavbar></SideNavbar>
       </div>
 
-      <div className={styles.megaDropdownBox}>
-        <NavbarCarousel></NavbarCarousel>
+
+        <div className={styles.megaDropdownBox}>
+          <NavbarCarousel></NavbarCarousel>
+        </div>
       </div>
     </>
   );
