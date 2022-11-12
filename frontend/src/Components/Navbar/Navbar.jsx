@@ -71,36 +71,40 @@ const Navbar = () => {
                   <p>Favourites</p>
                 </a>
 
-
-              <a href="/cart" alt="">
-                <FiShoppingCart size={"25px"} color="#ffda00"></FiShoppingCart>
-                <p>Cart</p>
-              </a>
-
-            
+                <a href="/cart" alt="">
+                  <FiShoppingCart
+                    size={"25px"}
+                    color="#ffda00"
+                  ></FiShoppingCart>
+                  <p>Cart</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.footerLogoNavbarDropdown}>
-        <img src="/footerLogo.png" alt=""></img>
-        <div className={styles.midScreenNavbar}>
-          <select>
-            <option>All</option>
-          </select>
-          <input placeholder="Search Products" />
-          <p>
-            <BiSearch size={"23px"}></BiSearch>
-          </p>
+        <div className={styles.footerLogoNavbarDropdown}>
+          <img src="/footerLogo.png" alt=""></img>
+          <div className={styles.midScreenNavbar}>
+            <select>
+              <option>All</option>
+            </select>
+            <input placeholder="Search Products" />
+            <p>
+              <BiSearch size={"23px"}></BiSearch>
+            </p>
+          </div>
+          <div className={styles.midSectionSign}>
+            <Signinfunction></Signinfunction>
+          </div>
         </div>
-<div className={styles.midSectionSign}>
-  <Signinfunction></Signinfunction>
-</div>
-      </div>
-<div className={styles.sideNavbarCompo}>      <SideNavbar></SideNavbar></div>
+        <div className={styles.sideNavbarCompo}>
+          {" "}
+          <SideNavbar></SideNavbar>
+        </div>
 
-      <div className={styles.megaDropdownBox}>
-        <NavbarCarousel></NavbarCarousel>
+        <div className={styles.megaDropdownBox}>
+          <NavbarCarousel></NavbarCarousel>
+        </div>
       </div>
     </>
   );
