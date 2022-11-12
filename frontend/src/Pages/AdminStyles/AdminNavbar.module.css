@@ -1,0 +1,49 @@
+.box{
+    margin: 0;
+    padding: 0;
+}
+
+.mainDiv{
+    width: auto;
+    height: 60px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.logoImg{
+    /* border: 1px solid white; */
+    width: 15%;
+    height: 30%;
+}
+.logoImg>img{
+    width: 70%;
+}
+.allProducts{
+    border: 2px solid white;
+    width: auto;
+    height: 60%;
+    background-color:  #fdd641;
+    display: inline-block;
+    color: black;
+    padding: 10px 10px 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.addProducts{
+    border: 2px solid white;
+    width: auto;
+    height: 60%;
+    background-color:  #fdd641;
+    display: inline-block;
+    color: black;
+    padding: 10px 10px 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.mainDiv>p{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}

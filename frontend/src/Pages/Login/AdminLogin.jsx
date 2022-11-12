@@ -9,16 +9,22 @@ import {
   Link,
   Button,
   Heading,
-  useColorModeValue
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { adminLogin } from "../../Redux/AuthReducer/action";
 
 function AdminLogin() {
-   const [formData, setFormData] = useState({
-    Email: "",
-    Password: "",
-  });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    AdminId: "",
+    password: "",
+  }); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,17 +36,15 @@ function AdminLogin() {
 
   console.log("formDataaabnj", formData);
 
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = () => {
 
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/user/login", formData)
-      .then((e) => {
-        console.log(e);
-        localStorage.setItem("token", e.data.token);
-      })
-      .catch((err) => console.log(err));
-  };
+    if (formData.AdminId && formData.password) {
+      dispatch(adminLogin(formData)).then((res)=>
+      navigate("/adminHome")
+      )
+    }
+    }
 
   return (
     <Flex
@@ -52,7 +56,6 @@ function AdminLogin() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"3xl"}>Sign in to your Admin account</Heading>
-         
         </Stack>
         <Box
           rounded={"lg"}
@@ -61,25 +64,37 @@ function AdminLogin() {
           p={8}
         >
           <Stack spacing={4}>
-            <FormControl  onSubmit={handleSubmit}>
-              <FormLabel>Email address</FormLabel>
-              <Input 
-              id="email" 
-                name="Email"
-                value={formData.Email}
-                type="Email"
+            <FormControl >
+              <FormLabel>Admin ID</FormLabel>
+              <Input
+                id="admin_id"
+                name="AdminId"
+                value={formData.AdminId}
+                type="text"
                 onChange={handleChange}
               />
 
               <FormLabel>Password</FormLabel>
               <Input
-              id="password"
-                name="Password"
-                value={formData.Password}
-                type="Password"
+                id="password"
+                name="password"
+                value={formData.password}
+                type="password"
                 onChange={handleChange}
               />
+
+              <Button
+                onClick={handleSubmit}
+                bg={"blue.400"}
+                color={"white"}
+                _hover={{
+                  bg: "blue.500",
+                }}
+              >
+                Sign in
+              </Button>
             </FormControl>
+
             <Stack spacing={10}>
               <Stack
                 direction={{ base: "column", sm: "row" }}
@@ -89,15 +104,6 @@ function AdminLogin() {
                 <Checkbox>Remember me</Checkbox>
                 <Link color={"blue.400"}>Forgot password?</Link>
               </Stack>
-              <Button
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Sign in
-              </Button>
             </Stack>
           </Stack>
         </Box>
@@ -105,4 +111,4 @@ function AdminLogin() {
     </Flex>
   );
 }
-export default AdminLogin;
+export default AdminLogin

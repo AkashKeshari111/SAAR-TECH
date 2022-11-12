@@ -3,7 +3,7 @@
   background-color: rgb(247, 238, 238);
   border-color: white;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   /* border: 1px solid red; */
 }
@@ -157,6 +157,8 @@
   width: 95%;
   background: #ffda00;
   margin: auto;
+
+  z-index: 1;
 }
 
 .navbardropdownName {
