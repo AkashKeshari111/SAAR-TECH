@@ -1,6 +1,6 @@
 // You can copy here your req.body data for different sections
 
-RemoveAllproducts, multer,  filtering  , Address ,profic pic
+ multer,  filtering  ,profic pic
 
 name,email,password,country_code,mobile,gender,ip_address
 
