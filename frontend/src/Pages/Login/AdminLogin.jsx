@@ -41,7 +41,7 @@ function AdminLogin() {
 
     if (formData.AdminId && formData.password) {
       dispatch(adminLogin(formData)).then((res)=>
-      navigate("/")
+      navigate("/adminHome")
       )
     }
     }
