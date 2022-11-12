@@ -71,14 +71,13 @@ const Navbar = () => {
                   <p>Favourites</p>
                 </a>
 
-                <a href="#" alt="">
-                  <FiShoppingCart
-                    size={"25px"}
-                    color="#ffda00"
-                  ></FiShoppingCart>
-                  <p>Cart</p>
-                </a>
-              </div>
+
+              <a href="/cart" alt="">
+                <FiShoppingCart size={"25px"} color="#ffda00"></FiShoppingCart>
+                <p>Cart</p>
+              </a>
+
+            
             </div>
           </div>
         </div>
