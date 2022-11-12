@@ -11,8 +11,8 @@ function App() {
 
 {/* <------------commnet---------------> */}
       
-      <AllRoutes/>
-      <AdminRoutes/>
+     <AllRoutes/>
+      
     {/* <MensFasion/> */}
 
     </div>
