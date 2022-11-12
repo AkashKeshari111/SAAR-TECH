@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styles from '../AdminStyles/Navbar.module.css';
+import styles from '../AdminStyles/AdminNavbar.module.css';
 import image from "../assets/saar.png"
 
-const Navbar = () => {
+const AdminNavbar = () => {
   return (
     <div className={styles.box} >
         <div className={styles.mainDiv} >
@@ -27,4 +27,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default AdminNavbar;
