@@ -1,14 +1,11 @@
 import React from 'react'
 import styles from './Styles/Homepage.module.css'
-export default function Card(props) {
+export default function Cardsec(props) {
 
 
 
   return (
     <>
-    
-
-    
         <div className={styles.card}>
 
 <div>
@@ -20,7 +17,7 @@ export default function Card(props) {
 <button className={styles.addcart}>{props.price}</button>
 
 </div>
-
+    
   
 
     </>

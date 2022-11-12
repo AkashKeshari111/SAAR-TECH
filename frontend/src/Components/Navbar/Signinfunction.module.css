@@ -2,7 +2,9 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color:white;
     height: 300px;
-    width: 100px
+    width: 100px;
+    position: sticky;
+z-index: 50;
 }
 
 .loginBtn{
@@ -12,3 +14,7 @@
 .registerBtn{
     background-color:#007aff;
 }
+
+/* .containerSigninfunction{
+
+} */
