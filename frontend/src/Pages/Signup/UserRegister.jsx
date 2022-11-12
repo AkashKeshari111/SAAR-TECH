@@ -33,7 +33,7 @@ const UserRegister = () => {
   
   });
 
-  console.log(userSignupData);
+  // console.log(userSignupData);
 
   const handleChange = (e) => {
 
@@ -64,7 +64,14 @@ const UserRegister = () => {
         alert('Registrations successfully!');
         navigate('/UserLogin');
       })
-      .catch(error => console.log(error));
+      .catch(error =>{
+        if(error.response.status===403){
+          alert(error.response.data.msg)
+        }
+        else{
+          alert(error)
+        }
+      });
   };
 
 
