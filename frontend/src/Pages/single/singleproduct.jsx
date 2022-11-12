@@ -4,7 +4,34 @@ import image7 from "./image7/Capture.PNG"
 import image8 from "./image8/Capture.PNG"
 import image10 from "./image10/Capture.PNG"
 import { Button, Stack } from '@chakra-ui/react'
+import  { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProduct } from "../../Redux/AppReducer/action";
+
 export default function Singleproduct() {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.AppReducer.products);
+  const [title ,settitle] =useState("")
+  const [price ,setprice] =useState("")
+  const [image ,setImage] =useState("")
+
+  useEffect(() => {
+    if (products.length === 0) {
+      dispatch(getProduct());
+    }
+  }, [products.length, dispatch]);
+
+  useEffect(() => {
+    if (id) {
+      const SingleData = products.find((elem) => elem.id === Number(id));
+      SingleData && setImage(SingleData.image);
+      SingleData && setprice(SingleData.price);
+      SingleData && settitle(SingleData.title);
+
+    }
+  }, [products, id]);
   return (
     <>
     {/* star div start */}
@@ -19,14 +46,14 @@ export default function Singleproduct() {
 
       {/* image div start */}
     <div className={styles.imagediv}>
-      <img src="https://gloimg.gbtcdn.com/soa/gb/store/6866325577285169152/16643/goods_img_big-v1/c151d34be1c4.jpg" alt="" />
+      <img src={image} alt="" />
     </div>
     {/* image div end */}
 
     {/* rate div start */}
     <div className={styles.ratediv}>
     <div className={styles.hdiv}>
-      <h1>Halloween Neon Mask Mixed Color Led Masks Masque Masquerade Party Horror Masks Glow In the Dark Funny Cosplay Costume Supplies - M06</h1>
+      <h1>{title}</h1>
     </div>
       <div className={styles.imagedown}>
         <img src={image8} alt="" />
@@ -35,7 +62,7 @@ export default function Singleproduct() {
        <div className={styles.price}>
     <label>Price:</label>
     <div className={styles.dollar}>
-    <span>$11.39 </span>
+    <span>{price} </span>
     <span> 20%off</span>
     </div>
     </div>
@@ -44,7 +71,7 @@ export default function Singleproduct() {
        <div className={styles.price1}>
     <label>Shipping:</label>
     <div className={styles.shiping}>
-      <p> <span>FREE SHIPPING</span>	 to United States Via Registered Air Mail <br />
+      <p><span>FREE SHIPPING</span>	 to United States Via Registered Air Mail <br />
 Ship between: <span>Nov 14 - Nov 18,</span> Estimated Shipping Time: 15-60 business days</p>
       
     </div>
