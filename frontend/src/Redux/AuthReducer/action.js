@@ -13,10 +13,21 @@ const userLogin = (payload)=> dispatch=>{
     
     })
     .catch((err)=>{
-      dispatch({type:types.USER_LOGIN_FAILURE,payload:err})
+      if(err.response.status===401){
+        alert("Invalid Credentials")
+       }
+       else{
+        dispatch({type:types.USER_LOGIN_FAILURE,payload:err})
+       }
     })
   }
 
+
+
+
+
+
+  
   const adminLogin = (payload)=> dispatch=>{
 
     dispatch({type:types.ADMIN_LOGIN_REQUEST})
@@ -27,7 +38,13 @@ const userLogin = (payload)=> dispatch=>{
     
     })
     .catch((err)=>{
-      dispatch({type:types.ADMIN_LOGIN_FAILURE,payload:err})
+       if(err.response.status===401){
+        alert("Invalid Credentials")
+       }
+       else{
+        dispatch({type:types.ADMIN_LOGIN_FAILURE,payload:err})
+       }
+   
     })
   }
 
