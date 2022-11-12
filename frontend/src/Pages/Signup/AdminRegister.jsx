@@ -18,9 +18,14 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import axios from 'axios'
+import {  useNavigate } from 'react-router-dom';
+
 
 const AdminRegister = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); 
+  
   const [adminSignupData, setAdminSignupData] = useState({
     name: "",
     email: "",
@@ -42,7 +47,18 @@ const { name, value } = e.target;
     });
   };
 
+  const handleSubmit = () => {
+     return axios
+      .post(`http://localhost:8080/auth/admin/register`, adminSignupData)
+      .then(res => {
+        console.log(res);
+        alert(`Registrations successfully! and user Admin ID is ${res.data.AdminId}`);
+        navigate('/AdminLogin');
+      })
+      .catch(error => console.log(error));
+  };
 
+      
   return (
     <Flex
       minH={"100vh"}
@@ -53,7 +69,7 @@ const { name, value } = e.target;
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            User Sign up
+            Admin Sign up
           </Heading>
         </Stack>
 
@@ -139,6 +155,7 @@ const { name, value } = e.target;
                   <Select
                     id="gender"
                     name="gender"
+                    onChange={handleChange}
                     value={adminSignupData.gender}
                     placeholder="Select option"
                     focusBorderColor="brand.400"
@@ -147,9 +164,9 @@ const { name, value } = e.target;
                     w="full"
                     rounded="md"
                   >
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="other">Other</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
                   </Select>
 
                   <FormLabel>GST Number</FormLabel>

@@ -9,17 +9,20 @@ import {
   Link,
   Button,
   Heading,
-   useColorModeValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../Redux/AuthReducer/action";
 
 function UserLogin() {
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    Email: "",
-    Password: "",
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -32,16 +35,13 @@ function UserLogin() {
 
   console.log("formDataaabnj", formData);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
+    if (formData.email && formData.password) {
+      dispatch(userLogin(formData)).then((res)=>
+      navigate("/")
+      )
 
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/user/login", formData)
-      .then((e) => {
-        console.log(e);
-        localStorage.setItem("token", e.data.token);
-      })
-      .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -54,7 +54,6 @@ function UserLogin() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"3xl"}>Sign in to your user account</Heading>
-         
         </Stack>
         <Box
           rounded={"lg"}
@@ -63,22 +62,22 @@ function UserLogin() {
           p={8}
         >
           <Stack spacing={4}>
-            <FormControl  onSubmit={handleSubmit}>
+            <FormControl>
               <FormLabel>Email address</FormLabel>
-              <Input 
-              id="email" 
-                name="Email"
-                value={formData.Email}
-                type="Email"
+              <Input
+                id="email"
+                name="email"
+                value={formData.email}
+                type="email"
                 onChange={handleChange}
               />
 
               <FormLabel>Password</FormLabel>
               <Input
-              id="password"
-                name="Password"
-                value={formData.Password}
-                type="Password"
+                id="password"
+                name="password"
+                value={formData.password}
+                type="password"
                 onChange={handleChange}
               />
             </FormControl>
@@ -92,6 +91,7 @@ function UserLogin() {
                 <Link color={"blue.400"}>Forgot password?</Link>
               </Stack>
               <Button
+                onClick={handleSubmit}
                 bg={"blue.400"}
                 color={"white"}
                 _hover={{
