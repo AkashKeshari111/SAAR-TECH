@@ -8,22 +8,11 @@ import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
 import NavbarCarousel from "./NavbarCarousel";
 import SideNavbar from "./SideNavbar";
+import {useSelector} from "react-redux"
+import AfterLoginButton from "./AfterLoginButton"
 
 const Navbar = () => {
-  const menuItems = [
-    {
-      title: "SUPER DEALS",
-      url: "/SUPER_DEALS",
-    },
-    {
-      title: "APP ONLY",
-      url: "/APP_ONLY",
-    },
-    {
-      title: "NEW ARRIVALS",
-      url: "/NEW_ARRIVALS",
-    },
-  ];
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
 
   return (
     <>
@@ -63,13 +52,15 @@ const Navbar = () => {
                   </p>
                 </div>
                 <p>
-                  <Signinfunction></Signinfunction>
+                  {isAuth?<AfterLoginButton/>:<Signinfunction/>}
+                  
                 </p>
 
                 <a href="#" alt="">
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
                   <p>Favourites</p>
                 </a>
+
 
 
               <a href="/cart" alt="">
@@ -80,6 +71,9 @@ const Navbar = () => {
    
               </div>
 
+
+
+                
 
             </div>
           </div>

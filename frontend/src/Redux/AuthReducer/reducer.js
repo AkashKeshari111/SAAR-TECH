@@ -5,6 +5,8 @@ const iniState = {
   isLoading: false,
   isError: false,
   token: localStorage.getItem("token")|| null,
+  role:localStorage.getItem("role")|| null,
+  name:localStorage.getItem("name")|| null,
 };
 
 export const reducer = (state = iniState, action) => {
@@ -22,13 +24,18 @@ export const reducer = (state = iniState, action) => {
       };
 
     case types.USER_LOGIN_SUCCESS:
-      localStorage.setItem("token", payload )
+      localStorage.setItem("token", payload.token )
+      localStorage.setItem("name", payload.name )
+      localStorage.setItem("role", payload.role )
+
       return {
         ...iniState,
         isLoading: false,
-        token: payload,
+        token: payload.token,
         isAuth: true,
-        isError:false
+        isError:false,
+        role:payload.role,
+        name:payload.name
       };
 
     case types.USER_LOGIN_FAILURE:
@@ -51,13 +58,18 @@ export const reducer = (state = iniState, action) => {
       };
 
     case types.ADMIN_LOGIN_SUCCESS:
-      localStorage.setItem("token", payload )
+    
+      localStorage.setItem("token", payload.token )
+      localStorage.setItem("name", payload.name )
+      localStorage.setItem("role", payload.role )
       return {
         ...iniState,
         isLoading: false,
-        token: payload,
+        token: payload.token,
         isAuth: true,
-        isError:false
+        isError:false,
+        role:payload.role,
+        name:payload.name
       };
 
     case types.ADMIN_LOGIN_FAILURE:

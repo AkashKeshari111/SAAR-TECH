@@ -1,4 +1,4 @@
-const {Schema,model}=require("mongoose");
+const {Schema,model}=require("mongoose");  
 
 const addressSchema=new Schema({
     first_name:{type:String},
@@ -16,4 +16,4 @@ const addressSchema=new Schema({
 
 const AddressModel=model("address",addressSchema);
 
-module.exports={AddressMode};
+module.exports={AddressModel};
