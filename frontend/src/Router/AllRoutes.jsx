@@ -1,5 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { AdminAddProducts } from '../Pages/AdminPages/AdminAddProducts'
+import { AdminEdit } from '../Pages/AdminPages/AdminEdit'
+import { AdminHome } from '../Pages/AdminPages/AdminHome'
+import { AdminProducts } from '../Pages/AdminPages/AdminProducts'
 import HomePage from '../Pages/Home/HomePage'
 import AdminLogin from "../Pages/Login/AdminLogin"
 import UserLogin from "../Pages/Login/UserLogin.jsx"
@@ -16,6 +20,11 @@ const AllRoutes = () => {
     <Route path="/UserLogin" element={<UserLogin/>}/>
     <Route path="/AdminRegister" element={<AdminRegister/>}/>
     <Route path="/UserRegister" element={<UserRegister/>}/>
+    <Route path='/adminHome' element={<AdminHome/>} />
+    <Route path='/adminproducts' element={<AdminProducts/>} />
+    <Route path='/adminaddproducts' element={<AdminAddProducts/>} />
+    <Route path='/adminedit/:id' element={<AdminEdit/>} />
+
   </Routes>
   )
 }

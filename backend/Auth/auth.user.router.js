@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { AuthModel } = require("./auth.user.model");
 const bcrypt = require("bcrypt");
-const dns = require("dns");
+const dns = require("node:dns");
 const jwt = require("jsonwebtoken");
 const { authentication } = require("../Middleware/authentication");
 const dotenv = require("dotenv").config();
@@ -48,7 +48,7 @@ authRouter.post("/register", async (req, res) => {
             userId,
           });
           await new_authUser.save();
-          return res.status(201).send({ msg: "Signup Successfully" });
+          return res.status(201).send({ "msg": "Signup Successfully" });
         });
       });
     }

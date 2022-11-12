@@ -13,17 +13,23 @@ import {
   Text,
   useColorModeValue,
   Link,
-
+Select
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import axios from 'axios'
+import {  useNavigate } from 'react-router-dom';
 
 const UserRegister = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [userSignupData, setUserSignupData] = useState({
     name: "",
     email: "",
     password: "",
+    country_code: "",
+    mobile: "",
+    gender: ""
   
   });
 
@@ -39,19 +45,27 @@ const UserRegister = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let payload = {
-      name:name,
-      email: email,
-      password: password,
-    };
-    if (email && password) {
-      dispatch(userLoginSuccess(payload))
-      
-    }
-  };
 
+
+  const handleSubmit = () => {
+    let userData = {
+      name: userSignupData.name,
+      email: userSignupData.email,
+      password: userSignupData.password,
+      country_code: userSignupData.country_code,
+      mobile: userSignupData.mobile,
+      gender: userSignupData.gender
+    };
+
+    return axios
+      .post(`http://localhost:8080/auth/register`, userData)
+      .then(res => {
+        console.log(res);
+        alert('Registrations successfully!');
+        navigate('/UserLogin');
+      })
+      .catch(error => console.log(error));
+  };
 
 
   return (
@@ -124,7 +138,46 @@ const UserRegister = () => {
                     </InputRightElement>
                   </InputGroup>
 
-                 
+                  <FormLabel>Country_Code</FormLabel>
+                  <Input
+                    height={"35px"}
+                    mb="4px"
+                    onChange={handleChange}
+                    name="country_code"
+                    value={userSignupData.country_code}
+                    id="country_code"
+                    type="number"
+                  />
+
+                  <FormLabel>Mobile</FormLabel>
+                  <Input
+                    height={"35px"}
+                    mb="4px"
+                    onChange={handleChange}
+                    name="mobile"
+                    value={userSignupData.mobile}
+                    id="mobile"
+                    type="number"
+                  />
+
+                  <FormLabel>Gender</FormLabel>
+                  <Select
+                    id="gender"
+                    name="gender"
+                    onChange={handleChange}
+                    value={userSignupData.gender}
+                    placeholder="Select option"
+                    focusBorderColor="brand.400"
+                    shadow="sm"
+                    size="sm"
+                    w="full"
+                    rounded="md"
+                  >
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                  </Select>
+
                   <Button
                   onClick={handleSubmit}
                   type="submit"
