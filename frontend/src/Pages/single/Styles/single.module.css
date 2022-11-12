@@ -32,17 +32,16 @@
 
 .hdiv{
   width: 75%;
-  line-height: 1;
   font-family: OpenSans,Arial,Helvetica,sans-serif;
   font-size: 18px;
   color: #000;
   font-weight: 600;
   margin-bottom: 10px;
-  
+  border:1px solid red
+
 }
 .price{
   margin-top: 20px;
-  
   width: 30%;
   display: flex;
   justify-content: space-between;
@@ -132,7 +131,9 @@
   font-family: OpenSans,Arial,Helvetica,sans-serif;
   font-size: 14px;
   color: #000;
-  border: 1px solid red;
+  
+  width: 50%;
+  text-align: left;
 }
 .icon{
   display: flex;

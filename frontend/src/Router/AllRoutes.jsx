@@ -32,7 +32,12 @@ const AllRoutes = () => {
     <Route path="/cart" element={<Add/>}/>
     <Route path="/products" element={<MensFasion/>}/> 
      <Route path="/products/:id" element={<Singleproduct/>}/>
+
+    <Route path="/cart" element={<Add/>}/>
+
+
      <Route path="/cart" element={ <PrivateRoute><Add/></PrivateRoute>}/>
+
 
   </Routes>
   <Footer />
