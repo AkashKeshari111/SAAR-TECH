@@ -8,22 +8,11 @@ import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
 import NavbarCarousel from "./NavbarCarousel";
 import SideNavbar from "./SideNavbar";
+import {useSelector} from "react-redux"
+import AfterLoginButton from "./AfterLoginButton"
 
 const Navbar = () => {
-  const menuItems = [
-    {
-      title: "SUPER DEALS",
-      url: "/SUPER_DEALS",
-    },
-    {
-      title: "APP ONLY",
-      url: "/APP_ONLY",
-    },
-    {
-      title: "NEW ARRIVALS",
-      url: "/NEW_ARRIVALS",
-    },
-  ];
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
 
   return (
     <>
@@ -63,7 +52,8 @@ const Navbar = () => {
                   </p>
                 </div>
                 <p>
-                  <Signinfunction></Signinfunction>
+                  {isAuth?<AfterLoginButton/>:<Signinfunction/>}
+                  
                 </p>
 
                 <a href="#" alt="">
@@ -71,43 +61,37 @@ const Navbar = () => {
                   <p>Favourites</p>
                 </a>
 
-
-
-              <a href="/cart" alt="">
-                <FiShoppingCart size={"25px"} color="#ffda00"></FiShoppingCart>
-                <p>Cart</p>
-              </a>
-
-   
+                <a href="#" alt="">
+                  <FiShoppingCart
+                    size={"25px"}
+                    color="#ffda00"
+                  ></FiShoppingCart>
+                  <p>Cart</p>
+                </a>
               </div>
-
-
             </div>
           </div>
         </div>
-        <div className={styles.footerLogoNavbarDropdown}>
-          <img src="/footerLogo.png" alt=""></img>
-          <div className={styles.midScreenNavbar}>
-            <select>
-              <option>All</option>
-            </select>
-            <input placeholder="Search Products" />
-            <p>
-              <BiSearch size={"23px"}></BiSearch>
-            </p>
-          </div>
-          <div className={styles.midSectionSign}>
-            <Signinfunction></Signinfunction>
-          </div>
+      </div>
+      <div className={styles.footerLogoNavbarDropdown}>
+        <img src="/footerLogo.png" alt=""></img>
+        <div className={styles.midScreenNavbar}>
+          <select>
+            <option>All</option>
+          </select>
+          <input placeholder="Search Products" />
+          <p>
+            <BiSearch size={"23px"}></BiSearch>
+          </p>
         </div>
-        <div className={styles.sideNavbarCompo}>
-          {" "}
-          <SideNavbar></SideNavbar>
-        </div>
+<div className={styles.midSectionSign}>
+  <Signinfunction></Signinfunction>
+</div>
+      </div>
+<div className={styles.sideNavbarCompo}>      <SideNavbar></SideNavbar></div>
 
-        <div className={styles.megaDropdownBox}>
-          <NavbarCarousel></NavbarCarousel>
-        </div>
+      <div className={styles.megaDropdownBox}>
+        <NavbarCarousel></NavbarCarousel>
       </div>
     </>
   );

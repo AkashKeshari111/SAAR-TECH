@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import styles from '../AdminStyles/AdminAddProducts.module.css';
 
 export const AdminAddProducts = () => {
-
+    const token = localStorage.get("token")
+    
     const [form,setForm] = useState({});
 
     const postChange = (e) => {
@@ -37,7 +38,7 @@ export const AdminAddProducts = () => {
             method:"POST",
             headers:{
                 'Content-Type': 'application/json',
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlMDJiYjIyZWE2MTYxZjEwNGU2OWMiLCJpYXQiOjE2NjgxNjg4NDMsImV4cCI6MTY2ODI1NTI0M30.wfsuWpsfSqoB0gDeZBLA5KzR1PNAdK48LEDjH8aFRPM`
+                "token":`Bearer ${token}`
             },
             body:JSON.stringify(payload)
         }).then(res=>res.json()).then((res)=>{
