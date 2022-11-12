@@ -19,4 +19,3 @@ if (window.Cypress) {
 
 
 export { store };
-
