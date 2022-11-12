@@ -5,6 +5,35 @@ const { AdminProductModel } = require("./Admin.model");
 
 const AdminProductRouter = Router();
 
+AdminProductRouter.get("/allproducts",async(req,res)=>{
+  let {
+    page = 1,
+    limit = 10,
+    sortBy = "id",
+    order = "asc",
+  
+  } = req.query;
+  try {
+      
+    product = await AdminProductModel.find({})
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .sort({ [sortBy]: order === "asc" ? 1 : -1 });
+  
+  const count = await AdminProductModel.find({}).count();
+  // console.log(count)
+  res
+    .status(200)
+    .send({ data: product, totalPages: Math.ceil(count / limit) });
+} catch (err) {
+  res.status(500).send(err);
+}
+
+})
+
+
+
+
 AdminProductRouter.get(
   "/product",
   authentication,

@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { AuthModel } = require("./auth.user.model");
 const bcrypt = require("bcrypt");
-const dns = require("dns");
+const dns = require("node:dns");
 const jwt = require("jsonwebtoken");
 const { authentication } = require("../Middleware/authentication");
 const dotenv = require("dotenv").config();
@@ -48,7 +48,7 @@ authRouter.post("/register", async (req, res) => {
             userId,
           });
           await new_authUser.save();
-          return res.status(201).send({ msg: "Signup Successfully" });
+          return res.status(201).send({ "msg": "Signup Successfully" });
         });
       });
     }
@@ -64,6 +64,8 @@ authRouter.post("/login", async (req, res) => {
   if(validUser){
   const userId = validUser._id;
   const hash = validUser.password;
+  const name=validUser.name;
+  const role=validUser.role;
   try {
     await bcrypt.compare(password, hash, async function (err, result) {
       if (err) {
@@ -71,18 +73,18 @@ authRouter.post("/login", async (req, res) => {
       }
       if (result) {
         const token = jwt.sign({ userId }, process.env.SECRET_KEY);
-        return res.status(201).send({ msg: "Login Success", token: token });
+        return res.status(201).send({ "msg": "Login Success", token: token ,name:name,role:role});
       }
       else{
-        return res.status(401).send({ msg: "Login failed!" })
+        return res.status(401).send({ "msg": "Login failed!" })
       }
     });
   } catch (err) {
-    return res.status(401).send({ msg: "Login failed!" });
+    return res.status(401).send({ "msg": "Login failed!" });
   }
 }
 else{
-  return res.status(401).send({ msg: "Login failed!" })
+  return res.status(401).send({ "msg": "Login failed!" })
 }
 });
 

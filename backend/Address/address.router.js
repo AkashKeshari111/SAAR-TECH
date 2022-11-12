@@ -47,7 +47,7 @@ addressRouter.post("/address", authentication, async (req, res) => {
       });
 
       await new_address.save();
-      res.status(201).send("Address added successfully");
+      res.status(201).send({"msg":"Address added successfully"});
     }
   } catch (err) {
     res.status(500).send(err);
