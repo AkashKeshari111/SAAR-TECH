@@ -32,5 +32,9 @@ const userLogin = (payload)=> dispatch=>{
   }
 
 
-  export {userLogin,  adminLogin}
+  const logout=()=>dispatch=>{
+    dispatch({type:types.LOGOUT})
+  }
+
+  export {userLogin,  adminLogin, logout}
  

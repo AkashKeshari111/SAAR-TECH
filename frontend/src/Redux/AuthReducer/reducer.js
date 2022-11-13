@@ -4,9 +4,9 @@ const iniState = {
   isAuth: localStorage.getItem("token")?true:false,
   isLoading: false,
   isError: false,
-  token: localStorage.getItem("token")|| null,
-  role:localStorage.getItem("role")|| null,
-  name:localStorage.getItem("name")|| null,
+  token: localStorage.getItem("token")|| "",
+  role:localStorage.getItem("role")|| "",
+  name:localStorage.getItem("name")|| "",
 };
 
 export const reducer = (state = iniState, action) => {
@@ -80,6 +80,23 @@ export const reducer = (state = iniState, action) => {
         isError:true,
         token: "",
       };
+
+
+      case types.LOGOUT:
+        localStorage.setItem("token", "" )
+        localStorage.setItem("name", "")
+        localStorage.setItem("role", "")
+  
+        return {
+          ...iniState,
+          isLoading: false,
+          token: "",
+          isAuth: true,
+          isError:false,
+          role:"",
+          name:""
+        };
+
     default:
       return state;
   }
