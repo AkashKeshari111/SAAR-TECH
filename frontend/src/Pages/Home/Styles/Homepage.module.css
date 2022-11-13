@@ -29,6 +29,15 @@
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
+.card1{
+  margin-top: 10px;
+  color: #666;
+  border: 1px solid #eee;
+  cursor: default;
+  width:80%;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+}
 
 .cardp{
   font-family: OpenSans,Arial,Helvetica,sans-serif;
@@ -118,6 +127,18 @@
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 10px;
+  
+}
+.gridcard1{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  
+  
+}
+.gridbaa{
+  
+  width: 90%;
   
 }
 .imagecard {
