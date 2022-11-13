@@ -48,6 +48,39 @@ const { name, value } = e.target;
   };
 
   const handleSubmit = () => {
+     if(adminSignupData.password.length<8 || adminSignupData.password===""){
+      alert("Week Password please fill 8 or more digits")
+      return false
+     }
+
+     if(adminSignupData.mobile==""){
+      alert("Plesae enter 10 digit mobile number");
+      return false;
+  }
+
+  if(isNaN(adminSignupData.mobile)){
+      alert("Enter only digit")
+      return false;
+  }
+  if(adminSignupData.mobile.length<10){
+      alert("Invalid mobile number !")
+      return false;
+  }
+  if(adminSignupData.mobile.length>10){
+     alert("Invalid mobile number !")
+     return false;
+ }
+  if((adminSignupData.mobile.charAt(0)!=9) && (adminSignupData.mobile.charAt(0)!=8) && (adminSignupData.mobile.charAt(0)!=7) && (adminSignupData.mobile.charAt(0)!=6)){
+      alert("Please enter a valid mobile number");
+      return false;
+  }
+
+
+  if(adminSignupData.gst_number==="" || adminSignupData.gst_number.length!=15){
+    alert("Please enter the valid 15 digits GST number")
+    return false
+  }
+
      return axios
       .post(`http://localhost:8080/auth/admin/register`, adminSignupData)
       .then(res => {
@@ -55,7 +88,14 @@ const { name, value } = e.target;
         alert(`Registrations successfully! and user Admin ID is ${res.data.AdminId}`);
         navigate('/AdminLogin');
       })
-      .catch(error => console.log(error));
+      .catch(error =>{
+        if(error.response.status===403){
+          alert(error.response.data.msg)
+        }
+        else{
+          alert(error)
+        }
+      });
   };
 
       
@@ -101,7 +141,7 @@ const { name, value } = e.target;
                     mb="4px"
                     onChange={handleChange}
                     name="email"
-                    value={adminSignupData.email}
+                    value={adminSignupData.email.toLowerCase()}
                     id="email"
                     isRequired
                     type="email"
@@ -115,6 +155,7 @@ const { name, value } = e.target;
                       value={adminSignupData.password}
                       id="password"
                       isRequired
+                      minLength={8}
                       type={showPassword ? "text" : "password"}
                     />
                     <InputRightElement h={"full"}>
@@ -149,6 +190,8 @@ const { name, value } = e.target;
                     value={adminSignupData.mobile}
                     id="mobile"
                     type="number"
+                    minLength={10}
+                    maxLength={10}
                   />
 
                   <FormLabel>Gender</FormLabel>
@@ -178,6 +221,8 @@ const { name, value } = e.target;
                     value={adminSignupData.gst_number}
                     id="gst_number"
                     type="number"
+                    minLength={15}
+                    maxLength={15}
                   />
 
                   <FormLabel>Company Name</FormLabel>

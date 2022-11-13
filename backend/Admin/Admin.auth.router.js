@@ -94,7 +94,7 @@ adminAuthRouter.post("/admin/login", async (req, res) => {
         }
         if (result) {
           const token = jwt.sign({ userId }, process.env.SECRET_KEY,{ expiresIn: '24h' });
-          return res.status(201).send({ "msg": "Login Success", token: token,name:name ,role:role});
+          return res.status(201).send({ "msg": "Login Success", token: token,name:name ,role:role,userId});
         } else {
           return res.status(401).send({ "msg": "Login failed!" });
         }

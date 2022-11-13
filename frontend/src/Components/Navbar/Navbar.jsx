@@ -8,22 +8,12 @@ import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
 import NavbarCarousel from "./NavbarCarousel";
 import SideNavbar from "./SideNavbar";
+import {useSelector} from "react-redux"
+import AfterLoginButton from "./AfterLoginButton"
+import Theme from "../Theme/Theme";
 
 const Navbar = () => {
-  const menuItems = [
-    {
-      title: "SUPER DEALS",
-      url: "/SUPER_DEALS",
-    },
-    {
-      title: "APP ONLY",
-      url: "/APP_ONLY",
-    },
-    {
-      title: "NEW ARRIVALS",
-      url: "/NEW_ARRIVALS",
-    },
-  ];
+  const isAuth = useSelector((state) => state.AuthReducer.isAuth);
 
   return (
     <>
@@ -47,9 +37,13 @@ const Navbar = () => {
                   {" "}
                   Language <BsChevronDown className={styles.icks} />{" "}
                 </p>
+                <div>
+                  <Theme></Theme>
+                </div>
                 <p>
                   {" "}
-                  Country Website <BsChevronDown className={styles.icks} />{" "}
+                  {/* Country Website <BsChevronDown className={styles.icks} />{" "} */}
+               
                 </p>
               </div>
               <div className={styles.navbarSearchSection}>
@@ -63,7 +57,8 @@ const Navbar = () => {
                   </p>
                 </div>
                 <p>
-                  <Signinfunction></Signinfunction>
+                  {isAuth?<AfterLoginButton/>:<Signinfunction/>}
+                  
                 </p>
 
                 <a href="#" alt="">
@@ -71,6 +66,10 @@ const Navbar = () => {
                   <p>Favourites</p>
                 </a>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f876a38ddf5f0821442e4b6d8e5ca2d8d7ad8211
                 <a href="#" alt="">
                   <FiShoppingCart
                     size={"25px"}
@@ -79,6 +78,10 @@ const Navbar = () => {
                   <p>Cart</p>
                 </a>
               </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f876a38ddf5f0821442e4b6d8e5ca2d8d7ad8211
             </div>
           </div>
         </div>

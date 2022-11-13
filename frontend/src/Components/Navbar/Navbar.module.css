@@ -1,6 +1,6 @@
 .outerbar {
   position: sticky;
-  background-color: rgb(247, 238, 238);
+  background-color:white;
   border-color: white;
   top: 0;
   z-index: 1000;
@@ -80,7 +80,7 @@
   width: 83%;
   height: 100%;
   padding-left: 3%;
-  /* border:2px solid #04c74f; */
+ 
 }
 
 .navbarSearchSection > div > input:focus {
@@ -149,7 +149,7 @@
   width: 95%;
   margin: auto;
   height: 420px;
-  position: relative;
+  position:static;
   z-index: -1;
   /* border: 1px solid green; */
 }
@@ -157,7 +157,7 @@
   width: 95%;
   background: #ffda00;
   margin: auto;
-
+ 
   z-index: 1;
 }
 
@@ -257,4 +257,9 @@ height:5%;
 margin-top: -2%;
 border: 1px solid red;
   }
+
+  .megaDropdownBox{
+    height: 310px;
+  }
+
 }

@@ -33,7 +33,7 @@ const UserRegister = () => {
   
   });
 
-  console.log(userSignupData);
+  // console.log(userSignupData);
 
   const handleChange = (e) => {
 
@@ -48,6 +48,22 @@ const UserRegister = () => {
 
 
   const handleSubmit = () => {
+
+    if(userSignupData.password.length<8 || userSignupData.password===""){
+      alert("Week Password please fill 8 or more digits")
+      return false
+     }
+     if(userSignupData.mobile.length===0 || userSignupData.mobile.length===10){
+      
+     }
+     else{
+      alert("Invalid mobile number")
+      return false
+     }
+     
+
+
+
     let userData = {
       name: userSignupData.name,
       email: userSignupData.email,
@@ -64,7 +80,14 @@ const UserRegister = () => {
         alert('Registrations successfully!');
         navigate('/UserLogin');
       })
-      .catch(error => console.log(error));
+      .catch(error =>{
+        if(error.response.status===403){
+          alert(error.response.data.msg)
+        }
+        else{
+          alert(error)
+        }
+      });
   };
 
 
@@ -110,7 +133,7 @@ const UserRegister = () => {
                     mb="4px"
                     onChange={handleChange}
                     name="email"
-                    value={userSignupData.email}
+                    value={userSignupData.email.toLowerCase()}
                     id="email"
                     isRequired
                     type="email"
