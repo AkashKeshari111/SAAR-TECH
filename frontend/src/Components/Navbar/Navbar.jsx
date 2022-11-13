@@ -65,11 +65,6 @@ const Navbar = () => {
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
                   <p>Favourites</p>
                 </a>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> f876a38ddf5f0821442e4b6d8e5ca2d8d7ad8211
                 <a href="#" alt="">
                   <FiShoppingCart
                     size={"25px"}
@@ -78,10 +73,8 @@ const Navbar = () => {
                   <p>Cart</p>
                 </a>
               </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> f876a38ddf5f0821442e4b6d8e5ca2d8d7ad8211
+
             </div>
           </div>
         </div>
