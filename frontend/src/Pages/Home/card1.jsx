@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Styles/Homepage.module.css'
-
+import {Link} from "react-router-dom"
 export default function Cardsec(props) {
 
 
@@ -18,10 +18,19 @@ export default function Cardsec(props) {
 <button className={styles.addcart}>{props.price}</button>
 
 </div> */}
+<Link to="/products">
+
 <div className={styles.card}>
-      <img className={styles.imagecard} src={props.image} alt="" />
+   <div>
+   <img className={styles.imagecard} src={props.image} alt="" />
+   </div>
+      <div>
       <h3 className={styles.cardp}>{props.title}</h3>
-      <h2  className={styles.addp} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>{props.price}</h2>
+      </div>
+     <div>
+     <h2  className={styles.addp} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>{props.price}</h2>
+     </div>
+     
       <div>
         
         {/* <button onClick={()=>handleIcon()}>
@@ -30,7 +39,7 @@ export default function Cardsec(props) {
         </button> */}
       </div>
     </div>
-    
+    </Link>
   
 
     </>
