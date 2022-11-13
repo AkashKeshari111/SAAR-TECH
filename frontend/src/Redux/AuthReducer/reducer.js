@@ -7,6 +7,8 @@ const iniState = {
   token: localStorage.getItem("token")|| "",
   role:localStorage.getItem("role")|| "",
   name:localStorage.getItem("name")|| "",
+  userId:localStorage.getItem("userId")|| "",
+
 };
 
 export const reducer = (state = iniState, action) => {
@@ -27,6 +29,8 @@ export const reducer = (state = iniState, action) => {
       localStorage.setItem("token", payload.token )
       localStorage.setItem("name", payload.name )
       localStorage.setItem("role", payload.role )
+      localStorage.setItem("userId", payload.userId )
+
 
       return {
         ...iniState,
@@ -35,7 +39,9 @@ export const reducer = (state = iniState, action) => {
         isAuth: true,
         isError:false,
         role:payload.role,
-        name:payload.name
+        name:payload.name,
+        userId:payload.userId
+
       };
 
     case types.USER_LOGIN_FAILURE:
@@ -62,6 +68,8 @@ export const reducer = (state = iniState, action) => {
       localStorage.setItem("token", payload.token )
       localStorage.setItem("name", payload.name )
       localStorage.setItem("role", payload.role )
+      localStorage.setItem("userId", payload.userId )
+
       return {
         ...iniState,
         isLoading: false,
@@ -69,7 +77,8 @@ export const reducer = (state = iniState, action) => {
         isAuth: true,
         isError:false,
         role:payload.role,
-        name:payload.name
+        name:payload.name,
+        userId:payload.userId
       };
 
     case types.ADMIN_LOGIN_FAILURE:
@@ -86,6 +95,7 @@ export const reducer = (state = iniState, action) => {
         localStorage.setItem("token", "" )
         localStorage.setItem("name", "")
         localStorage.setItem("role", "")
+        localStorage.setItem("userId" )
   
         return {
           ...iniState,
