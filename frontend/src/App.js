@@ -9,7 +9,7 @@ import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
 import Address from "./Pages/Cart/Address";
 
-
+import Thanku from "./Pages/Thanku/Thanku"
 
 
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
 
-
+{/* <Thanku/> */}
 
       
       <AllRoutes/>
