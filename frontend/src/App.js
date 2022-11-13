@@ -32,10 +32,15 @@ function App() {
 
       
 
+
+      
+      <AdminRoutes/>
+
       <AllRoutes/>
     {/* <AdminProfile></AdminProfile>  */}
       {/* <AdminRoutes/> */}
      <UserProfile></UserProfile>
+
 
 
 

@@ -43,7 +43,7 @@ AdminProductRouter.get(
     let {
       page = 1,
       limit = 10,
-      sortBy = "id",
+      sortBy = "product_title",
       order = "asc",
     
     } = req.query;
