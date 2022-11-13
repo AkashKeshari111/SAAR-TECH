@@ -122,10 +122,13 @@ import { getProduct } from "../../Redux/AppReducer/action";
                   <div  className={styles.mainsmallcard}>
                     
                     <ProductCard   key={item.id}
-            title={item.title}
-            price={item.price}
-            image={item.image}
-            productsId={item.id}  />
+                    item={item}
+                        title={item.title}
+                        price={item.price}
+                        image={item.image}
+                        productsId={item.id} 
+                        discount={item.discount}
+                        per={item.per} />
                     
                   </div>
                 ))}

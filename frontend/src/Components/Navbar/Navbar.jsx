@@ -65,8 +65,6 @@ const Navbar = () => {
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
                   <p>Favourites</p>
                 </a>
-
-
                 <a href="#" alt="">
                   <FiShoppingCart
                     size={"25px"}
@@ -75,6 +73,7 @@ const Navbar = () => {
                   <p>Cart</p>
                 </a>
               </div>
+
 
             </div>
           </div>

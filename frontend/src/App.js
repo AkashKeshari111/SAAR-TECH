@@ -6,6 +6,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
 
+import Address from "./Pages/Cart/Address";
+
+import Thanku from "./Pages/Thanku/Thanku"
+
+
+
 import AdminProfile from "./Pages/Profile/AdminProfile"
 import UserProfile from "./Pages/Profile/UserProfile";
 
@@ -18,7 +24,11 @@ function App() {
       <AdminRoutes />
 
 
+{/* <Thanku/> */}
+
+
       <AdminProfile />
+
 
       
 
