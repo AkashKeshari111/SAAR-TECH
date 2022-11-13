@@ -71,7 +71,7 @@ export default function Singleproduct() {
        <div className={styles.price1}>
     <label>Shipping:</label>
     <div className={styles.shiping}>
-      <p><span>FREE SHIPPING</span>	 to United States Via Registered Air Mail <br />
+      <p><span>FREE SHIPPING</span>to United States Via Registered Air Mail<br />
 Ship between: <span>Nov 14 - Nov 18,</span> Estimated Shipping Time: 15-60 business days</p>
       
     </div>

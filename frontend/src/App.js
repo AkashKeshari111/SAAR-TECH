@@ -7,9 +7,7 @@ import MensFasion from "./Pages/product/MensFasion";
 import Navbar from "./Components/Navbar/Navbar"
 import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
-import Address from "./Pages/Cart/Address";
-
-
+import AdminProfile from "./Pages/Profile/AdminProfile"
 
 
 
@@ -20,8 +18,12 @@ function App() {
 
 
       
+
       <AllRoutes/>
-      <AdminRoutes/>
+    <AdminProfile></AdminProfile>
+      {/* <AdminRoutes/> */}
+     
+
 
     </div>
   );
