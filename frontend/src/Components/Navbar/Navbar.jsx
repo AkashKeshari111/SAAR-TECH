@@ -10,6 +10,7 @@ import NavbarCarousel from "./NavbarCarousel";
 import SideNavbar from "./SideNavbar";
 import {useSelector} from "react-redux"
 import AfterLoginButton from "./AfterLoginButton"
+import Theme from "../Theme/Theme";
 
 const Navbar = () => {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
@@ -36,9 +37,13 @@ const Navbar = () => {
                   {" "}
                   Language <BsChevronDown className={styles.icks} />{" "}
                 </p>
+                <div>
+                  <Theme></Theme>
+                </div>
                 <p>
                   {" "}
-                  Country Website <BsChevronDown className={styles.icks} />{" "}
+                  {/* Country Website <BsChevronDown className={styles.icks} />{" "} */}
+               
                 </p>
               </div>
               <div className={styles.navbarSearchSection}>

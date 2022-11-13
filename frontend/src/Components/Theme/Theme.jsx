@@ -5,11 +5,14 @@ import { BsSun, BsMoonStarsFill } from 'react-icons/bs';
 const Theme = (ButtonProps) => {
     const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex h="100vh" justifyContent="center" alignItems="center">
+    <Flex h="24px" justifyContent="center" alignItems="center">
     <Button
+    border={"none"}
+    background={"none"}
+    _hoverColor={{background:"none"}}
       aria-label="Toggle Color Mode"
       onClick={toggleColorMode}
-      _focus={{ boxShadow: 'none' }}
+      _focus={{ boxShadow: 'none',background:"none" }}
       w="fit-content"
       {...ButtonProps}>
       {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}

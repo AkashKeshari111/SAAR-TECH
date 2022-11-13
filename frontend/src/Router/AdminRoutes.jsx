@@ -5,6 +5,8 @@ import { AdminEdit } from '../Pages/AdminPages/AdminEdit'
 import { AdminHome } from '../Pages/AdminPages/AdminHome'
 import { AdminProducts } from '../Pages/AdminPages/AdminProducts'
 import PrivateRoute from "../Components/PrivateRoute"
+import AdminProfile from "../Pages/Profile/AdminProfile"
+
 
 export const AdminRoutes = () => {
   return (
@@ -13,6 +15,8 @@ export const AdminRoutes = () => {
     <Route path='/adminproducts' element={ <PrivateRoute> <AdminProducts/></PrivateRoute> } />
     <Route path='/adminaddproducts' element={ <PrivateRoute>  <AdminAddProducts/></PrivateRoute> } />
     <Route path='/adminedit/:id' element={ <PrivateRoute>  <AdminEdit/></PrivateRoute> } />
+    {/* <Route path='/adminProfile' element={    <AdminProfile/> } /> */}
+
     </Routes>
   )
 }
