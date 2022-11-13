@@ -110,17 +110,23 @@ import { getProduct } from "../../Redux/AppReducer/action";
               <h4 style={{ marginTop: "20px" }}>New Arrivals</h4>
             </div>
           </div>
+
           <div className={styles.allfilterandproduct}>
+
             <div>
-              <Filters   />
+              <Filters/>
             </div>
             <div className={styles.maincard}>
               {products.length > 0 &&
-                products.map((el) => (
-                  <div key={el.id} className={styles.mainsmallcard}>
-                    <Link to={`/productDetails/cart/${el.id}`}> 
-                    <ProductCard {...el} />
-                    </Link>
+                products.map((item) => (
+                  <div  className={styles.mainsmallcard}>
+                    
+                    <ProductCard   key={item.id}
+            title={item.title}
+            price={item.price}
+            image={item.image}
+            productsId={item.id}  />
+                    
                   </div>
                 ))}
             </div>
