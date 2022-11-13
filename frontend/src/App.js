@@ -21,7 +21,7 @@ function App() {
 
       
 
-      <AllRoutes/>
+      
       <AdminRoutes/>
 
 

@@ -4,6 +4,8 @@ import styles from '../AdminStyles/AdminNavbar.module.css';
 import image from "../assets/saar.png"
 
 const AdminNavbar = () => {
+  var x = localStorage.getItem("name");
+  console.log(x,"ssss")
   return (
     <div className={styles.box} >
         <div className={styles.mainDiv} >
