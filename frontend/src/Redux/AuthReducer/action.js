@@ -22,6 +22,7 @@ const adminLogin = (payload) => (dispatch) => {
   return axios
     .post("http://localhost:8080/auth/admin/login", payload)
     .then((r) => {
+      
       return dispatch({ type: types.ADMIN_LOGIN_SUCCESS, payload: r.data });
     })
     .catch((err) => {

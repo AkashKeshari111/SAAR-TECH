@@ -12,17 +12,16 @@ import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-export default function AdminProfile() {
+export default function UserProfile() {
   const [formData, setFormData] = useState({
-    AdminId: "",
-    password: "",
+      password: "",
     name: "",
   });
 
   const token = useSelector((state) => state.AuthReducer.token);
   const userId = useSelector((state) => state.AuthReducer.userId);
 
-  // console.log(token);
+  console.log(token);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -35,19 +34,17 @@ export default function AdminProfile() {
     setFormData({
       ...formData,
       name: "",
-      AdminId: "",
       password: "",
     });
   };
 
-  const handleUpdate = (userId) => { 
-    if(formData.password.length<8 || formData.password===""){
-      alert("Week Password please fill 8 or more digits")
-      return false
-     }
-    // console.log(userId);
+  const handleUpdate = (userId) => {
+    if (formData.password.length < 8 || formData.password === "") {
+      alert("Week Password! Please fill 8 or more digits");
+      return false;
+    }
     axios
-      .patch(`http://localhost:8080/auth/admin/${userId}`, formData, {
+      .patch(`http://localhost:8080/auth/${userId}`, formData, {
         headers: {
           token: `Bearer ${token}`,
         },
@@ -74,7 +71,7 @@ export default function AdminProfile() {
         my={12}
       >
         <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
-          Admin Profile Edit
+          User Profile Edit
         </Heading>
 
         <FormControl>
@@ -86,16 +83,6 @@ export default function AdminProfile() {
             id="name"
             isRequired
             placeholder="UserName"
-            _placeholder={{ color: "gray.500" }}
-            type="text"
-          />
-
-          <FormLabel>Admin Id</FormLabel>
-          <Input
-            name="AdminId"
-            onChange={handleChange}
-            value={formData.AdminId}
-            id="Adminid"
             _placeholder={{ color: "gray.500" }}
             type="text"
           />

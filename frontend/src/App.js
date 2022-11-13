@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar/Navbar"
 import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
 import AdminProfile from "./Pages/Profile/AdminProfile"
+import UserProfile from "./Pages/Profile/UserProfile";
 
 
 
@@ -20,9 +21,9 @@ function App() {
       
 
       <AllRoutes/>
-    <AdminProfile></AdminProfile>
+    {/* <AdminProfile></AdminProfile>  */}
       {/* <AdminRoutes/> */}
-     
+     <UserProfile></UserProfile>
 
 
     </div>
