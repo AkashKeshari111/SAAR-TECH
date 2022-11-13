@@ -4,7 +4,12 @@ import styles from '../AdminStyles/AdminAddProducts.module.css';
 import AdminNavbar from './AdminNavbar';
 
 export const AdminAddProducts = () => {
+
     const navigate = useNavigate();
+
+
+    const token = localStorage.get("token")
+    
 
     const [form,setForm] = useState({});
 
@@ -40,7 +45,8 @@ export const AdminAddProducts = () => {
             method:"POST",
             headers:{
                 'Content-Type': 'application/json',
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZmZGM2ZWZmMDQ2ZmNhNjNjNzI2ZmYiLCJpYXQiOjE2NjgzMTE4MjgsImV4cCI6MTY2ODM5ODIyOH0.VLFyaJ-d9kWDZbYrrudFl3VybFKDaPNpFsyfKVk0r-4`
+                "token":`Bearer ${token}`
+
             },
             body:JSON.stringify(payload)
         }).then(res=>res.json()).then((res)=>{

@@ -32,20 +32,23 @@
 
 .hdiv{
   width: 75%;
-  line-height: 1;
   font-family: OpenSans,Arial,Helvetica,sans-serif;
   font-size: 18px;
   color: #000;
   font-weight: 600;
   margin-bottom: 10px;
-  
+
+
+}
+.hdiv h1{
+  text-align: left;
 }
 .price{
   margin-top: 20px;
-  
-  width: 30%;
+  width: 40%;
   display: flex;
   justify-content: space-between;
+  
 }
 .dollar{
   
@@ -64,6 +67,7 @@
   color: #666;
   font-size: 14px;
   margin: auto;
+  text-align: left;
 }
 .dollar span:nth-child(1){
   -webkit-text-size-adjust: 100%;
@@ -95,6 +99,8 @@
   font-family: OpenSans,Arial,Helvetica,sans-serif;
   font-size: 14px;
   color: #999;
+  
+  text-align: left;
 }
 
 .price1{
@@ -132,7 +138,9 @@
   font-family: OpenSans,Arial,Helvetica,sans-serif;
   font-size: 14px;
   color: #000;
-  border: 1px solid red;
+  
+  width: 50%;
+  text-align: left;
 }
 .icon{
   display: flex;

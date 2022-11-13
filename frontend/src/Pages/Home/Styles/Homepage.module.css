@@ -120,6 +120,27 @@
   gap: 10px;
   
 }
+.imagecard {
+  width: 100%;
+  height: 70%;
+}
+
+.titlecard {
+ 
+  height: 60%;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+ 
+}
+.productcard {
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+}
 @media(max-width:800px ){
   .fdiv{
     display: grid;

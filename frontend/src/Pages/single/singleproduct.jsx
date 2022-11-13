@@ -8,8 +8,10 @@ import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../Redux/AppReducer/action";
-
+import { useCart } from 'react-use-cart'
+import { Link } from 'react-router-dom';
 export default function Singleproduct() {
+  
   const { id } = useParams();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.AppReducer.products);
@@ -20,18 +22,26 @@ export default function Singleproduct() {
   useEffect(() => {
     if (products.length === 0) {
       dispatch(getProduct());
+
     }
   }, [products.length, dispatch]);
-
+let SingleData;
   useEffect(() => {
     if (id) {
-      const SingleData = products.find((elem) => elem.id === Number(id));
+       SingleData = products.find((elem) => elem.id === Number(id));
       SingleData && setImage(SingleData.image);
       SingleData && setprice(SingleData.price);
       SingleData && settitle(SingleData.title);
 
     }
   }, [products, id]);
+
+  const {addItem}=useCart()
+  console.log(SingleData)
+  const Aoddo=()=>{
+    addItem(SingleData)
+    alert("item successfully added")
+  }
   return (
     <>
     {/* star div start */}
@@ -40,7 +50,7 @@ export default function Singleproduct() {
       </div>
       {/* star div end */}
 
-
+     
       {/* main div start */}
     <div className={styles.mainsinglepage}>
 
@@ -71,7 +81,7 @@ export default function Singleproduct() {
        <div className={styles.price1}>
     <label>Shipping:</label>
     <div className={styles.shiping}>
-      <p><span>FREE SHIPPING</span>	 to United States Via Registered Air Mail <br />
+      <p><span>FREE SHIPPING</span>to United States Via Registered Air Mail<br />
 Ship between: <span>Nov 14 - Nov 18,</span> Estimated Shipping Time: 15-60 business days</p>
       
     </div>
@@ -80,12 +90,19 @@ Ship between: <span>Nov 14 - Nov 18,</span> Estimated Shipping Time: 15-60 busin
 
      <div className={styles.buttondiv}>
      <Stack  mt={10} br={0} spacing={4} direction='row' align='center'>
-  <Button borderRadius="0" colorScheme='' color='white' bg='#f30240' size='lg'>
+        
+      
+  <Button onClick={Aoddo} borderRadius="0" colorScheme='' color='white' bg='#f30240' size='lg'>
+  
     Add to Cart
   </Button>
-  <Button borderRadius="0"  color='#F30240' border='1px' borderColor='#F30240' variant='outline' size='lg'>
+    
+    <Link to="/addcart">
+  <Button  borderRadius="0"  color='#F30240' border='1px' borderColor='#F30240' variant='outline' size='lg'>
+  
     Buy Now
   </Button>
+  </Link>  
 </Stack>
      </div>
      <div className={styles.fav}>

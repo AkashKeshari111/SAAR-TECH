@@ -8,11 +8,15 @@ import AdminNavbar from './AdminNavbar';
 
 export const AdminProducts = () => {
     const [data,setData] = useState();
+
     const [page,setPage] = useState(1);
     const [order,setOrder] = useState("asc");
     const [sortBy,setSortBy] = useState("product_price");
     const [limit,setLimit] = useState(12);
     const [total,setTotal]=useState();
+
+    const token = localStorage.get("token")
+
 
 
 
@@ -21,7 +25,9 @@ export const AdminProducts = () => {
        return axios.get(`http://localhost:8080/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
             
             headers:{
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZmZGM2ZWZmMDQ2ZmNhNjNjNzI2ZmYiLCJpYXQiOjE2NjgzMTE4MjgsImV4cCI6MTY2ODM5ODIyOH0.VLFyaJ-d9kWDZbYrrudFl3VybFKDaPNpFsyfKVk0r-4`
+
+                "token":`Bearer ${token}`
+
             }
         })
 }
