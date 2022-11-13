@@ -5,7 +5,10 @@ import MensFasion from "./Pages/product/MensFasion";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
-import AdminProfile from "./Pages/Profile/AdminProfile";
+
+import AdminProfile from "./Pages/Profile/AdminProfile"
+import UserProfile from "./Pages/Profile/UserProfile";
+
 
 function App() {
   return (
@@ -14,8 +17,18 @@ function App() {
 
       <AdminRoutes />
 
+
       <AdminProfile />
+
+      
+
+      <AllRoutes/>
+    {/* <AdminProfile></AdminProfile>  */}
       {/* <AdminRoutes/> */}
+     <UserProfile></UserProfile>
+
+
+
     </div>
   );
 }
