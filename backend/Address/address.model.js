@@ -16,4 +16,4 @@ const addressSchema=new Schema({
 
 const AddressModel=model("address",addressSchema);
 
-module.exports={AddressMode};
+module.exports={AddressModel};
