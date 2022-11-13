@@ -18,10 +18,12 @@ function App() {
 
 
       
+
       <AllRoutes/>
     <AdminProfile></AdminProfile>
       {/* <AdminRoutes/> */}
      
+
 
     </div>
   );

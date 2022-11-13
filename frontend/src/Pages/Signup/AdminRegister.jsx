@@ -55,7 +55,14 @@ const { name, value } = e.target;
         alert(`Registrations successfully! and user Admin ID is ${res.data.AdminId}`);
         navigate('/AdminLogin');
       })
-      .catch(error => console.log(error));
+      .catch(error =>{
+        if(error.response.status===403){
+          alert(error.response.data.msg)
+        }
+        else{
+          alert(error)
+        }
+      });
   };
 
       
