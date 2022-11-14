@@ -1,3 +1,12 @@
+.megaDropdownBox {
+  width: 95%;
+  margin: auto;
+  height: 420px;
+  position:static;
+  z-index: -1;
+ 
+}
+
 .Add-main-div{
   
   max-width: 90%;

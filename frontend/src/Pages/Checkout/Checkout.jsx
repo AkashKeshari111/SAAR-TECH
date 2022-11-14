@@ -116,7 +116,7 @@ export default function Checkout() {
         </div>
        </div>
       
-       <Link className='linkdin' to="/thnku">
+       <Link className='linkdin' to="/thanku">
 
        <button onClick={Moved} className='checkout'>
       Place Order

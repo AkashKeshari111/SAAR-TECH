@@ -11,6 +11,7 @@ import{rahul} from "./data2"
 import image from "./image/Capture5.PNG"
 import image1 from "./image1/Capture6.PNG"
 import image2 from "./image2/Capture7.PNG"
+import NavbarCarousel from '../../Components/Navbar/NavbarCarousel'
 
 const HomePage = () => {
   const[sman,setsman]=useState(data)
@@ -18,6 +19,10 @@ const HomePage = () => {
   const[smanp,setsmanp]=useState(rahul)
 
   return (
+    <>
+     <div className={styles.megaDropdownBox}>
+        <NavbarCarousel></NavbarCarousel>
+      </div>
     <div className={styles.maincontainer}>
       {/* firs images start */}
       <div className={styles.fdiv}>
@@ -119,6 +124,7 @@ const HomePage = () => {
     </div>
     {/* card1 button end */}
     </div>
+    </>
   )
 }
 

@@ -3,6 +3,9 @@ import {useCart} from "react-use-cart"
 import  "./Style/Addto.css"
 import { Link } from 'react-router-dom';
 import  "./Style1/Junior.css"
+import NavbarCarousel from '../../Components/Navbar/NavbarCarousel';
+
+
 export default function Addto() {
   const Moved=()=>{
     alert("Go to Payment Page")
@@ -30,6 +33,9 @@ export default function Addto() {
     
   return (
     <>
+    <div className="megaDropdownBox">
+        <NavbarCarousel/>
+      </div>
       
       <div className='junior-nav-box1'>
       <div className='junior-nav1'>

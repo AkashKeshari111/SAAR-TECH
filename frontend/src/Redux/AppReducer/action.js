@@ -14,7 +14,7 @@ const getProductRequest =()=>{
 
 const getProduct = (queryParams) =>(dispatch) =>{
     dispatch(getProductRequest());
-    return axios.get(`http://localhost:8080/products`,queryParams)
+    return axios.get(`http://localhost:7000/products`,queryParams)
     .then((res)=>{
         dispatch({
             type: types.GET_PRODUCTS_SUCCESS,

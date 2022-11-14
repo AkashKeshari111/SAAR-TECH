@@ -2,6 +2,14 @@
  width: 90%;
  margin: auto;
 }
+.megaDropdownBox {
+  width: 95%;
+  margin: auto;
+  height: 420px;
+  position:static;
+  z-index: -1;
+ 
+}
 .gridcard{
   display: grid;
   grid-template-columns: repeat(5,1fr);
