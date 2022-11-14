@@ -8,44 +8,15 @@ import { AdminRoutes } from "./Router/AdminRoutes";
 
 import Address from "./Pages/Cart/Address";
 
-import Thanku from "./Pages/Thanku/Thanku"
+import Thanku from "./Pages/Thanku/Thanku";
 
-
-
-import AdminProfile from "./Pages/Profile/AdminProfile"
+import AdminProfile from "./Pages/Profile/AdminProfile";
 import UserProfile from "./Pages/Profile/UserProfile";
 
-
 function App() {
-  return (
-    <div className="App">
-      <AllRoutes />
-
-      <AdminRoutes />
-
-
-{/* <Thanku/> */}
-
-
-      <AdminProfile />
-
-
-      
-
-
-      
-      <AdminRoutes/>
-
-      <AllRoutes/>
-    {/* <AdminProfile></AdminProfile>  */}
-      {/* <AdminRoutes/> */}
-     <UserProfile></UserProfile>
-
-
-
-
-    </div>
-  );
+  return <div className="App">
+ <AllRoutes/>
+  </div>;
 }
 
 export default App;
