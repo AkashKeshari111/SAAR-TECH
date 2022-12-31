@@ -14,13 +14,13 @@ const getProductRequest =()=>{
 
 const getProduct = (queryParams) =>(dispatch) =>{
     dispatch(getProductRequest());
-    return axios.get(`http://localhost:8080/products`,queryParams)
+    return axios.get(`https://saartech-production.up.railway.app/admin/allproducts`,queryParams)
     .then((res)=>{
         dispatch({
             type: types.GET_PRODUCTS_SUCCESS,
-            payload: res.data,
+            payload: res.data.data,
         });
-        console.log(res.data)
+        console.log(res.data.data)
     })
     .catch((err)=>{
         dispatch({

@@ -82,7 +82,7 @@ const { name, value } = e.target;
   }
 
      return axios
-      .post(`http://localhost:8080/auth/admin/register`, adminSignupData)
+      .post(`https://saartech-production.up.railway.app/auth/admin/register`, adminSignupData)
       .then(res => {
         console.log(res);
         alert(`Registrations successfully! and user Admin ID is ${res.data.AdminId}`);

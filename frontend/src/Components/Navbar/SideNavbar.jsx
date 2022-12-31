@@ -46,7 +46,7 @@ const SideNavbar = () => {
                         <MDBListGroupItem className='text-uppercase' style={{fontWeight:"bold"}} tag='a' href='#' action>
                         Consumer Electronics
                         </MDBListGroupItem>
-                        <MDBListGroupItem tag='a' href='#' action>
+                        <MDBListGroupItem tag='a' href='' action>
                           <MDBIcon icon='caret-right' className='pe-2' /> Smart Electronics
                         </MDBListGroupItem>
                         <MDBListGroupItem tag='a' href='#' action>

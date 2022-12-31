@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Styles/Homepage.module.css'
+import { Link } from 'react-router-dom'
 export default function Card(props) {
 
 
@@ -7,7 +8,7 @@ export default function Card(props) {
   return (
     <>
     
-
+<Link to="/products">
     
         <div className={styles.card}>
 
@@ -20,7 +21,7 @@ export default function Card(props) {
 <button className={styles.addcart}>{props.price}</button>
 
 </div>
-
+</Link>
   
 
     </>

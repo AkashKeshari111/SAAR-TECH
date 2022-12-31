@@ -44,7 +44,7 @@ export default function UserProfile() {
       return false;
     }
     axios
-      .patch(`http://localhost:8080/auth/${userId}`, formData, {
+      .patch(`https://saartech-production.up.railway.app/auth/${userId}`, formData, {
         headers: {
           token: `Bearer ${token}`,
         },

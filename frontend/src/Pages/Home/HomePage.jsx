@@ -7,17 +7,22 @@ import Cardthird from './card2'
 import {Link} from "react-router-dom"
 import{data} from "./data"
 import{datathird} from "./data1"
-
+import{rahul} from "./data2"
 import image from "./image/Capture5.PNG"
 import image1 from "./image1/Capture6.PNG"
 import image2 from "./image2/Capture7.PNG"
+import NavbarCarousel from '../../Components/Navbar/NavbarCarousel'
 
 const HomePage = () => {
   const[sman,setsman]=useState(data)
   const[smanthird,setsmanthird]=useState(datathird)
-
+  const[smanp,setsmanp]=useState(rahul)
 
   return (
+    <>
+     <div className={styles.megaDropdownBox}>
+        <NavbarCarousel></NavbarCarousel>
+      </div>
     <div className={styles.maincontainer}>
       {/* firs images start */}
       <div className={styles.fdiv}>
@@ -76,15 +81,19 @@ const HomePage = () => {
   <div className={styles.image1}>
   <img src={image1} alt="omnifood" />
   </div>
-  <div className={styles.gridcard}>
+  <div className={styles.gridbaa}>
 
-  {sman.map((e,index)=>{
+  
+    <div className={styles.gridcard1}>
+
+  {smanp.map((e,index)=>{
     return( 
-    <Cardsec key={index} e={e} Image={e.Image} title={e.title}  price={e.price} />)
+    <Cardsec key={index} e={e} image={e.image} title={e.title}  price={e.price} />)
    })}
+   </div> 
    </div>
     </div>
-    </div>
+    </div> 
     {/* card1 button end */}
 
     {/* Card1 button  start*/}
@@ -100,7 +109,7 @@ const HomePage = () => {
   <div className={styles.image1}>
   <img src={image2} alt="omnifood" />
   </div>
-  
+  <div>
  <Link to="/products">
   <div className={styles.gridcard2}>
 
@@ -110,10 +119,12 @@ const HomePage = () => {
    })}
    </div>
    </Link>
+   </div>
     </div>
     </div>
     {/* card1 button end */}
     </div>
+    </>
   )
 }
 

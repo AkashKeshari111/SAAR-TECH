@@ -11,6 +11,7 @@ import SideNavbar from "./SideNavbar";
 import {useSelector} from "react-redux"
 import AfterLoginButton from "./AfterLoginButton"
 import Theme from "../Theme/Theme";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
@@ -21,7 +22,7 @@ const Navbar = () => {
         <div className={styles.containerNavbar}>
           {/* <a href="" alt=""></a> */}
           <div className={styles.topNavbarSEction}>
-            <img src="footerLogo.png" alt=""></img>
+           <Link to="/" ><img src="footerLogo.png" alt=""/></Link>
             <div>
               <div className={styles.navbarlnguageSection}>
                 <p>
@@ -65,9 +66,7 @@ const Navbar = () => {
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
                   <p>Favourites</p>
                 </a>
-
-
-                <a href="#" alt="">
+                <a href="/addcart" alt="">
                   <FiShoppingCart
                     size={"25px"}
                     color="#ffda00"
@@ -75,6 +74,7 @@ const Navbar = () => {
                   <p>Cart</p>
                 </a>
               </div>
+
 
             </div>
           </div>
@@ -97,9 +97,7 @@ const Navbar = () => {
       </div>
 <div className={styles.sideNavbarCompo}>      <SideNavbar></SideNavbar></div>
 
-      <div className={styles.megaDropdownBox}>
-        <NavbarCarousel></NavbarCarousel>
-      </div>
+     
     </>
   );
 };

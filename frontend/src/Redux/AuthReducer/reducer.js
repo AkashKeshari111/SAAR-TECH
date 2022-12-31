@@ -95,7 +95,7 @@ export const reducer = (state = iniState, action) => {
         localStorage.setItem("token", "" )
         localStorage.setItem("name", "")
         localStorage.setItem("role", "")
-        localStorage.setItem("userId" )
+        localStorage.setItem("userId", "" )
   
         return {
           ...iniState,

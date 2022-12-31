@@ -2,6 +2,14 @@
  width: 90%;
  margin: auto;
 }
+.megaDropdownBox {
+  width: 95%;
+  margin: auto;
+  height: 420px;
+  position:static;
+  z-index: -1;
+ 
+}
 .gridcard{
   display: grid;
   grid-template-columns: repeat(5,1fr);
@@ -26,6 +34,15 @@
   border: 1px solid #eee;
   cursor: default;
   width:100%;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+}
+.card1{
+  margin-top: 10px;
+  color: #666;
+  border: 1px solid #eee;
+  cursor: default;
+  width:80%;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
 }
@@ -119,6 +136,39 @@
   grid-template-columns: repeat(4,1fr);
   gap: 10px;
   
+}
+.gridcard1{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  
+  
+}
+.gridbaa{
+  
+  width: 90%;
+  
+}
+.imagecard {
+  width: 100%;
+  height: 70%;
+}
+
+.titlecard {
+ 
+  height: 60%;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+ 
+}
+.productcard {
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
 }
 @media(max-width:800px ){
   .fdiv{

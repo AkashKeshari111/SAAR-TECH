@@ -6,31 +6,21 @@ import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import { AdminRoutes } from "./Router/AdminRoutes";
 
-import AdminProfile from "./Pages/Profile/AdminProfile"
-import UserProfile from "./Pages/Profile/UserProfile";
+import Address from "./Pages/Cart/Address";
 
+import Thanku from "./Pages/Thanku/Thanku";
+
+import AdminProfile from "./Pages/Profile/AdminProfile";
+import UserProfile from "./Pages/Profile/UserProfile";
+import { useSelector } from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <AllRoutes />
-
-      <AdminRoutes />
+  const token=useSelector((state)=>state.AuthReducer.token)
+  return <div className="App">
+    {token? <><AllRoutes/><AdminRoutes/></>: <AllRoutes/>}
 
 
-      <AdminProfile />
-
-      
-
-      <AllRoutes/>
-    {/* <AdminProfile></AdminProfile>  */}
-      {/* <AdminRoutes/> */}
-     <UserProfile></UserProfile>
-
-
-
-    </div>
-  );
+  </div>;
 }
 
 export default App;
