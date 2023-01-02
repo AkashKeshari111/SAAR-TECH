@@ -4,12 +4,12 @@ import styles from "./Navbar.module.css"
 function NavbarCarousel() {
 
   const carouselData =[
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/electronics_1190x420_en.jpg"},
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/en_1190x420.jpg?imbypass=true"},
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/printer_1190x420_en.jpg"},
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/home_1190x420_en.jpg"},
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/ortur_master3_1190X420_en.jpg"},
-    {img:"https://uidesign.gbtcdn.com/GB/image/8823/1190X420.jpg"}
+    {img:"/carousel1.jpg"},
+    {img:"/carousel2.avif"},
+    {img:"/carousel3.webp"},
+    // {img:"https://uidesign.gbtcdn.com/GB/image/8823/home_1190x420_en.jpg"},
+    // {img:"https://uidesign.gbtcdn.com/GB/image/8823/ortur_master3_1190X420_en.jpg"},
+    // {img:"https://uidesign.gbtcdn.com/GB/image/8823/1190X420.jpg"}
 
   ]
 
