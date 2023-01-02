@@ -74,7 +74,7 @@ const UserRegister = () => {
     };
 
     return axios
-      .post(`http://localhost:8080/auth/register`, userData)
+      .post(`https://saartech-production.up.railway.app/auth/register`, userData)
       .then(res => {
         console.log(res);
         alert('Registrations successfully!');

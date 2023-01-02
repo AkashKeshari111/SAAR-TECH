@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styles from '../AdminStyles/AdminAddProducts.module.css';
 import AdminNavbar from './AdminNavbar';
@@ -9,6 +10,9 @@ export const AdminEdit = () => {
   const [form,setForm] = useState({});
   const {id} = useParams()
   console.log("sahil",id)
+  const token=useSelector((state)=>state.AuthReducer.token)
+  const name=useSelector((state)=>state.AuthReducer.name)
+
 
     const postChange = (e) => {
         const {name,value} = e.target;
@@ -39,11 +43,11 @@ export const AdminEdit = () => {
             product_description:form.product_description
           
     }
-        fetch(`http://localhost:8080/admin/product/${id}`,{
+        fetch(`https://saartech-production.up.railway.app/admin/product/${id}`,{
             method:"GET",
             headers:{
                 'Content-Type': 'application/json',
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZlMDJiYjIyZWE2MTYxZjEwNGU2OWMiLCJpYXQiOjE2NjgxNjg4NDMsImV4cCI6MTY2ODI1NTI0M30.wfsuWpsfSqoB0gDeZBLA5KzR1PNAdK48LEDjH8aFRPM`
+                "token":`Bearer ${token}`
             },
             body:JSON.stringify(payload)
             

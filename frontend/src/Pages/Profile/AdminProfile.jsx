@@ -47,7 +47,7 @@ export default function AdminProfile() {
      }
     // console.log(userId);
     axios
-      .patch(`http://localhost:8080/auth/admin/${userId}`, formData, {
+      .patch(`https://saartech-production.up.railway.app/admin/${userId}`, formData, {
         headers: {
           token: `Bearer ${token}`,
         },

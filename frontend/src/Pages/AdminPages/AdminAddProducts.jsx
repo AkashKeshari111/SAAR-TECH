@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
+
 import { useNavigate } from 'react-router-dom';
 import styles from '../AdminStyles/AdminAddProducts.module.css';
 import AdminNavbar from './AdminNavbar';
@@ -8,7 +10,11 @@ export const AdminAddProducts = () => {
     const navigate = useNavigate();
 
 
+
+//    const token=useSelector((state)=>state.AuthReducer.token)
+
     const token = localStorage.get("token")
+
     
 
     const [form,setForm] = useState({});
@@ -41,7 +47,7 @@ export const AdminAddProducts = () => {
             product_description:form.product_description
           
     }
-        fetch("http://localhost:8080/admin/product",{
+        fetch("https://saartech-production.up.railway.app/admin/product",{
             method:"POST",
             headers:{
                 'Content-Type': 'application/json',

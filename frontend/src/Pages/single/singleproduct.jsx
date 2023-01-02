@@ -27,27 +27,41 @@ export default function Singleproduct() {
     }
   }, [products.length, dispatch]);
 
-  
- 
   useEffect(() => {
-    if (id) {      
-      let SingleData = products.find((elem) => elem.id === Number(id));
+    if (id) {
+      let SingleData = products.find((elem) => elem._id ===id);
+      // console.log("abcdffggfd",SingleData)
       setSingleProductData(SingleData)
-      SingleData && setImage(SingleData.image);
-      SingleData && setprice(SingleData.price);
-      SingleData && settitle(SingleData.title);
+      SingleData && setImage(SingleData.product_img);
+      SingleData && setprice(SingleData.product_price);
+      SingleData && settitle(SingleData.product_title);
     }
   }, [products, id]);
+
+
+
+  
+ 
+  // useEffect(() => {
+  //   if (id) {      
+  //     let SingleData = products.find((elem) => elem.id === Number(id));
+  //     setSingleProductData(SingleData)
+  //     SingleData && setImage(SingleData.image);
+  //     SingleData && setprice(SingleData.price);
+  //     SingleData && settitle(SingleData.title);
+  //   }
+  // }, [products, id]);
 
   
 
   // console.log(singleProductData)
 
+
   const Aoddo = () => {
     addItem(singleProductData);
     alert("item successfully added");
   };
-  
+
   return (
     <>
       {/* star div start */}
@@ -103,12 +117,13 @@ export default function Singleproduct() {
                 borderRadius="0"
                 colorScheme=""
                 color="white"
-                bg="#f30240"
+
+                bg="#F30240"
+
                 size="lg"
               >
                 Add to Cart
               </Button>
-
               <Link to="/addcart">
                 <Button
                   borderRadius="0"
@@ -137,4 +152,6 @@ export default function Singleproduct() {
       {/* main div end */}
     </>
   );
+
 }
+

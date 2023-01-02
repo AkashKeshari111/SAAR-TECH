@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styles from '../AdminStyles/AdminProducts.module.css';
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import Pagination from './Pagination';
+import Pagination from '../../Components/Pagination';
 import AdminNavbar from './AdminNavbar';
 
 
 export const AdminProducts = () => {
+
     const [data,setData] = useState();
 
     const [page,setPage] = useState(1);
@@ -22,7 +23,7 @@ export const AdminProducts = () => {
 
 
     const getYourData=({page,limit,sortBy,order})=>{
-       return axios.get(`http://localhost:8080/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
+       return axios.get(`https://saartech-production.up.railway.app/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
             
             headers:{
 
@@ -36,9 +37,9 @@ export const AdminProducts = () => {
     const deleteItem = (id) => {
         
         console.log(id)
-        axios.delete(`http://localhost:8080/admin/product/${id}`,{
+        axios.delete(`https://saartech-production.up.railway.app/admin/product/${id}`,{
             headers:{
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZmZGM2ZWZmMDQ2ZmNhNjNjNzI2ZmYiLCJpYXQiOjE2NjgzMTE4MjgsImV4cCI6MTY2ODM5ODIyOH0.VLFyaJ-d9kWDZbYrrudFl3VybFKDaPNpFsyfKVk0r-4`
+                "token":`Bearer ${token}`
             }
         })
         .then((res) => {
@@ -71,7 +72,7 @@ export const AdminProducts = () => {
     getYourData({page,limit,sortBy,order})
     .then(res=>{
         setData(res.data.data)
-        console.log("sahil",res.data.totalPages)
+        // console.log("sahil",res.data.totalPages)
         setTotal(res.data.totalPages)
 
     })
@@ -80,10 +81,26 @@ export const AdminProducts = () => {
     })
    
 },[page,limit,sortBy,order])
-      
+
+
+//     const [data,setData] = useState();
+// const token = localStorage.get("token")
+
+//     const getYourData=()=>{
+//         axios.get("http://localhost:8080/admin/product",{
+//             headers:{
+
+//                 "token":`Bearer ${token}`
+
+//             }
+//         })
+// }
+//     useEffect(()=>{
+//         getYourData()
+//     },[])
   return (
     <>
-    <AdminNavbar/>
+    <AdminNavbar />
     <div className={styles.box} >
     <div className={styles.filterBox} >
         <div>

@@ -78,6 +78,7 @@ const AllRoutes = () => {
           <Route path="/thanku" element={<Thanku />} />
         </Routes>
       </CartProvider>
+
     </>
   );
 };
