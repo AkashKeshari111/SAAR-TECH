@@ -23,7 +23,7 @@ export const AdminProducts = () => {
 
 
     const getYourData=({page,limit,sortBy,order})=>{
-       return axios.get(`http://localhost:8080/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
+       return axios.get(`https://saartech-production.up.railway.app/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
             
             headers:{
 
@@ -37,9 +37,9 @@ export const AdminProducts = () => {
     const deleteItem = (id) => {
         
         console.log(id)
-        axios.delete(`http://localhost:8080/admin/product/${id}`,{
+        axios.delete(`https://saartech-production.up.railway.app/admin/product/${id}`,{
             headers:{
-                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZmZGM2ZWZmMDQ2ZmNhNjNjNzI2ZmYiLCJpYXQiOjE2NjgzMTE4MjgsImV4cCI6MTY2ODM5ODIyOH0.VLFyaJ-d9kWDZbYrrudFl3VybFKDaPNpFsyfKVk0r-4`
+                "token":`Bearer ${token}`
             }
         })
         .then((res) => {
@@ -72,7 +72,7 @@ export const AdminProducts = () => {
     getYourData({page,limit,sortBy,order})
     .then(res=>{
         setData(res.data.data)
-        console.log("sahil",res.data.totalPages)
+        // console.log("sahil",res.data.totalPages)
         setTotal(res.data.totalPages)
 
     })
