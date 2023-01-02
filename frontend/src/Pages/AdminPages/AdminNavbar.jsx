@@ -5,7 +5,11 @@ import styles from '../AdminStyles/AdminNavbar.module.css';
 import image from "../assets/saar.png"
 
 const AdminNavbar = () => {
+
   const name=useSelector((state)=>state.AuthReducer.name)
+
+  var x = localStorage.getItem("name");
+
   return (
     <div className={styles.box} >
         <div className={styles.mainDiv} >

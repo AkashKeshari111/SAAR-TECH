@@ -79,7 +79,6 @@ const AllRoutes = () => {
         </Routes>
       </CartProvider>
 
-     
     </>
   );
 };

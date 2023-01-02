@@ -17,13 +17,16 @@ export default function Singleproduct() {
   const { addItem } = useCart();
   const [title, settitle] = useState("");
   const [singleProductData, setSingleProductData] = useState({});
+
   const [price, setprice] = useState("");
   const [image, setImage] = useState("");
+
   useEffect(() => {
     if (products.length === 0) {
       dispatch(getProduct());
     }
   }, [products.length, dispatch]);
+
   useEffect(() => {
     if (id) {
       let SingleData = products.find((elem) => elem._id ===id);
@@ -35,10 +38,30 @@ export default function Singleproduct() {
     }
   }, [products, id]);
 
+
+
+  
+ 
+  // useEffect(() => {
+  //   if (id) {      
+  //     let SingleData = products.find((elem) => elem.id === Number(id));
+  //     setSingleProductData(SingleData)
+  //     SingleData && setImage(SingleData.image);
+  //     SingleData && setprice(SingleData.price);
+  //     SingleData && settitle(SingleData.title);
+  //   }
+  // }, [products, id]);
+
+  
+
+  // console.log(singleProductData)
+
+
   const Aoddo = () => {
     addItem(singleProductData);
     alert("item successfully added");
   };
+
   return (
     <>
       {/* star div start */}
@@ -46,6 +69,7 @@ export default function Singleproduct() {
         <img src={image7} alt="omnifood" />
       </div>
       {/* star div end */}
+
       {/* main div start */}
       <div className={styles.mainsinglepage}>
         {/* image div start */}
@@ -53,6 +77,7 @@ export default function Singleproduct() {
           <img src={image} alt="" />
         </div>
         {/* image div end */}
+
         {/* rate div start */}
         <div className={styles.ratediv}>
           <div className={styles.hdiv}>
@@ -84,6 +109,7 @@ export default function Singleproduct() {
               </div>
             </div>
           </div>
+
           <div className={styles.buttondiv}>
             <Stack mt={10} br={0} spacing={4} direction="row" align="center">
               <Button
@@ -91,7 +117,9 @@ export default function Singleproduct() {
                 borderRadius="0"
                 colorScheme=""
                 color="white"
+
                 bg="#F30240"
+
                 size="lg"
               >
                 Add to Cart
@@ -124,4 +152,6 @@ export default function Singleproduct() {
       {/* main div end */}
     </>
   );
+
 }
+

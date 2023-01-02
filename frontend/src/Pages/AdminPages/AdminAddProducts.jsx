@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
+
 import { useNavigate } from 'react-router-dom';
 import styles from '../AdminStyles/AdminAddProducts.module.css';
 import AdminNavbar from './AdminNavbar';
@@ -9,7 +10,11 @@ export const AdminAddProducts = () => {
     const navigate = useNavigate();
 
 
-   const token=useSelector((state)=>state.AuthReducer.token)
+
+//    const token=useSelector((state)=>state.AuthReducer.token)
+
+    const token = localStorage.get("token")
+
     
 
     const [form,setForm] = useState({});

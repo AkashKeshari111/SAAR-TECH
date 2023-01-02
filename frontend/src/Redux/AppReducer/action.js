@@ -15,7 +15,8 @@ const getProductRequest =()=>{
 const getProduct = (queryParams) =>(dispatch) =>{
     dispatch(getProductRequest());
     return axios.get(`https://saartech-production.up.railway.app/admin/allproducts`,queryParams)
-    .then((res)=>{
+    .then((res)=>
+{
         dispatch({
             type: types.GET_PRODUCTS_SUCCESS,
             payload: res.data.data,

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styles from '../AdminStyles/AdminProducts.module.css';
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import Pagination from './Pagination';
+import Pagination from '../../Components/Pagination';
 import AdminNavbar from './AdminNavbar';
-import { useSelector } from 'react-redux';
 
 
 export const AdminProducts = () => {
+
     const [data,setData] = useState();
 
     const [page,setPage] = useState(1);
@@ -16,14 +16,14 @@ export const AdminProducts = () => {
     const [limit,setLimit] = useState(12);
     const [total,setTotal]=useState();
 
-    const token=useSelector((state)=>state.AuthReducer.token)
-    const name=useSelector((state)=>state.AuthReducer.name)
-console.log(token)
+    const token = localStorage.get("token")
+
+
 
 
 
     const getYourData=({page,limit,sortBy,order})=>{
-       return axios.get(`https://saartech-production.up.railway.app/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
+       return axios.get(`http://localhost:8080/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
             
             headers:{
 
@@ -39,7 +39,7 @@ console.log(token)
         console.log(id)
         axios.delete(`http://localhost:8080/admin/product/${id}`,{
             headers:{
-                "token":`Bearer ${token}`
+                "token":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzZmZGM2ZWZmMDQ2ZmNhNjNjNzI2ZmYiLCJpYXQiOjE2NjgzMTE4MjgsImV4cCI6MTY2ODM5ODIyOH0.VLFyaJ-d9kWDZbYrrudFl3VybFKDaPNpFsyfKVk0r-4`
             }
         })
         .then((res) => {
@@ -81,10 +81,26 @@ console.log(token)
     })
    
 },[page,limit,sortBy,order])
-      
+
+
+//     const [data,setData] = useState();
+// const token = localStorage.get("token")
+
+//     const getYourData=()=>{
+//         axios.get("http://localhost:8080/admin/product",{
+//             headers:{
+
+//                 "token":`Bearer ${token}`
+
+//             }
+//         })
+// }
+//     useEffect(()=>{
+//         getYourData()
+//     },[])
   return (
     <>
-    <AdminNavbar/>
+    <AdminNavbar />
     <div className={styles.box} >
     <div className={styles.filterBox} >
         <div>

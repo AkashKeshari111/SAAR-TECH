@@ -92,6 +92,7 @@ const MensFasion = () => {
             <p>Socks</p>
             <p>Jewelry</p>
           </div>
+
           <div
             style={{
               border: "0.5px solid lightgrey",
@@ -128,6 +129,31 @@ const MensFasion = () => {
                   />
                 </div>
               ))}
+
+{/* 
+          <div className={styles.allfilterandproduct}>
+
+            <div>
+              <Filters/>
+            </div>
+            <div className={styles.maincard}>
+              {products.length > 0 &&
+                products.map((item) => (
+                  <div  className={styles.mainsmallcard}>
+                    
+                    <ProductCard   key={item.id}
+                    item={item}
+                        title={item.title}
+                        price={item.price}
+                        image={item.image}
+                        productsId={item.id} 
+                        discount={item.discount}
+                        per={item.per} />
+                    
+                  </div>
+                ))}
+            </div> */}
+
           </div>
         </div>
       </div>
