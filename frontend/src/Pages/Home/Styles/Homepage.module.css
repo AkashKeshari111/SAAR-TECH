@@ -24,6 +24,7 @@
 .maincontainer{
  width: 90%;
  margin: auto;
+ margin-top: -92px;
 }
 .megaDropdownBox {
   width: 95%;
@@ -215,6 +216,7 @@
     height: 100vh;
   
   }
+ 
 }
  @media(max-width:380px){
   .fdiv{
@@ -255,6 +257,13 @@
     
     margin: auto;
    }
+
+   .gridcard1, .gridcard2{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    /* border:1px solid green; */
+    margin: auto;
+   }
    .maincard{
     display: block;
     gap: 10px;
@@ -280,6 +289,14 @@
     margin: auto;
     padding-top: 10px;
    }
+
+   .gridcard1, .gridcard2{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    /* border:1px solid green; */
+    margin: auto;
+   }
+
   .fdiv{
     display: grid;
     grid-template-columns: repeat(1,1fr);

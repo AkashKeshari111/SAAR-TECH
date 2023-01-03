@@ -25,7 +25,7 @@ const HomePage = () => {
       </div>
     <div className={styles.maincontainer}>
       {/* firs images start */}
-      <div className={styles.fdiv}>
+      {/* <div className={styles.fdiv}>
         <div>
           <img src="https://uidesign.gbtcdn.com/GB/image/6874/230x120b_en.jpg" alt="" />
         </div>
@@ -41,7 +41,7 @@ const HomePage = () => {
         <div>
           <img src="https://uidesign.gbtcdn.com/GB/image/6080/230x120.jpg?imbypass=true" alt="" />
         </div>
-        </div>
+        </div> */}
        {/* firs images end */}
           
       {/* card button  start*/}
