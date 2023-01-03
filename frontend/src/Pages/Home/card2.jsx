@@ -11,7 +11,7 @@ export default function Cardthird(props) {
     
         <div className={styles.card}>
 
-<div>
+<div className={styles.div113}>
 <img src={props.Image} alt="" />
 </div>
 <div className={styles.cardp}>

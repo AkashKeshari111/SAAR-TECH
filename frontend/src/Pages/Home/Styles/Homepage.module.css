@@ -10,6 +10,17 @@
   z-index: -1;
  
 }
+
+.div111,.div112{
+  height:230px;
+  width: 100%;
+  border:1px solid lightgray;
+}
+.div113{
+  height:245px;
+  width: 100%;
+  border:1px solid lightgray;
+}
 .gridcard{
   display: grid;
   grid-template-columns: repeat(5,1fr);
@@ -49,12 +60,12 @@
 
 .cardp{
   font-family: OpenSans,Arial,Helvetica,sans-serif;
-  line-height: 1;
+  line-height: 1.5;
   padding: 20px;
   padding-top: 15px;
   padding-bottom: 10px;
    color: black;
-   font-size: 15px;
+   font-size: 13px;
    text-align: center;
 }
 .addcart{
