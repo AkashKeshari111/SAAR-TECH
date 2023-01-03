@@ -31,7 +31,7 @@ export default function AfterLoginButton() {
 
   const handleLogout = () => {
     dispatch(logout()).then((res)=>
-    { window.opener.location.reload()
+    { 
     navigate("/")
     }    
     )

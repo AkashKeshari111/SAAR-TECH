@@ -1,26 +1,26 @@
 export const data=[
   {
-    Image:"https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16652/goods_thumb_220-v1/8fcb44903e27.jpg",
+    Image:"https://www.gearbest.com/u_file/2212/14/products/b69a610da5.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
     title:"Nimble Tech Store",
     price:"$329.00"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6862458881155723264/16456/goods_thumb_220-v3/67f17c7e8795.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/15/products/91f260cb45.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
   title:"Oritur Tech Store",
   price:"$319.90"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6507287161137004544/16390/goods_thumb_220-v1/b16d56b31f5b.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/15/products/20df7065c4.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
   title:"Asseo Store",
   price:"$169.99"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/store/6878025592978206720/16512/goods_thumb_220-v1/8d220616eed4.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/13/photo/105077334688139362-bc97.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_0,w_308",
   title:"Eigth Hour Store",
   price:"$50.05"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16643/goods_thumb_220-v1/d7a90e41e9e6.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/14/products/df24708b6b.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
   title:"Clearance Sale",
   price:"$9.90"
 }

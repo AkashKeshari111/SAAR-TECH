@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className={styles.containerNavbar}>
           {/* <a href="" alt=""></a> */}
           <div className={styles.topNavbarSEction}>
-           <Link to="/" ><img src="footerLogo.png" alt=""/></Link>
+           <Link to="/" ><img className={styles.logoImages} src="footerLogo.png" alt=""/></Link>
             <div>
               <div className={styles.navbarlnguageSection}>
                 <p>

@@ -12,8 +12,8 @@ export default function Card(props) {
     
         <div className={styles.card}>
 
-<div>
-<img src={props.Image} alt="" />
+        <div className={styles.div111}>
+<img  src={props.Image} alt="" />
 </div>
 <div className={styles.cardp}>
 <p>{props.title}</p>

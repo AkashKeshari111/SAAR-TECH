@@ -1,21 +1,21 @@
 export const datathird=[
   {
-    Image:"https://gloimg.gbtcdn.com/soa/gb/item/6878030535709618176/16660/goods_thumb_220-v1/59b11139a0dd.jpg",
+    Image:"https://www.gearbest.com/u_file/2212/13/photo/xiaomi-redmi-airdots-s-faq-9921.webp",
     
     price:"$329.00"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6866325577285169152/16653/goods_thumb_220-v4/dda839eb0bb0.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/14/photo/284360572B62024319A4CAC2CA5F088D-574b.webp",
 
   price:"$319.90"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16659/goods_thumb_220-v1/d042dd9ed7e0.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/24/products/Main-04--939d.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
   
   price:"$169.99"
 },
 {
-  Image:"https://gloimg.gbtcdn.com/soa/gb/item/6866325577285169152/16654/goods_thumb_220-v1/e7c2f2a04654.jpg",
+  Image:"https://www.gearbest.com/u_file/2212/24/products/SKU-03-Orange-723b.jpg?x-oss-process=image/format,webp/resize,m_lfit,h_500,w_500",
   
   price:"$50.05"
 }

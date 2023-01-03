@@ -21,11 +21,11 @@ export default function Cardsec(props) {
 <Link to="/products">
 
 <div className={styles.card}>
-   <div>
+<div className={styles.div112}>
    <img className={styles.imagecard} src={props.image} alt="" />
    </div>
       <div>
-      <h3 className={styles.cardp}>{props.title}</h3>
+      <h3 className={styles.cardp1}>{props.title}</h3>
       </div>
      <div>
      <h2  className={styles.addp} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>{props.price}</h2>
