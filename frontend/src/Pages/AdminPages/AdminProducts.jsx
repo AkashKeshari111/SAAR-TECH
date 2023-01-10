@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import Pagination from '../../Components/Pagination';
 import AdminNavbar from './AdminNavbar';
+import { useSelector } from 'react-redux';
 
 
 export const AdminProducts = () => {
@@ -16,7 +17,9 @@ export const AdminProducts = () => {
     const [limit,setLimit] = useState(12);
     const [total,setTotal]=useState();
 
-    const token = localStorage.get("token")
+   const token=useSelector((state)=>state.AuthReducer.token)
+
+    // const token = localStorage.get("token")
 
 
 

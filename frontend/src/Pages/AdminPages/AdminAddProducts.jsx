@@ -11,9 +11,9 @@ export const AdminAddProducts = () => {
 
 
 
-//    const token=useSelector((state)=>state.AuthReducer.token)
+   const token=useSelector((state)=>state.AuthReducer.token)
 
-    const token = localStorage.get("token")
+    // const token = localStorage.get("token")
 
     
 
