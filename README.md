@@ -4,7 +4,7 @@ SAARTECH is an e-commerce store, that sells cell phones, electronic gadgets, toy
 Akash Keshri
 Rahul Kumar
 Sahil Kumar 
-Anjana Rani
+Anjana Kushwaha
 
 
 ### Tools & Technology Used:
