@@ -1,3 +1,6 @@
+*{
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+}
 .mainDiv{
     background-color:#d9d9d9 ;
     /* margin-top: -21px; */
@@ -17,6 +20,7 @@
     flex-direction: column;
     gap: 30px;
     padding: 30px;
+    
 }
 
 
@@ -35,6 +39,10 @@
 .formDiv>form>div{
     border-bottom: 1px solid black;
     padding: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 .formDiv>form>div>input{
     padding: 20px;

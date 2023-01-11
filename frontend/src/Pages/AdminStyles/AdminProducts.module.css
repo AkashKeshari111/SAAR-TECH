@@ -1,3 +1,6 @@
+*{
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+}
 .box{
     margin: 0;
     padding: 0;
@@ -15,35 +18,77 @@
     width: 85%;
     height: auto;
     /* border: 2px solid black; */
-    padding: 10px 0px 0px 0px;
+    padding: 20px;
     background-color: white;
-    cursor: pointer;
+    border-radius: 5px;
 }
 .product:hover{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border: none;
 }
+.prodName{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.time2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-style: oblique;
+    
+}
+.time2>div{
+    color: lightgray;
+    font-size: 10px;
+    font-weight: bold;
+}
+.time2>div>strong{
+    color: lightgray;
+}
+.prodImg{
+    width: 85%;
+    height: 250px;
+    /* border: 1px solid black; */
+    margin: auto;
+    
+}
 .prodImg>img{
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 .prodButton{
     display: flex;
     justify-content: space-around;
     padding: 20px;
-}
-.btn{
-    padding: 5px 10px 5px 10px;
-    border: 1px solid black;
-    background-color: #ffda00;
-    color: black;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
+    gap: 100px;
 }
 
-.btn:hover{
-    border: 2px solid black;
+.editbtn{
+    padding: 5px 10px 5px 10px;
+    /* border: 1px solid black; */
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.deletebtn{
+    padding: 5px 10px 5px 10px;
+    /* border: 1px solid black; */
+    /* background-color: #fe6364; */
+    color: darkgray;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.deletebtn:hover{
+    background: #f30240;
+    box-shadow: 0 0 5px #f30240, 0 0 25px
+    #f30240, 0 0 50px #f30240, 0 0 200px #f30240;
 }
 .filterBox{
     /* border: 1px solid red; */
@@ -74,4 +119,5 @@
     /* border: 1px solid black; */
     padding: 10px;
     background-color: #d9d9d9;
+    margin: auto;
 }

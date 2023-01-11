@@ -11,6 +11,8 @@ export const AdminProducts = () => {
 
     const [data,setData] = useState();
 
+    const [filterData,setFilterData] = useState();
+
     const [page,setPage] = useState(1);
     const [order,setOrder] = useState("asc");
     const [sortBy,setSortBy] = useState("product_price");
@@ -26,7 +28,8 @@ export const AdminProducts = () => {
 
 
     const getYourData=({page,limit,sortBy,order})=>{
-       return axios.get(`https://saartech-production.up.railway.app/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
+
+       axios.get(`https://saartech-production.up.railway.app/admin/product?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,{
             
             headers:{
 
@@ -34,10 +37,19 @@ export const AdminProducts = () => {
 
             }
         })
+        .then(res=>{
+            setData(res.data.data)
+            // console.log("sahil",res.data.totalPages)
+            setTotal(res.data.totalPages)
+    
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 }
     
 
-    const deleteItem = (id) => {
+    const deleteItem = (id,page,limit,sortBy,order) => {
         
         console.log(id)
         axios.delete(`https://saartech-production.up.railway.app/admin/product/${id}`,{
@@ -46,8 +58,11 @@ export const AdminProducts = () => {
             }
         })
         .then((res) => {
-            getYourData()
-            console.log(res)
+            getYourData({page,limit,sortBy,order})
+            console.log(res,"akash")
+        })
+        .catch(err => {
+            console.log(err)
         })
 
     }
@@ -60,47 +75,26 @@ export const AdminProducts = () => {
         console.log(e.target.value)
       }
 
-    //   const onChange=(value)=>{
-
-    //     setPage(prev=>prev+value)
-
-    // }
 
     const handlePageChange = (value) => {
         setPage(value);
      };
+
+    //  const handleFilter = (e) => {
+    //     console.log(e.target.value);
+
+    //     const filter = data.filter((el) => el.product_name == e.target.value)
+    //     setFilterData(filter);
+
+    //  }
  
-   useEffect(()=>{
+    useEffect(()=>{
+            
+        getYourData({page,limit,sortBy,order})
         
-    getYourData({page,limit,sortBy,order})
-    .then(res=>{
-        setData(res.data.data)
-        // console.log("sahil",res.data.totalPages)
-        setTotal(res.data.totalPages)
-
-    })
-    .catch((err) => {
-        console.log(err)
-    })
-   
-},[page,limit,sortBy,order])
+    },[page,limit,sortBy,order])
 
 
-//     const [data,setData] = useState();
-// const token = localStorage.get("token")
-
-//     const getYourData=()=>{
-//         axios.get("http://localhost:8080/admin/product",{
-//             headers:{
-
-//                 "token":`Bearer ${token}`
-
-//             }
-//         })
-// }
-//     useEffect(()=>{
-//         getYourData()
-//     },[])
   return (
     <>
     <AdminNavbar />
@@ -108,9 +102,8 @@ export const AdminProducts = () => {
     <div className={styles.filterBox} >
         <div>
             <p><strong>Sort by Title:</strong></p>
-            <select onChange={handleChange}>
-                <option value='desc' >A-Z</option>
-                <option value='asc' >Z-A</option>
+            <select>
+                
             </select>
         </div>
         <div>
@@ -126,22 +119,27 @@ export const AdminProducts = () => {
             {
                 data?.map(prod=>
                     <div key={prod._id} className={styles.product} >
-                        <div className={styles.prodImg} ><img src={prod.img} alt='' /></div>
-                        <div className={styles.prodTitle}><strong>Title :</strong>{prod.product_name}</div>
-                        <div className={styles.prodPrice}><strong>Price :</strong>{prod.product_price}</div>
-                        <div className={styles.prodTime}><strong>Updated Time :</strong>{prod.updatedAt}</div>
+                        <div className={styles.prodImg} ><img src={prod.product_img} alt='' /></div>
+                        <div className={styles.prodName} >
+                            <div className={styles.prodTitle}><strong>Product Name :</strong>{prod.product_name}</div>
+                            <div className={styles.prodPrice}><strong>Price :</strong> ₹{prod.product_price}</div>
+                        </div>
+                        <div className={styles.time2} >
+                            <div className={styles.prodTime}><strong>Updated Time :</strong>{prod.updatedAt.substring(11,19)}</div>
+                            <div className={styles.prodTime}><strong>Updated Date :</strong>{prod.updatedAt.substring(0,10)}</div>
+                        </div>
                         <div className={styles.prodButton}>
                             <Link to={`/adminedit/${prod._id}`}>
-                                <button className={styles.btn}>Edit</button>
+                                <button className={styles.editbtn}>Edit</button>
                             </Link>
-                            <button  onClick={() => deleteItem(prod._id)}  className={styles.btn}>Delete</button>
+                            <button  onClick={() => deleteItem(prod._id,page,limit,sortBy,order)}  className={styles.deletebtn}>Delete</button>
                         </div>
                     </div>
                     )
             }
             </div>
             <div className={styles.pagination} >
-            <Pagination handlePageChange={handlePageChange}  currentPage={page} totalPages={total}/>
+                <Pagination handlePageChange={handlePageChange}  currentPage={page} totalPages={total}/>
             </div>
             </div>
     </div>

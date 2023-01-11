@@ -8,24 +8,35 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../Redux/AppReducer/action";
-import { useCart } from "react-use-cart";
+
 import { Link } from "react-router-dom";
+
+
+const cartItem = JSON.parse(localStorage.getItem("cart")) || [];
+
+
 export default function Singleproduct() {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch1 = useDispatch();
   const products = useSelector((state) => state.AppReducer.products);
-  const { addItem } = useCart();
   const [title, settitle] = useState("");
   const [singleProductData, setSingleProductData] = useState({});
 
   const [price, setprice] = useState("");
   const [image, setImage] = useState("");
+  const [brand,setBrand] = useState("");
+  const [discount,setDiscount] = useState("");
+  const [prodName,setProdName] = useState("");
+
+
+
+  
 
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(getProduct());
+      dispatch1(getProduct());
     }
-  }, [products.length, dispatch]);
+  }, [products.length, dispatch1]);
 
   useEffect(() => {
     if (id) {
@@ -35,31 +46,40 @@ export default function Singleproduct() {
       SingleData && setImage(SingleData.product_img);
       SingleData && setprice(SingleData.product_price);
       SingleData && settitle(SingleData.product_title);
+      SingleData && setBrand(SingleData.product_brand);
+      SingleData && setDiscount(SingleData.product_discount);
+      SingleData && setProdName(SingleData.product_name);
+
     }
   }, [products, id]);
 
 
 
-  
- 
-  // useEffect(() => {
-  //   if (id) {      
-  //     let SingleData = products.find((elem) => elem.id === Number(id));
-  //     setSingleProductData(SingleData)
-  //     SingleData && setImage(SingleData.image);
-  //     SingleData && setprice(SingleData.price);
-  //     SingleData && settitle(SingleData.title);
-  //   }
-  // }, [products, id]);
+  const AddToCart = (id,title,price,image,brand,discount,prodName) => {
+    
+    var x = cartItem.find((el) => {
+      return el.id == id
 
-  
+    })
+    // console.log(x)
 
-  // console.log(singleProductData)
+    if(x !== undefined)
+    {
+      alert("Item is already Added!")
+    }
+    else{
+      const qty = 1
+        const obj = {id,title,price,image,qty,brand,discount,prodName}
 
+        cartItem.push(obj)
+        localStorage.setItem("cart" , JSON.stringify(cartItem));
+        alert("Add To Cart Successfully!!");
+    }
 
-  const Aoddo = () => {
-    addItem(singleProductData);
-    alert("item successfully added");
+    
+
+    
+
   };
 
   return (
@@ -113,7 +133,7 @@ export default function Singleproduct() {
           <div className={styles.buttondiv}>
             <Stack mt={10} br={0} spacing={4} direction="row" align="center">
               <Button
-                onClick={Aoddo}
+                onClick={() => AddToCart(id,title,price,image,brand,discount,prodName)}
                 borderRadius="0"
                 colorScheme=""
                 color="white"

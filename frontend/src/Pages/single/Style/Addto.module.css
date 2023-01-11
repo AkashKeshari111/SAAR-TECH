@@ -1,0 +1,39 @@
+.empty_cart{
+    width: 50%;
+    margin: auto;
+}
+.mainBox{
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100vh;
+}
+.box1{
+  border: 1px solid green;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 80%;
+  overflow: auto;
+}
+.productBox{
+  border: 1px solid red;
+  height: auto;
+  width: 50%;
+  margin: auto;
+}
+.box2{
+  width: 50%;
+}
+.btn1{
+  display: flex;
+  gap: 20px;
+}
+.incBtn{
+  display: flex;
+  gap: 10px;
+  margin: auto;
+  justify-content: space-around;
+}

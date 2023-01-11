@@ -30,4 +30,21 @@ const getProduct = (queryParams) =>(dispatch) =>{
         console.log(err)
     })
 }
-export {getProduct, getProductRequest}
+
+const getCart2=(creds)=>async(dispatch)=>{
+    try{
+        dispatch({type:types.Success_Cart_Qty,payload:creds})  
+        // console.log(creds); 
+    }
+    catch(error){
+         console.log(error)
+    }
+        
+}
+
+const Remove = (creds) => (dispatch)=>{
+    dispatch({type:types.Remove_Cart,payload:creds})
+  //   console.log(creds);
+  }
+
+export {getProduct, getProductRequest,getCart2,Remove}

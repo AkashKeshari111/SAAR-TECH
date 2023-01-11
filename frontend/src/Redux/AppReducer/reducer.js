@@ -1,10 +1,11 @@
-import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS } from "./actionTypes";
+import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, Remove_Cart, Success_Cart_Qty } from "./actionTypes";
 
 
 const initialState = {
     products: [],
     isLoading: false,
     isError: false,
+    cart_data:JSON.parse(localStorage.getItem("cart"))||[],
   };
 
 
@@ -74,6 +75,17 @@ const initialState = {
         //   isLoading: false,
         //   isError: true,
         // }
+
+        case Success_Cart_Qty:{
+          localStorage.setItem("cart",JSON.stringify(payload))
+          return {...oldState,isLoading:false,isError:false,cart_data:payload}
+        
+      }
+
+      case Remove_Cart:{
+        localStorage.setItem("cart",JSON.stringify(payload))
+        return {...oldState,isLoading:false,isError:false,cart_data:[...payload]}
+    }
     
     
     

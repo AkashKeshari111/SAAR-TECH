@@ -20,8 +20,7 @@ const ProductCard = ({ title, image, price, discount, per, off,productsId }) => 
       <h2 className={styles.priceheart} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>₹ {price}</h2>
       <div>
         <h4 className={styles.discountcard}>
-          {per}{discount}  <br />
-          {off}
+          {per}{discount}% Off <br />
         </h4>
         {/* <button onClick={()=>handleIcon()}>
 

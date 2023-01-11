@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import styles from '../AdminStyles/AdminAddProducts.module.css';
 import AdminNavbar from './AdminNavbar';
+import axios from "axios";
 
 export const AdminEdit = () => {
 
   const [form,setForm] = useState({});
   const {id} = useParams()
-  console.log("sahil",id)
+//   console.log("sahil",id)
   const token=useSelector((state)=>state.AuthReducer.token)
+//   console.log(token)
   const name=useSelector((state)=>state.AuthReducer.name)
 
 
@@ -21,9 +23,9 @@ export const AdminEdit = () => {
             [name]:value
         })
     }
-    console.log(form,"sagar")
+    // console.log(form,"sagar")
 
-    const postYourData=(e)=>{
+    const postYourData= async(e)=>{
         e.preventDefault()
         const payload = {
             product_img:form.product_img,
@@ -43,19 +45,39 @@ export const AdminEdit = () => {
             product_description:form.product_description
           
     }
-        fetch(`https://saartech-production.up.railway.app/admin/product/${id}`,{
-            method:"GET",
-            headers:{
-                'Content-Type': 'application/json',
-                "token":`Bearer ${token}`
-            },
-            body:JSON.stringify(payload)
+        // fetch(`https://saartech-production.up.railway.app/admin/product/${id}`,{
+        //     method:"PATCH",
+        //     headers:{
+        //         'Content-Type': 'application/json',
+        //         "token":`Bearer ${token}`
+        //     },
+        //     body:JSON.stringify(payload)
             
-        }).then(res=>res.json()).then((res)=>{
-            console.log(res)
-            // getYourData()
-        })
+        // }).then(res=>res.json()).then((res)=>{
+        //     console.log(res,"sahil")
+        //     // getYourData()
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+
+        const config = {
+            headers : {
+                "Content-Type":"application/json",
+                "token":`Bearer ${token}`
+            }
+        };
+
+        const data = await axios.patch(`https://saartech-production.up.railway.app/admin/product/${id}`,payload,config)
+        console.log(data)
     }
+
+    // useEffect(() => {
+    //     const fetching = async () => {
+    //         const {data} = await axios.get(`https://saartech-production.up.railway.app/admin/product/${id}`)
+    //         console.log(data)
+    //     }
+    //     fetching()
+    // },[id])
 
   return (
     <>
