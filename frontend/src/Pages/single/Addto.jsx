@@ -105,13 +105,23 @@ export default function Addto() {
             
           </div>
       <div className={styles.box2} >
-        <h1>Discount Price : {TotalDiscount}</h1>
-        <h1>Actual Price : {ActualPrice}</h1>
-        <h1>Total Price : {TotalPrice}</h1>
+        <div>
+            <p>Estimate shipping & tax</p>
+            <div>
+              <input type='checkbox'  />
+              <p>NYC SuperStore Pickup</p>
+            </div>
+        </div>
+        <div>
+          <h1>Discount Price : {TotalDiscount}</h1>
+          <h1>Actual Price : {ActualPrice}</h1>
+          <h1>Total Price : {TotalPrice}</h1>
+          <div>
+              <button onClick={handlePlaceOrder} >Placed Order</button>
+          </div>
+        </div>
       </div>
-      <div>
-            <button onClick={handlePlaceOrder} >Placed Order</button>
-      </div>
+      
     </div>
         
       </>
