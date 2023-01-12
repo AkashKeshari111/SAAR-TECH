@@ -3,7 +3,7 @@ import  "./Style1/Junior.css";
 import styles from "./Style/Addto.module.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart2, PlacedOrder, Remove } from '../../Redux/AppReducer/action';
-import {BsFillTrashFill} from "react-icons/bs"
+import {BsFillTrashFill , BsFillCaretDownFill , BsFillBagPlusFill} from "react-icons/bs"
 
 
 
@@ -105,19 +105,36 @@ export default function Addto() {
             
           </div>
       <div className={styles.box2} >
-        <div>
-            <p>Estimate shipping & tax</p>
-            <div>
+        <div className={styles.innerBox1} >
+            
+            <p className={styles.estimate} >Estimate shipping & tax</p>
+            <div className={styles.checkBox} >
               <input type='checkbox'  />
               <p>NYC SuperStore Pickup</p>
+
+            </div>
+            <div className={styles.country} >
+              <p>United State</p>
+              <BsFillCaretDownFill/>
             </div>
         </div>
-        <div>
-          <h1>Discount Price : {TotalDiscount}</h1>
-          <h1>Actual Price : {ActualPrice}</h1>
-          <h1>Total Price : {TotalPrice}</h1>
+        <div className={styles.innerBox2} >
           <div>
-              <button onClick={handlePlaceOrder} >Placed Order</button>
+              <p>Actual Price:</p>
+              <p>{ActualPrice}</p>
+          </div>
+          <div>
+            <p>Discount Price:</p>
+            <p>{TotalDiscount}</p>
+          </div>
+          <div className={styles.totalPrice} >
+            <p>Total Price:</p>
+            <p>{TotalPrice}</p>
+          </div>
+        
+          <div className={styles.checkout} >
+              <BsFillBagPlusFill/>
+              <p>Begin Checkout</p>
           </div>
         </div>
       </div>
