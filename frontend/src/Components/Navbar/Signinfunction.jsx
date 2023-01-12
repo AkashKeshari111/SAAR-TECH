@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { HiOutlineUser } from "react-icons/hi";
 import {FcGoogle} from "react-icons/fc"
+import { Link } from "react-router-dom";
 
 const Signinfunction = () => {
   const initialFocusRef = React.useRef();
@@ -58,21 +59,21 @@ const Signinfunction = () => {
             {" "}
             <Button className={styles.loginBtn} width={"90%"} mt="-2%" bgColor="rgb(255,218,0)">
               
-              <a href="/UserLogin">User Login</a>
+              <Link to="/UserLogin">User Login</Link>
             </Button>
            
             <Button className={styles.loginBtn} width={"90%"} mt="2%" bgColor="rgb(255,218,0)">
            
-              <a href="/AdminLogin">    Admin Login</a>
+              <Link href="/AdminLogin">    Admin Login</Link>
             </Button>
             <PopoverBody color={"grey"} display="flex" ml="18%"><p>or connect via </p><FcGoogle size={"27px"} mt="20%"></FcGoogle> </PopoverBody>
             <Button className={styles.registerBtn} bgColor="#007aff" width={"90%"}>
-            <a href="/UserRegister">    User Register</a>
+            <Link href="/UserRegister">    User Register</Link>
 
              </Button>
           
             <Button className={styles.registerBtn} bgColor="#007aff" mt="2%" width={"90%"}>
-            <a href="/AdminRegister">  Admin Register</a>
+            <Link href="/AdminRegister">  Admin Register</Link>
               
               </Button>
           </Box>

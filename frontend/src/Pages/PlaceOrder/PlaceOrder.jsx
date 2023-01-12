@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 function PlaceOrder() {
     const data = useSelector((store) => store.AppReducer.placeOrder);
 
-    console.log(data);
+    console.log("akaka",data);
 
   return (
     <div>
     {
-        data.map((el) => 
+        data?.map((el) => 
             <div>{el.title}</div>
         )
     }
