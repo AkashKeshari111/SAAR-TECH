@@ -7,7 +7,7 @@ function PlaceOrder() {
     console.log("akaka",data);
 
   return (
-    <div>
+    <div >
     {
         data?.map((el) => 
             <div>{el.title}</div>

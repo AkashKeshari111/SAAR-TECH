@@ -28,7 +28,7 @@ export default function AfterLoginButton() {
   const role = useSelector((state) => state.AuthReducer.role);
   const navigate = useNavigate();
   name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-
+  // const placeorder = useSelector((state) => state.AppReducer.placeOrder);
   const handleLogout = () => {
     dispatch(logout()).then((res)=>
     { 
