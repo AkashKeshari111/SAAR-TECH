@@ -27,7 +27,7 @@ const AdminNavbar = () => {
                         </div>
                     </Link>
                     <div className={styles.adminName}>
-                    Admin:{name}
+                      Welcome {name} !
                     </div>
                     
         </div>

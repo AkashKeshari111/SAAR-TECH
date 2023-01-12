@@ -47,4 +47,9 @@ const Remove = (creds) => (dispatch)=>{
   //   console.log(creds);
   }
 
-export {getProduct, getProductRequest,getCart2,Remove}
+const PlacedOrder = (payload) => (dispatch) => {
+    dispatch({type:types.Placed_Order,payload:payload})
+    localStorage.removeItem("cart")
+}
+
+export {getProduct, getProductRequest,getCart2,Remove,PlacedOrder}

@@ -68,7 +68,7 @@ export default function Singleproduct() {
       alert("Item is already Added!")
     }
     else{
-      const qty = 1
+        const qty = 1
         const obj = {id,title,price,image,qty,brand,discount,prodName}
 
         cartItem.push(obj)

@@ -4,3 +4,4 @@ export const GET_PRODUCTS_FAILURE = "GET_PRODUCTS_FAILURE";
 
 export const Success_Cart_Qty="products/Success_Cart_Qty";
 export const Remove_Cart = "products/Remove_Cart";
+export const Placed_Order = 'placed_order';
