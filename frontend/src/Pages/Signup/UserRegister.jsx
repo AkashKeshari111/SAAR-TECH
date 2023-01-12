@@ -202,6 +202,7 @@ const UserRegister = () => {
                   </Select>
 
                   <Button
+                    mt={4}
                   onClick={handleSubmit}
                   type="submit"
                     loadingText="Submitting"

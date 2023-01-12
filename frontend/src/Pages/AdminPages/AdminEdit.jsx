@@ -70,6 +70,7 @@ export const AdminEdit = () => {
         };
 
         const data = await axios.patch(`https://saartech-production.up.railway.app/admin/product/${id}`,payload,config)
+        alert("Product update Successfully!")
         console.log(data)
     }
 

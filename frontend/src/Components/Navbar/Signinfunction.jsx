@@ -57,25 +57,25 @@ const Signinfunction = () => {
           {/* <Box fontSize="sm">Step 2 of 4</Box> */}
           <Box>
             {" "}
-            <Button className={styles.loginBtn} width={"90%"} mt="-2%" bgColor="rgb(255,218,0)">
+            <Link to="/UserLogin">  <Button className={styles.loginBtn} width={"90%"} mt="-2%" bgColor="rgb(255,218,0)">
               
-              <Link to="/UserLogin">User Login</Link>
-            </Button>
+              User Login
+            </Button></Link>
            
-            <Button className={styles.loginBtn} width={"90%"} mt="2%" bgColor="rgb(255,218,0)">
+            <Link to="/AdminLogin">   <Button className={styles.loginBtn} width={"90%"} mt="2%" bgColor="rgb(255,218,0)">
            
-              <Link href="/AdminLogin">    Admin Login</Link>
-            </Button>
+                 Admin Login
+            </Button></Link>
             <PopoverBody color={"grey"} display="flex" ml="18%"><p>or connect via </p><FcGoogle size={"27px"} mt="20%"></FcGoogle> </PopoverBody>
-            <Button className={styles.registerBtn} bgColor="#007aff" width={"90%"}>
-            <Link href="/UserRegister">    User Register</Link>
+            <Link to="/UserRegister"><Button className={styles.registerBtn} bgColor="#007aff" width={"90%"}>
+                User Register
 
-             </Button>
+             </Button></Link>
           
-            <Button className={styles.registerBtn} bgColor="#007aff" mt="2%" width={"90%"}>
-            <Link href="/AdminRegister">  Admin Register</Link>
+             <Link to="/AdminRegister"><Button className={styles.registerBtn} bgColor="#007aff" mt="2%" width={"90%"}>
+              Admin Register
               
-              </Button>
+              </Button></Link>
           </Box>
         </PopoverFooter>
       </PopoverContent>

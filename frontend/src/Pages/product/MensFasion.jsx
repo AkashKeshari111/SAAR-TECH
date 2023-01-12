@@ -44,10 +44,10 @@ const MensFasion = () => {
       }}
     >
       <div className={styles.topcard}>
-        <div className={styles.sidebar}>
+        {/* <div className={styles.sidebar}>
           <div style={{ marginLeft: "30px" }}>
             <h1 style={{ fontWeight: "bolder", marginBottom: "20px" }}>
-              Men's Fashion
+             Products
             </h1>
             <p>Watches</p>
             <p>Shoes</p>
@@ -110,7 +110,7 @@ const MensFasion = () => {
             <p>CLEARANCE</p>
             <h4 style={{ marginTop: "20px" }}>New Arrivals</h4>
           </div>
-        </div>
+        </div> */}
         <div className={styles.allfilterandproduct}>
           <div>
             <Filters />
