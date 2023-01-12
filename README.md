@@ -8,7 +8,7 @@ This repository contains a functional clone of the Gearbest website. SAARTECH is
 [Rahul Monga](https://github.com/Rishon-A-Singh)
 
 
-## Tech Stack
+## Tech Stack (MERN)
 - HTML
 - CSS
 - Javascript 
@@ -16,6 +16,10 @@ This repository contains a functional clone of the Gearbest website. SAARTECH is
 - React-Redux
 - React-Router
 - Chakra UI
+- Node.js
+- Express.js
+- MongoDb
+
 
 ## pages and features
 - Home Page:- Nav Bar, sliding banners & slider for Products.
