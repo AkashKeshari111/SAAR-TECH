@@ -62,17 +62,17 @@ const Navbar = () => {
                   
                 </p>
 
-                <a href="#" alt="">
+                <Link to="" alt="">
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
                   <p>Favourites</p>
-                </a>
-                <a href="/addcart" alt="">
+                </Link>
+                <Link to="/addcart" alt="">
                   <FiShoppingCart
                     size={"25px"}
                     color="#ffda00"
                   ></FiShoppingCart>
                   <p>Cart</p>
-                </a>
+                </Link>
               </div>
 
 

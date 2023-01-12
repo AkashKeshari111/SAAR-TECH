@@ -90,7 +90,8 @@ const initialState = {
 
     case Placed_Order:{
       localStorage.setItem("placeorder",JSON.stringify(payload))
-      return {...oldState,isLoading:false,isError:false,placeOrder:[...oldState.placeOrder,payload]}
+      localStorage.removeItem("cart")
+      return {...oldState,isLoading:false,isError:false,placeOrder:[...payload]}
     }
     
     

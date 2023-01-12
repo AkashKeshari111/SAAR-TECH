@@ -3,6 +3,7 @@ import axios from "axios";
 import * as types from "./actionTypes"
 
 
+
 const getProductRequest =()=>{
     return{
 
@@ -47,9 +48,12 @@ const Remove = (creds) => (dispatch)=>{
   //   console.log(creds);
   }
 
-const PlacedOrder = (payload) => (dispatch) => {
+const PlacedOrder = (payload,navigate) => (dispatch) => {
+    
     dispatch({type:types.Placed_Order,payload:payload})
-    localStorage.removeItem("cart")
+    alert("Product Order Successfully!")
+    navigate("/placeorder")
+   
 }
 
 export {getProduct, getProductRequest,getCart2,Remove,PlacedOrder}

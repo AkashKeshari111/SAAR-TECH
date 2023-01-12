@@ -4,6 +4,8 @@ import styles from "./Style/Addto.module.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart2, PlacedOrder, Remove } from '../../Redux/AppReducer/action';
 import {BsFillTrashFill , BsFillCaretDownFill , BsFillBagPlusFill} from "react-icons/bs"
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -11,7 +13,7 @@ import {BsFillTrashFill , BsFillCaretDownFill , BsFillBagPlusFill} from "react-i
 export default function Addto() {
   
   
-
+  const navigate=useNavigate();
   const data = useSelector((store) => store.AppReducer.cart_data);
   console.log(data)
 
@@ -55,9 +57,12 @@ export default function Addto() {
   }
 
   const handlePlaceOrder = () => {
-    dispatch(PlacedOrder([...data]))
+    dispatch(PlacedOrder([...data],navigate))
     
   }
+
+
+  
 
     if(data.length==0 || data.length == undefined) 
     {
@@ -75,7 +80,7 @@ export default function Addto() {
             <div className={styles.box1} >
             {
               
-              data?.reverse().map((ele) =>
+              data?.map((ele,index) =>
               <div className={styles.productBox} >
                 <div className={styles.prodImg} >
                   <img src={ele.image} />
@@ -84,7 +89,7 @@ export default function Addto() {
                   <p>Title : {ele.title}</p>
                 </div>
                 <div className={styles.prodPrice} >
-                  <p>Price : ₹{ele.price}</p>
+                  <p>Price : ₹{ele.price.toFixed(2)}</p>
                 </div>
                 <div className={styles.incBtn} >
                   <div className={styles.btn1} >
@@ -93,7 +98,7 @@ export default function Addto() {
                     <div><button onClick={()=>handleQty(ele.id,1)} >+</button></div>
                   </div>
                   <div>
-                    <button onClick={() => deleteBtn(ele.id)} > <BsFillTrashFill style={{color:"red",fontSize:"25px",marginTop:"12px"}} /> </button>
+                    <button onClick={() => deleteBtn(index)} > <BsFillTrashFill style={{color:"red",fontSize:"25px",marginTop:"12px"}} /> </button>
                   </div>
                 </div>
                 
@@ -121,18 +126,18 @@ export default function Addto() {
         <div className={styles.innerBox2} >
           <div>
               <p>Actual Price:</p>
-              <p>{ActualPrice}</p>
+              <p>₹ {ActualPrice.toFixed(2)}</p>
           </div>
           <div>
             <p>Discount Price:</p>
-            <p>{TotalDiscount}</p>
+            <p>₹ {TotalDiscount.toFixed(2)}</p>
           </div>
           <div className={styles.totalPrice} >
             <p>Total Price:</p>
-            <p>{TotalPrice}</p>
+            <p>₹ {TotalPrice.toFixed(2)}</p>
           </div>
         
-          <div className={styles.checkout} >
+          <div className={styles.checkout} onClick={handlePlaceOrder}>
               <BsFillBagPlusFill/>
               <p>Begin Checkout</p>
           </div>

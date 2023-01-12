@@ -5,20 +5,21 @@ import image8 from "./image8/Capture.PNG";
 import image10 from "./image10/Capture.PNG";
 import { Button, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../Redux/AppReducer/action";
 
 import { Link } from "react-router-dom";
 
 
-const cartItem = JSON.parse(localStorage.getItem("cart")) || [];
+// const cartItem = JSON.parse(localStorage.getItem("cart")) || []
 
 
 export default function Singleproduct() {
   const { id } = useParams();
   const dispatch1 = useDispatch();
   const products = useSelector((state) => state.AppReducer.products);
+  const cart_data = useSelector((state) => state.AppReducer.cart_data);
   const [title, settitle] = useState("");
   const [singleProductData, setSingleProductData] = useState({});
 
@@ -51,13 +52,13 @@ export default function Singleproduct() {
       SingleData && setProdName(SingleData.product_name);
 
     }
-  }, [products, id]);
+  }, [products, id,cart_data]);
 
 
 
   const AddToCart = (id,title,price,image,brand,discount,prodName) => {
-    
-    var x = cartItem.find((el) => {
+  
+    var x = cart_data.find((el) => {
       return el.id == id
 
     })
@@ -71,14 +72,11 @@ export default function Singleproduct() {
         const qty = 1
         const obj = {id,title,price,image,qty,brand,discount,prodName}
 
-        cartItem.push(obj)
-        localStorage.setItem("cart" , JSON.stringify(cartItem));
+        cart_data.push(obj)
+        localStorage.setItem("cart" , JSON.stringify(cart_data));
         alert("Add To Cart Successfully!!");
     }
 
-    
-
-    
 
   };
 
@@ -174,4 +172,3 @@ export default function Singleproduct() {
   );
 
 }
-
