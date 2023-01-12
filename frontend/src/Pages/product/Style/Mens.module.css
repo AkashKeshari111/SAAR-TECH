@@ -2,14 +2,15 @@
   display: flex;
   margin: auto;
   justify-content: center;
-  width: 99%;
+  width: 100%;
+  height: auto;
 }
 .allfilterandproduct{
   display: flex;
   flex-direction: column;
   margin: auto;
  
-  width: 80%;
+  width: 90%;
 }
 
 .maincard {
