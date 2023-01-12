@@ -2,9 +2,9 @@
 This repository contains a functional clone of the Gearbest website. SAARTECH is an e-commerce store, that sells cell phones, electronic gadgets, toys, sporting goods, home products and apparel.
 
 ## Team
-[Akash Keshari ](https://github.com/AkashKeshari111)
-[Sahil Kumar](https://github.com/sgovind158)
-[Anjana Kushwaha](https://github.com/AtulPandey429/AtulPandey429)
+[Akash Keshari ](https://github.com/AkashKeshari111),
+[Sahil Kumar](https://github.com/sgovind158),
+[Anjana Kushwaha](https://github.com/AtulPandey429/AtulPandey429),
 [Rahul Monga](https://github.com/Rishon-A-Singh)
 
 
