@@ -13,10 +13,10 @@ import UserRegister from "../Pages/Signup/UserRegister.jsx";
 
 import Addto from "../Pages/single/Addto";
 import { CartProvider } from "react-use-cart";
-import Checkout from "../Pages/Checkout/Checkout";
 import Thanku from "../Pages/Thanku/Thanku";
 
 import PrivateRoute from "../Components/PrivateRoute";
+import PlaceOrder from "../Pages/PlaceOrder/PlaceOrder";
 
 const AllRoutes = () => {
   return (
@@ -35,7 +35,7 @@ const AllRoutes = () => {
         <Route path="/UserLogin" element={<>  <Navbar /><UserLogin /><Footer /></>} />
         <Route path="/AdminRegister" element={ <> <Navbar /><AdminRegister /><Footer /></>} />
         <Route path="/UserRegister" element={<>  <Navbar /><UserRegister /><Footer /></>} />
-
+        <Route path="/placeorder" element={<>  <Navbar /><PlaceOrder/><Footer /></>} />
         <Route
           path="/products"
           element={
@@ -72,11 +72,9 @@ const AllRoutes = () => {
           />
         </Routes>
         <Routes>
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-        <Routes>
           <Route path="/thanku" element={<Thanku />} />
         </Routes>
+
       </CartProvider>
 
     </>

@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, Remove_Cart, Success_Cart_Qty } from "./actionTypes";
+import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, Placed_Order, Remove_Cart, Success_Cart_Qty } from "./actionTypes";
 
 
 const initialState = {
@@ -6,6 +6,7 @@ const initialState = {
     isLoading: false,
     isError: false,
     cart_data:JSON.parse(localStorage.getItem("cart"))||[],
+    placeOrder:JSON.parse(localStorage.getItem("placeorder"))||[],
   };
 
 
@@ -85,6 +86,11 @@ const initialState = {
       case Remove_Cart:{
         localStorage.setItem("cart",JSON.stringify(payload))
         return {...oldState,isLoading:false,isError:false,cart_data:[...payload]}
+    }
+
+    case Placed_Order:{
+      localStorage.setItem("placeorder",JSON.stringify(payload))
+      return {...oldState,isLoading:false,isError:false,placeOrder:[...oldState.placeOrder,payload]}
     }
     
     

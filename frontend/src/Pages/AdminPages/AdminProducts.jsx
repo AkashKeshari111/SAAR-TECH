@@ -101,12 +101,6 @@ export const AdminProducts = () => {
     <div className={styles.box} >
     <div className={styles.filterBox} >
         <div>
-            <p><strong>Sort by Title:</strong></p>
-            <select>
-                
-            </select>
-        </div>
-        <div>
             <p><strong>Sort by Price:</strong></p>
             <select onChange={handleChange}>
                 <option value="asc" >Low-High</option>

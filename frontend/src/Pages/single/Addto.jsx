@@ -2,19 +2,21 @@ import React from 'react'
 import  "./Style1/Junior.css";
 import styles from "./Style/Addto.module.css"
 import { useDispatch, useSelector } from 'react-redux';
-import { getCart2, Remove } from '../../Redux/AppReducer/action';
+import { getCart2, PlacedOrder, Remove } from '../../Redux/AppReducer/action';
+import {BsFillTrashFill} from "react-icons/bs"
 
 
-const array = JSON.parse(localStorage.getItem("cart")) || []
+
 
 export default function Addto() {
   
-  console.log(array.length,"sad")
+  
 
   const data = useSelector((store) => store.AppReducer.cart_data);
   console.log(data)
 
   const dispatch = useDispatch();
+  const token = useSelector((state)=>state.AuthReducer.token)
 
   const TotalPrice = data.reduce((acc, el)=>{
     return acc + ((el.qty * el.price) - ((el.qty*el.price*el.discount)/100))
@@ -53,10 +55,11 @@ export default function Addto() {
   }
 
   const handlePlaceOrder = () => {
+    dispatch(PlacedOrder([...data]))
     
   }
 
-    if(array.length==0 || array.length == undefined) 
+    if(data.length==0 || data.length == undefined) 
     {
       return <> 
     <div className={styles.empty_cart}>
@@ -72,25 +75,25 @@ export default function Addto() {
             <div className={styles.box1} >
             {
               
-              data?.map((ele) =>
+              data?.reverse().map((ele) =>
               <div className={styles.productBox} >
-                <div>
+                <div className={styles.prodImg} >
                   <img src={ele.image} />
                 </div>
-                <div>
-                  <h1>{ele.title}</h1>
+                <div className={styles.prodTitle} >
+                  <p>Title : {ele.title}</p>
                 </div>
-                <div>
-                  <p>{ele.price}</p>
+                <div className={styles.prodPrice} >
+                  <p>Price : ₹{ele.price}</p>
                 </div>
                 <div className={styles.incBtn} >
                   <div className={styles.btn1} >
-                    <button onClick={()=>handleQty(ele.id,-1)} >-</button>
+                    <div><button onClick={()=>handleQty(ele.id,-1)} >-</button></div>
                     <p>{ele.qty}</p>
-                    <button onClick={()=>handleQty(ele.id,1)} >+</button>
+                    <div><button onClick={()=>handleQty(ele.id,1)} >+</button></div>
                   </div>
                   <div>
-                    <button onClick={() => deleteBtn(ele.id)} >DELETE</button>
+                    <button onClick={() => deleteBtn(ele.id)} > <BsFillTrashFill style={{color:"red",fontSize:"25px",marginTop:"12px"}} /> </button>
                   </div>
                 </div>
                 

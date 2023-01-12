@@ -109,17 +109,19 @@ export default function AfterLoginButton() {
               >
                 My Favourites
               </Button>
-              <Button
-                w="194px"
-                variant="ghost"
-                rightIcon={<FaOpencart />}
-                justifyContent="space-between"
-                fontWeight="normal"
-                colorScheme="red"
-                fontSize="sm"
-              >
-                My Orders
-              </Button>
+              <Link to='/placeorder' >
+                <Button
+                  w="194px"
+                  variant="ghost"
+                  rightIcon={<FaOpencart />}
+                  justifyContent="space-between"
+                  fontWeight="normal"
+                  colorScheme="red"
+                  fontSize="sm"
+                >
+                  My Orders
+                </Button>
+              </Link>
               <Button
                 onClick={handleLogout}
                 w="194px"

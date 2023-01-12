@@ -10,7 +10,7 @@
   height: 100vh;
 }
 .box1{
-  border: 1px solid green;
+  border: 2px solid black;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -18,11 +18,46 @@
   height: 80%;
   overflow: auto;
 }
+.box1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.box1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+.box1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
 .productBox{
-  border: 1px solid red;
+  border: 4px solid #ffda00;
   height: auto;
   width: 50%;
   margin: auto;
+  padding: 10px;
+}
+/* .prodImg{
+  border: 1px solid black;
+} */
+.prodTitle{
+  color: darkgray;
+  text-align: left;
+  text-decoration: underline;
+  font-size: 20px;
+  font-style: oblique;
+}
+.prodPrice{
+  text-align: right;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4f4f4f;
 }
 .box2{
   width: 50%;
@@ -30,10 +65,26 @@
 .btn1{
   display: flex;
   gap: 20px;
+  border: 3px solid #ffda00;
+  padding: 5px;
+}
+.btn1>p{
+  margin-top: 4px;
+  font-size: 21px;
+}
+
+.btn1>div>button{
+  width: 100%;
+  height: 98%;
+  padding: 3px;
+  /* border: 1px solid black; */
+  font-size: 23px;
 }
 .incBtn{
+  /* border: 1px solid black; */
   display: flex;
   gap: 10px;
   margin: auto;
   justify-content: space-around;
+  padding: 5px;
 }

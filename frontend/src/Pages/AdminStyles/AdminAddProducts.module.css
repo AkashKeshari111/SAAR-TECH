@@ -2,7 +2,7 @@
     font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 }
 .mainDiv{
-    background-color:#d9d9d9 ;
+    background-color:#fbfaf9 ;
     /* margin-top: -21px; */
     padding: 40px;
 }
@@ -10,17 +10,45 @@
     font-weight: bold;
     font-size: 40px;
 }
+.mainBox{
+    display: flex;
+    height: 66vh;
+    padding: 20px;
+   
+}
+.logoDiv{
+    /* border: 1px solid black; */
+    width: 95%;
+    height: 95%;
+}
 
 .formDiv{
-    border: 1px solid black;
+    border: 2px solid black;
     width: 95%;
-    height: auto;
-    margin: auto;
+    height: 95%;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 30px;
-    
+    overflow: auto;
+    border-radius: 4px;
+}
+.formDiv::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.formDiv::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+.formDiv::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
 }
 
 
@@ -45,11 +73,56 @@
     /* justify-content: space-between; */
 }
 .formDiv>form>div>input{
-    padding: 20px;
+    padding: 10px;
     margin-left: 20px;
     border-radius: 10px;
+    width: 80%;
+    background-color: #fbfaf9;
+    outline: none;
 }
 .formDiv>form>div>label{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
+}
+
+
+@media screen and (max-width: 400px) {
+    .mainDiv>p{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .mainBox{
+        display: flex;
+        flex-direction: column;
+    }
+    .formDiv{
+        border: 1px solid black;
+        width: 95%;
+        height: 98%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+        overflow: auto;
+    }
+    .formDiv>form>div{
+        border-bottom: 1px solid black;
+        padding: 5px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        /* justify-content: space-between; */
+    }
+    .formDiv>form>div>input{
+        padding: 5px;
+        margin-left: 20px;
+        border-radius: 10px;
+        width: 80%;
+        background-color: #fbfaf9;
+        outline: none;
+    }
+    .formDiv>form>div>label{
+        font-size: 10px;
+        font-weight: bold;
+    }
 }
