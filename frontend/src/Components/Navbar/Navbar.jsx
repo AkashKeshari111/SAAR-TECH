@@ -8,21 +8,25 @@ import { BiSearch } from "react-icons/bi";
 import Signinfunction from "./Signinfunction.jsx";
 import NavbarCarousel from "./NavbarCarousel";
 import SideNavbar from "./SideNavbar";
-import {useSelector} from "react-redux"
-import AfterLoginButton from "./AfterLoginButton"
+import { useSelector } from "react-redux";
+import AfterLoginButton from "./AfterLoginButton";
 import Theme from "../Theme/Theme";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const cart_data = useSelector((state) => state.AppReducer.cart_data);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
 
+ 
   return (
     <>
       <div className={styles.outerbar}>
         <div className={styles.containerNavbar}>
           {/* <a href="" alt=""></a> */}
           <div className={styles.topNavbarSEction}>
-           <Link to="/" ><img className={styles.logoImages} src="footerLogo.png" alt=""/></Link>
+            <Link to="/">
+              <img className={styles.logoImages} src="footerLogo.png" alt="" />
+            </Link>
             <div>
               <div className={styles.navbarlnguageSection}>
                 <p>
@@ -44,7 +48,6 @@ const Navbar = () => {
                 <p>
                   {" "}
                   {/* Country Website <BsChevronDown className={styles.icks} />{" "} */}
-               
                 </p>
               </div>
               <div className={styles.navbarSearchSection}>
@@ -57,10 +60,7 @@ const Navbar = () => {
                     <BiSearch size={"23px"}></BiSearch>
                   </p>
                 </div>
-                <p>
-                  {isAuth?<AfterLoginButton/>:<Signinfunction/>}
-                  
-                </p>
+                <p>{isAuth ? <AfterLoginButton /> : <Signinfunction />}</p>
 
                 <Link to="" alt="">
                   <HiOutlineHeart size={"25px"}></HiOutlineHeart>
@@ -71,11 +71,9 @@ const Navbar = () => {
                     size={"25px"}
                     color="#ffda00"
                   ></FiShoppingCart>
-                  <p>Cart</p>
+                  <p>Cart<sup>{cart_data.length}</sup></p>
                 </Link>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -91,13 +89,14 @@ const Navbar = () => {
             <BiSearch size={"23px"}></BiSearch>
           </p>
         </div>
-<div className={styles.midSectionSign}>
-  <Signinfunction></Signinfunction>
-</div>
+        <div className={styles.midSectionSign}>
+          <Signinfunction></Signinfunction>
+        </div>
       </div>
-<div className={styles.sideNavbarCompo}>      <SideNavbar></SideNavbar></div>
-
-     
+      <div className={styles.sideNavbarCompo}>
+        {" "}
+        <SideNavbar></SideNavbar>
+      </div>
     </>
   );
 };
