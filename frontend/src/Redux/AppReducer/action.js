@@ -48,11 +48,11 @@ const Remove = (creds) => (dispatch)=>{
   //   console.log(creds);
   }
 
-const PlacedOrder = (payload,navigate) => (dispatch) => {
+  const PlacedOrder = (payload,navigate) => (dispatch) => {
     
     dispatch({type:types.Placed_Order,payload:payload})
     alert("Product Order Successfully!")
-    navigate("/placeorder")
+    navigate("/")
    
 }
 
