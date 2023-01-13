@@ -1,6 +1,9 @@
 # SAAR-TECH Website
 This repository contains a functional clone of the Gearbest website. SAARTECH is an e-commerce store, that sells cell phones, electronic gadgets, toys, sporting goods, home products and apparel.
 
+## URL:
+[SAAR-TECH Website](https://saartech.vercel.app/)
+
 ## Team
 [Akash Keshari ](https://github.com/AkashKeshari111),
 [Sahil Kumar](https://github.com/sgovind158),
@@ -35,8 +38,7 @@ This repository contains a functional clone of the Gearbest website. SAARTECH is
 - Address page lets you input and displays address, and then through the payment page
 
 
-## URL:
-saartech.vercel.app
+
 
 
 ## screenshots
