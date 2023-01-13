@@ -15,7 +15,7 @@ const ProductCard = ({ title, image, price, discount, per, off,productsId }) => 
   return (
     <Link to={`/products/${productsId}`}>
     <div className={styles.productcard}>
-      <img className={styles.imagecard} src={image} alt={title} />
+      <div className={styles.imageDiv}><img className={styles.imagecard} src={image} alt={title} /></div>
       <h3 className={styles.titlecard}>{title}</h3>
       <h2 className={styles.priceheart} style={{color:" #f30240",fontSize:"larger",fontWeight:"500"}}>₹ {price}</h2>
       <div>

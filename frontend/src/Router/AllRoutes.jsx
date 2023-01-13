@@ -12,7 +12,6 @@ import AdminRegister from "../Pages/Signup/AdminRegister.jsx";
 import UserRegister from "../Pages/Signup/UserRegister.jsx";
 
 import Addto from "../Pages/single/Addto";
-import { CartProvider } from "react-use-cart";
 import Thanku from "../Pages/Thanku/Thanku";
 
 import PrivateRoute from "../Components/PrivateRoute";
@@ -46,7 +45,6 @@ const AllRoutes = () => {
           }
         />
       </Routes>
-      <CartProvider>
         <Routes>
           <Route
             path="/products/:id"
@@ -75,7 +73,6 @@ const AllRoutes = () => {
           <Route path="/thanku" element={<Thanku />} />
         </Routes>
 
-      </CartProvider>
 
     </>
   );

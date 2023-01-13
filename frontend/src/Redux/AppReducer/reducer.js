@@ -36,47 +36,6 @@ const initialState = {
           isError: true,
         }
     
-        // case DELETE_PRODUCT_REQUEST:
-        // return {
-        //   ...oldState,
-        //   isLoading: true,
-        // }
-    
-        // case DELETE_PRODUCT_SUCCESS:
-        // return {
-        //   ...oldState,
-        //   isLoading: false,
-        //   products: payload,
-        // }
-    
-        // case DELETE_PRODUCT_FAILURE:
-        // return {
-        //   ...oldState,
-        //   isLoading: false,
-        //   isError: true,
-        // }
-    
-    
-        // case ADD_PRODUCT_REQUEST:
-        // return {
-        //   ...oldState,
-        //   isLoading: true,
-        // }
-    
-        // case ADD_PRODUCT_SUCCESS:
-        // return {
-        //   ...oldState,
-        //   isLoading: false,
-        //   products: payload,
-        // }
-    
-        // case ADD_PRODUCT_FAILURE:
-        // return {
-        //   ...oldState,
-        //   isLoading: false,
-        //   isError: true,
-        // }
-
         case Success_Cart_Qty:{
           localStorage.setItem("cart",JSON.stringify(payload))
           return {...oldState,isLoading:false,isError:false,cart_data:payload}
@@ -89,9 +48,10 @@ const initialState = {
     }
 
     case Placed_Order:{
-      localStorage.setItem("placeorder",JSON.stringify(payload))
-      localStorage.removeItem("cart")
-      return {...oldState,isLoading:false,isError:false,placeOrder:[...payload]}
+      localStorage.setItem("placeorder",JSON.stringify([...oldState.placeOrder]))
+      localStorage.setItem("cart")
+      return {...oldState,isLoading:false,isError:false,
+        placeOrder:[...oldState.placeOrder, payload]}
     }
     
     
