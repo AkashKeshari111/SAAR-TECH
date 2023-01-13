@@ -52,7 +52,7 @@ const PlacedOrder = (payload,navigate) => (dispatch) => {
     
     dispatch({type:types.Placed_Order,payload:payload})
     alert("Product Order Successfully!")
-    navigate("/placeorder")
+    navigate("/")
    
 }
 
